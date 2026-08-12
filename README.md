@@ -103,7 +103,7 @@ A interface foi planejada para possuir um design **moderno, intuitivo e responsi
 
 ### Dashboard
 
-![Dashboard](docs/imagens/dashboard.png)
+![Dashboard](docs/img/dashboard)
 
 ### Mural de Aulas
 
