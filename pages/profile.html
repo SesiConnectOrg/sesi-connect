@@ -1,0 +1,908 @@
+<!doctype html>
+
+<html data-theme="light" lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="Painel principal do SESI Connect." name="description" />
+    <meta content="#f8fafc" name="theme-color" />
+    <title>Meu Perfil | SESI Connect</title>
+    <link href="../assets/icons/favicon.svg" rel="icon" type="image/svg+xml" />
+    <!-- Font Awesome -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      rel="stylesheet"
+    />
+    <!-- Estilos do projeto -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+  <body
+    class="app-layout profile-page has-mobile-navigation"
+    data-app-name="SESI Connect"
+    data-auth-required="true"
+    data-page="profile"
+    data-page-title="Meu Perfil"
+    data-restore-scroll="true"
+  >
+    <!-- Acessibilidade -->
+    <a class="skip-link" href="#main-content"> Ir para o conteúdo principal </a>
+    <!-- =========================
+         CARREGAMENTO
+         ========================= -->
+    <div aria-hidden="true" class="page-loader">
+      <div class="page-loader-content">
+        <div class="page-loader-logo">
+          <i class="fa-solid fa-graduation-cap"></i>
+        </div>
+        <span class="loading-spinner"></span>
+        <p>Carregando SESI Connect...</p>
+      </div>
+    </div>
+    <!-- =========================
+         ESTRUTURA PRINCIPAL
+         ========================= -->
+    <div class="app-container">
+      <!-- =========================
+             SIDEBAR
+             ========================= -->
+      <aside aria-label="Navegação principal" class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+          <a
+            aria-label="Página inicial do SESI Connect"
+            class="sidebar-logo"
+            data-route="dashboard"
+            href="./dashboard.html"
+          >
+            <span class="sidebar-logo-icon">
+              <i class="fa-solid fa-graduation-cap"></i>
+            </span>
+            <span class="sidebar-logo-text">
+              <strong>SESI</strong>
+              <span>Connect</span>
+            </span>
+          </a>
+          <button
+            aria-controls="sidebar"
+            aria-expanded="false"
+            aria-label="Fechar menu"
+            class="sidebar-close-button mobile-only"
+            data-sidebar-toggle=""
+            type="button"
+          >
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+        <!-- Perfil -->
+        <div class="sidebar-user">
+          <div
+            aria-hidden="true"
+            class="sidebar-user-avatar"
+            data-user-initials=""
+          >
+            JS
+          </div>
+          <div class="sidebar-user-info">
+            <strong data-user-name=""> Jully Silva </strong>
+            <span data-user-role=""> Estudante </span>
+          </div>
+        </div>
+        <!-- Menu -->
+        <nav class="sidebar-navigation">
+          <div class="sidebar-navigation-group" data-navigation-group="">
+            <span class="sidebar-section-title"> Principal </span>
+            <a
+              aria-current="page"
+              class="sidebar-link active"
+              data-route="dashboard"
+              href="./dashboard.html"
+            >
+              <i class="fa-solid fa-chart-pie"></i>
+              <span class="sidebar-link-text"> Visão Geral </span>
+            </a>
+            <a class="sidebar-link" data-route="lessons" href="./lessons.html">
+              <i class="fa-solid fa-book-open"></i>
+              <span class="sidebar-link-text"> Mural de Aulas </span>
+            </a>
+            <a
+              class="sidebar-link"
+              data-route="schedule"
+              href="./schedule.html"
+            >
+              <i class="fa-solid fa-calendar-days"></i>
+              <span class="sidebar-link-text"> Cronograma </span>
+            </a>
+            <a
+              class="sidebar-link"
+              data-route="activities"
+              href="./activities.html"
+            >
+              <i class="fa-solid fa-list-check"></i>
+              <span class="sidebar-link-text"> Atividades </span>
+              <span class="sidebar-link-badge" data-dashboard-activity-count="">
+                0
+              </span>
+            </a>
+            <a
+              class="sidebar-link"
+              data-route="materials"
+              href="./materials.html"
+            >
+              <i class="fa-solid fa-folder-open"></i>
+              <span class="sidebar-link-text"> Materiais </span>
+            </a>
+            <a
+              class="sidebar-link sidebar-link--highlight"
+              data-route="ai"
+              href="./ai.html"
+            >
+              <i class="fa-solid fa-robot"></i>
+              <span class="sidebar-link-text"> Assistente IA </span>
+            </a>
+          </div>
+          <div class="sidebar-navigation-group" data-navigation-group="">
+            <span class="sidebar-section-title"> Gestão </span>
+            <a
+              class="sidebar-link"
+              data-roles="admin,coordinator,teacher"
+              data-route="students"
+              href="./students.html"
+            >
+              <i class="fa-solid fa-user-graduate"></i>
+              <span class="sidebar-link-text"> Alunos </span>
+            </a>
+            <a
+              class="sidebar-link"
+              data-roles="admin,coordinator"
+              data-route="teachers"
+              href="./teachers.html"
+            >
+              <i class="fa-solid fa-chalkboard-user"></i>
+              <span class="sidebar-link-text"> Professores </span>
+            </a>
+          </div>
+          <div class="sidebar-navigation-group" data-navigation-group="">
+            <span class="sidebar-section-title"> Conta </span>
+            <a class="sidebar-link" data-route="profile" href="./profile.html">
+              <i class="fa-solid fa-user"></i>
+              <span class="sidebar-link-text"> Meu Perfil </span>
+            </a>
+            <a
+              class="sidebar-link"
+              data-route="settings"
+              href="./settings.html"
+            >
+              <i class="fa-solid fa-gear"></i>
+              <span class="sidebar-link-text"> Configurações </span>
+            </a>
+          </div>
+        </nav>
+        <!-- Rodapé da sidebar -->
+        <div class="sidebar-footer">
+          <button
+            class="sidebar-link sidebar-logout-button logout-button"
+            data-logout=""
+            type="button"
+          >
+            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+            <span class="sidebar-link-text"> Sair </span>
+          </button>
+          <span class="sidebar-version"> SESI Connect v1.0 </span>
+        </div>
+      </aside>
+      <!-- Fundo da sidebar mobile -->
+      <button
+        aria-label="Fechar menu lateral"
+        class="sidebar-overlay"
+        id="sidebar-overlay"
+        tabindex="-1"
+        type="button"
+      ></button>
+      <!-- =========================
+             CONTEÚDO
+             ========================= -->
+      <div class="main-content">
+        <!-- =========================
+                 CABEÇALHO
+                 ========================= -->
+        <header class="top-header">
+          <div class="top-header-left">
+            <button
+              aria-controls="sidebar"
+              aria-expanded="false"
+              aria-label="Abrir menu"
+              class="mobile-menu-button"
+              data-sidebar-toggle=""
+              type="button"
+            >
+              <i class="fa-solid fa-bars"></i>
+            </button>
+            <div class="top-header-heading">
+              <span class="top-header-title"> SESI Connect </span>
+              <span class="top-header-page">Meu Perfil</span>
+            </div>
+          </div>
+          <div class="top-header-search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input
+              aria-label="Pesquisar no sistema"
+              placeholder="Pesquisar no SESI Connect"
+              type="search"
+            />
+            <kbd>Ctrl K</kbd>
+          </div>
+          <div class="top-header-actions">
+            <!-- Tema -->
+            <button
+              aria-label="Ativar tema escuro"
+              aria-pressed="false"
+              class="top-header-action theme-toggle-button"
+              data-theme-toggle=""
+              type="button"
+            >
+              <i class="fa-solid fa-moon" data-theme-icon=""></i>
+            </button>
+            <!-- Notificações -->
+            <div class="notification-wrapper">
+              <button
+                aria-controls="notification-panel"
+                aria-expanded="false"
+                aria-label="Notificações"
+                class="top-header-action notification-button"
+                data-notification-toggle=""
+                type="button"
+              >
+                <i class="fa-regular fa-bell"></i>
+                <span
+                  class="notification-badge"
+                  data-notification-count=""
+                  id="notification-count"
+                >
+                  0
+                </span>
+              </button>
+              <!-- Painel de notificações -->
+              <section
+                aria-hidden="true"
+                class="notification-panel"
+                data-notification-panel=""
+                data-use-hidden=""
+                hidden=""
+                id="notification-panel"
+              >
+                <div class="notification-panel-header">
+                  <div>
+                    <h2>Notificações</h2>
+                    <p>Acompanhe suas novidades.</p>
+                  </div>
+                  <button
+                    class="notification-header-action"
+                    data-notifications-read-all=""
+                    type="button"
+                  >
+                    Marcar como lidas
+                  </button>
+                </div>
+                <div
+                  class="notification-list"
+                  data-notification-list=""
+                  id="notification-list"
+                >
+                  <!-- Gerado pelo notifications.js -->
+                </div>
+                <div class="notification-panel-footer">
+                  <button
+                    class="notification-clear-button"
+                    data-notifications-clear=""
+                    type="button"
+                  >
+                    <i class="fa-solid fa-trash"></i>
+                    Limpar notificações
+                  </button>
+                </div>
+              </section>
+            </div>
+            <!-- Perfil -->
+            <a
+              aria-label="Abrir meu perfil"
+              class="top-header-user"
+              data-route="profile"
+              href="./profile.html"
+            >
+              <div
+                aria-hidden="true"
+                class="top-header-user-avatar"
+                data-user-initials=""
+              >
+                JS
+              </div>
+              <div class="top-header-user-info">
+                <strong class="top-header-user-name" data-user-name="">
+                  Jully Silva
+                </strong>
+                <span class="top-header-user-role" data-user-role="">
+                  Estudante
+                </span>
+              </div>
+              <i class="fa-solid fa-chevron-right"></i>
+            </a>
+          </div>
+        </header>
+        <!-- =========================
+                 CONTEÚDO PRINCIPAL
+                 ========================= -->
+        <main class="page-content profile-content" id="main-content">
+          <section class="profile-header">
+            <div class="profile-header-content">
+              <span class="page-eyebrow">Minha conta</span>
+              <h1>Meu Perfil</h1>
+              <p>Consulte e atualize suas informações do SESI Connect.</p>
+            </div>
+            <div class="profile-header-actions">
+              <a
+                class="btn btn-outline"
+                data-route="settings"
+                href="./settings.html"
+                ><i class="fa-solid fa-gear"></i> Configurações</a
+              ><button
+                class="btn btn-primary"
+                data-profile-edit=""
+                type="button"
+              >
+                <i class="fa-solid fa-pen"></i> Editar perfil
+              </button>
+            </div>
+          </section>
+          <section class="profile-hero">
+            <div class="profile-photo-wrapper">
+              <div
+                class="profile-photo-placeholder"
+                data-profile-avatar=""
+                data-user-initials=""
+              >
+                JS
+              </div>
+              <button
+                aria-label="Alterar foto"
+                class="profile-photo-edit"
+                data-modal-open="profile-photo-modal"
+                type="button"
+              >
+                <i class="fa-solid fa-camera"></i>
+              </button>
+            </div>
+            <div class="profile-hero-info">
+              <h2 class="profile-name" data-user-name="">Jully Silva</h2>
+              <span class="profile-role"
+                ><i class="fa-solid fa-user-graduate"></i>
+                <span data-user-role="">Aluno</span></span
+              >
+              <p class="profile-description" data-profile-description="">
+                Estudante do SESI, acompanhando aulas, atividades, materiais e
+                metas de estudo pela plataforma.
+              </p>
+              <div class="profile-meta">
+                <span class="profile-meta-item"
+                  ><i class="fa-solid fa-envelope"></i
+                  ><span data-user-email=""
+                    >jully.silva@aluno.sesi.br</span
+                  ></span
+                ><span class="profile-meta-item"
+                  ><i class="fa-solid fa-users"></i>2º Ano A</span
+                ><span class="profile-status"
+                  ><i class="fa-solid fa-circle-check"></i> Perfil ativo</span
+                >
+              </div>
+            </div>
+          </section>
+          <div class="profile-grid">
+            <div class="profile-main-column">
+              <section class="profile-section-card">
+                <div class="profile-section-header">
+                  <h2 class="profile-section-title">Informações pessoais</h2>
+                  <button
+                    class="profile-section-action"
+                    data-profile-edit=""
+                    type="button"
+                  >
+                    Editar
+                  </button>
+                </div>
+                <div class="profile-info-grid" data-profile-view="">
+                  <div class="profile-info-item">
+                    <span class="profile-info-label">Nome completo</span
+                    ><strong class="profile-info-value" data-profile-name=""
+                      >Jully Silva</strong
+                    >
+                  </div>
+                  <div class="profile-info-item">
+                    <span class="profile-info-label">E-mail institucional</span
+                    ><strong class="profile-info-value" data-profile-email=""
+                      >jully.silva@aluno.sesi.br</strong
+                    >
+                  </div>
+                  <div class="profile-info-item">
+                    <span class="profile-info-label">Telefone</span
+                    ><strong class="profile-info-value" data-profile-phone=""
+                      >(11) 99999-0000</strong
+                    >
+                  </div>
+                  <div class="profile-info-item">
+                    <span class="profile-info-label">Cidade</span
+                    ><strong class="profile-info-value" data-profile-city=""
+                      >São Paulo - SP</strong
+                    >
+                  </div>
+                  <div class="profile-info-item profile-form-full">
+                    <span class="profile-info-label">Sobre mim</span>
+                    <p
+                      class="profile-info-value profile-info-value--multiline"
+                      data-profile-bio=""
+                    >
+                      Gosto de tecnologia, leitura e projetos escolares.
+                    </p>
+                  </div>
+                </div>
+                <form class="profile-edit-form" data-profile-form="" hidden="">
+                  <div class="profile-form-grid">
+                    <div class="form-group">
+                      <label for="profile-name">Nome completo</label
+                      ><input
+                        class="form-control"
+                        id="profile-name"
+                        name="name"
+                        required=""
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label for="profile-phone">Telefone</label
+                      ><input
+                        class="form-control"
+                        id="profile-phone"
+                        name="phone"
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label for="profile-city">Cidade</label
+                      ><input
+                        class="form-control"
+                        id="profile-city"
+                        name="city"
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label for="profile-state">Estado</label
+                      ><input
+                        class="form-control"
+                        id="profile-state"
+                        maxlength="2"
+                        name="state"
+                      />
+                    </div>
+                    <div class="form-group profile-form-full">
+                      <label for="profile-bio">Sobre mim</label
+                      ><textarea
+                        class="form-control"
+                        id="profile-bio"
+                        maxlength="300"
+                        name="bio"
+                        rows="4"
+                      ></textarea>
+                    </div>
+                  </div>
+                  <div class="profile-form-actions">
+                    <button
+                      class="btn btn-outline"
+                      data-profile-cancel=""
+                      type="button"
+                    >
+                      Cancelar</button
+                    ><button class="btn btn-primary" type="submit">
+                      <i class="fa-solid fa-floppy-disk"></i> Salvar alterações
+                    </button>
+                  </div>
+                </form>
+              </section>
+              <section class="profile-section-card">
+                <div class="profile-section-header">
+                  <h2 class="profile-section-title">Desempenho acadêmico</h2>
+                  <a class="profile-section-action" href="./lessons.html"
+                    >Ver aulas</a
+                  >
+                </div>
+                <div class="profile-statistics">
+                  <article class="profile-statistic">
+                    <strong class="profile-statistic-value">8,4</strong
+                    ><span class="profile-statistic-label">Média geral</span>
+                  </article>
+                  <article class="profile-statistic">
+                    <strong class="profile-statistic-value">94%</strong
+                    ><span class="profile-statistic-label">Frequência</span>
+                  </article>
+                  <article class="profile-statistic">
+                    <strong class="profile-statistic-value">18</strong
+                    ><span class="profile-statistic-label"
+                      >Atividades concluídas</span
+                    >
+                  </article>
+                </div>
+                <div class="profile-performance">
+                  <article class="profile-performance-item">
+                    <div class="profile-performance-header">
+                      <span class="profile-performance-subject">Matemática</span
+                      ><strong class="profile-performance-score">9,1</strong>
+                    </div>
+                    <div class="profile-performance-track">
+                      <span
+                        class="profile-performance-bar"
+                        style="width: 91%"
+                      ></span>
+                    </div>
+                  </article>
+                  <article class="profile-performance-item">
+                    <div class="profile-performance-header">
+                      <span class="profile-performance-subject"
+                        >Língua Portuguesa</span
+                      ><strong class="profile-performance-score">8,6</strong>
+                    </div>
+                    <div class="profile-performance-track">
+                      <span
+                        class="profile-performance-bar"
+                        style="width: 86%"
+                      ></span>
+                    </div>
+                  </article>
+                  <article class="profile-performance-item">
+                    <div class="profile-performance-header">
+                      <span class="profile-performance-subject">Física</span
+                      ><strong class="profile-performance-score">7,9</strong>
+                    </div>
+                    <div class="profile-performance-track">
+                      <span
+                        class="profile-performance-bar"
+                        style="width: 79%"
+                      ></span>
+                    </div>
+                  </article>
+                </div>
+              </section>
+              <section class="profile-section-card">
+                <div class="profile-section-header">
+                  <h2 class="profile-section-title">Atividade recente</h2>
+                </div>
+                <div class="profile-activity-list">
+                  <article class="profile-activity-item">
+                    <span class="profile-achievement-icon"
+                      ><i class="fa-solid fa-circle-check"></i
+                    ></span>
+                    <div class="profile-activity-content">
+                      <strong class="profile-activity-title"
+                        >Atividade de Matemática entregue</strong
+                      ><span class="profile-activity-time">Hoje</span>
+                    </div>
+                  </article>
+                  <article class="profile-activity-item">
+                    <span class="profile-achievement-icon"
+                      ><i class="fa-solid fa-book-open"></i
+                    ></span>
+                    <div class="profile-activity-content">
+                      <strong class="profile-activity-title"
+                        >Aula de História concluída</strong
+                      ><span class="profile-activity-time">Ontem</span>
+                    </div>
+                  </article>
+                </div>
+              </section>
+            </div>
+            <aside class="profile-side-column">
+              <section class="profile-section-card">
+                <div class="profile-section-header">
+                  <h2 class="profile-section-title">Conquistas</h2>
+                </div>
+                <div class="profile-achievements">
+                  <article class="profile-achievement">
+                    <span class="profile-achievement-icon"
+                      ><i class="fa-solid fa-fire"></i
+                    ></span>
+                    <div class="profile-achievement-content">
+                      <strong class="profile-achievement-title"
+                        >7 dias estudando</strong
+                      ><span class="profile-achievement-description"
+                        >Sequência semanal concluída</span
+                      >
+                    </div>
+                  </article>
+                  <article class="profile-achievement">
+                    <span class="profile-achievement-icon"
+                      ><i class="fa-solid fa-star"></i
+                    ></span>
+                    <div class="profile-achievement-content">
+                      <strong class="profile-achievement-title"
+                        >Nota excelente</strong
+                      ><span class="profile-achievement-description"
+                        >Nota acima de 9,0</span
+                      >
+                    </div>
+                  </article>
+                </div>
+              </section>
+              <section class="profile-section-card">
+                <div class="profile-section-header">
+                  <h2 class="profile-section-title">Segurança</h2>
+                </div>
+                <div class="profile-security-list">
+                  <article class="profile-security-item">
+                    <span class="profile-security-icon"
+                      ><i class="fa-solid fa-shield-halved"></i
+                    ></span>
+                    <div class="profile-security-content">
+                      <strong class="profile-security-title"
+                        >Conta protegida</strong
+                      ><span class="profile-security-description"
+                        >Sessão autenticada e ativa.</span
+                      >
+                    </div>
+                  </article>
+                </div>
+                <a
+                  class="btn btn-outline btn-full"
+                  href="./settings.html#security"
+                  >Gerenciar segurança</a
+                >
+              </section>
+            </aside>
+          </div>
+          <div aria-hidden="true" class="modal" id="profile-photo-modal">
+            <button
+              aria-label="Fechar"
+              class="modal-overlay"
+              data-modal-close=""
+              type="button"
+            ></button>
+            <div class="modal-container">
+              <div class="modal-header">
+                <div>
+                  <span class="modal-eyebrow">Foto do perfil</span>
+                  <h2>Alterar foto</h2>
+                </div>
+                <button class="modal-close" data-modal-close="" type="button">
+                  <i class="fa-solid fa-xmark"></i>
+                </button>
+              </div>
+              <div class="modal-body">
+                <label class="file-upload-area" for="profile-photo-input"
+                  ><i class="fa-solid fa-image"></i
+                  ><strong>Selecione uma imagem</strong
+                  ><span>PNG ou JPG de até 5 MB</span></label
+                ><input
+                  accept="image/png,image/jpeg"
+                  data-profile-photo-input=""
+                  id="profile-photo-input"
+                  type="file"
+                />
+                <div
+                  class="profile-photo-preview"
+                  data-profile-photo-preview=""
+                ></div>
+              </div>
+              <div class="modal-footer">
+                <button
+                  class="btn btn-outline"
+                  data-modal-close=""
+                  type="button"
+                >
+                  Cancelar</button
+                ><button
+                  class="btn btn-primary"
+                  data-profile-photo-save=""
+                  type="button"
+                >
+                  Salvar foto
+                </button>
+              </div>
+            </div>
+          </div>
+        </main>
+        <!-- =========================
+                 RODAPÉ
+                 ========================= -->
+        <footer class="app-footer">
+          <p>
+            ©
+            <span data-current-year="">2026</span>
+            SESI Connect.
+          </p>
+          <div class="app-footer-links">
+            <a href="#">Privacidade</a>
+            <a href="#">Suporte</a>
+            <a href="#">Acessibilidade</a>
+          </div>
+        </footer>
+      </div>
+    </div>
+    <!-- =========================
+         NAVEGAÇÃO MOBILE
+         ========================= -->
+    <nav aria-label="Navegação mobile" class="mobile-bottom-navigation">
+      <a
+        aria-current="page"
+        class="mobile-bottom-link active"
+        data-route="dashboard"
+        href="./dashboard.html"
+      >
+        <i class="fa-solid fa-house"></i>
+        <span>Início</span>
+      </a>
+      <a class="mobile-bottom-link" data-route="lessons" href="./lessons.html">
+        <i class="fa-solid fa-book-open"></i>
+        <span>Aulas</span>
+      </a>
+      <a
+        class="mobile-bottom-link"
+        data-route="activities"
+        href="./activities.html"
+      >
+        <i class="fa-solid fa-list-check"></i>
+        <span>Atividades</span>
+      </a>
+      <a class="mobile-bottom-link" data-route="ai" href="./ai.html">
+        <i class="fa-solid fa-robot"></i>
+        <span>IA</span>
+      </a>
+      <a class="mobile-bottom-link" data-route="profile" href="./profile.html">
+        <i class="fa-solid fa-user"></i>
+        <span>Perfil</span>
+      </a>
+    </nav>
+    <!-- =========================
+         TOASTS
+         ========================= -->
+    <div
+      aria-atomic="true"
+      aria-live="polite"
+      class="toast-container"
+      id="toast-container"
+    ></div>
+    <!-- =========================
+         SEM JAVASCRIPT
+         ========================= -->
+    <noscript>
+      <div class="noscript-warning">
+        <strong>JavaScript desativado</strong>
+        <p>
+          Ative o JavaScript do navegador para utilizar todos os recursos do
+          SESI Connect.
+        </p>
+      </div>
+    </noscript>
+    <!-- =========================
+         JAVASCRIPT
+         ========================= -->
+    <!-- JavaScript revisado -->
+    <script src="../js/auth.js" type="module"></script>
+    <script src="../js/app.js" type="module"></script>
+    <script type="module">
+      const PROFILE_KEY = "sesi-connect-profile";
+      const PHOTO_KEY = "sesi-connect-profile-photo";
+      const $ = (s, c = document) => c.querySelector(s);
+      const $$ = (s, c = document) => [...c.querySelectorAll(s)];
+      function read(key, fallback) {
+        try {
+          return JSON.parse(localStorage.getItem(key)) ?? fallback;
+        } catch {
+          return fallback;
+        }
+      }
+      function write(key, value) {
+        try {
+          localStorage.setItem(key, JSON.stringify(value));
+          return true;
+        } catch {
+          return false;
+        }
+      }
+      function getAuthUser() {
+        return window.SESIAuth?.getCurrentUser?.() || {};
+      }
+      function data() {
+        const u = getAuthUser();
+        return {
+          ...{
+            name: u.name || "Jully Silva",
+            email: u.email || "jully.silva@aluno.sesi.br",
+            phone: "(11) 99999-0000",
+            city: "São Paulo",
+            state: "SP",
+            bio: "Gosto de tecnologia, leitura e projetos escolares.",
+          },
+          ...read(PROFILE_KEY, {}),
+        };
+      }
+      function render() {
+        const p = data();
+        $$("[data-profile-name]").forEach((e) => (e.textContent = p.name));
+        $$("[data-profile-email]").forEach((e) => (e.textContent = p.email));
+        $$("[data-profile-phone]").forEach((e) => (e.textContent = p.phone));
+        $$("[data-profile-city]").forEach(
+          (e) => (e.textContent = `${p.city}${p.state ? ` - ${p.state}` : ""}`),
+        );
+        $$("[data-profile-bio]").forEach((e) => (e.textContent = p.bio));
+        const photo = read(PHOTO_KEY, null);
+        $$("[data-profile-avatar]").forEach((e) => {
+          if (photo) {
+            e.innerHTML = `<img src="${photo}" alt="Foto do perfil" class="profile-photo">`;
+          }
+        });
+      }
+      function edit(on = true) {
+        const f = $("[data-profile-form]"),
+          v = $("[data-profile-view]");
+        if (!f || !v) return;
+        f.hidden = !on;
+        v.hidden = on;
+        $$("[data-profile-edit]").forEach((b) => (b.hidden = on));
+        if (on) {
+          const p = data();
+          f.elements.name.value = p.name;
+          f.elements.phone.value = p.phone;
+          f.elements.city.value = p.city;
+          f.elements.state.value = p.state;
+          f.elements.bio.value = p.bio;
+          f.elements.name.focus();
+        }
+      }
+      $$("[data-profile-edit]").forEach((b) =>
+        b.addEventListener("click", () => edit(true)),
+      );
+      $("[data-profile-cancel]")?.addEventListener("click", () => edit(false));
+      $("[data-profile-form]")?.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const f = e.currentTarget;
+        const current = data();
+        const next = {
+          ...current,
+          name: f.elements.name.value.trim(),
+          phone: f.elements.phone.value.trim(),
+          city: f.elements.city.value.trim(),
+          state: f.elements.state.value.trim().toUpperCase(),
+          bio: f.elements.bio.value.trim(),
+        };
+        write(PROFILE_KEY, next);
+        window.SESIAuth?.updateCurrentUser?.({ name: next.name });
+        render();
+        edit(false);
+        window.SESIConnect?.showToast?.(
+          "Perfil atualizado com sucesso.",
+          "success",
+        );
+      });
+      let tempPhoto = null;
+      $("[data-profile-photo-input]")?.addEventListener("change", (e) => {
+        const file = e.target.files?.[0];
+        if (!file) return;
+        if (file.size > 5 * 1024 * 1024) {
+          window.SESIConnect?.showToast?.(
+            "A imagem deve ter no máximo 5 MB.",
+            "warning",
+          );
+          return;
+        }
+        const r = new FileReader();
+        r.onload = () => {
+          tempPhoto = String(r.result);
+          const p = $("[data-profile-photo-preview]");
+          if (p)
+            p.innerHTML = `<img src="${tempPhoto}" alt="Prévia da foto" class="profile-photo">`;
+        };
+        r.readAsDataURL(file);
+      });
+      $("[data-profile-photo-save]")?.addEventListener("click", () => {
+        if (!tempPhoto) return;
+        write(PHOTO_KEY, tempPhoto);
+        render();
+        window.SESIConnect?.closeModal?.("profile-photo-modal");
+        window.SESIConnect?.showToast?.("Foto atualizada.", "success");
+      });
+      render();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,1350 @@
+<!doctype html>
+
+<html data-theme="light" lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta
+      content="Gerenciamento de alunos do SESI Connect."
+      name="description"
+    />
+    <meta content="#f8fafc" name="theme-color" />
+    <title>Alunos | SESI Connect</title>
+    <link href="../assets/icons/favicon.svg" rel="icon" type="image/svg+xml" />
+    <!-- Font Awesome -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      rel="stylesheet"
+    />
+    <!-- Estilos -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+  <body
+    class="app-layout students-page has-mobile-navigation"
+    data-auth-required="true"
+    data-page="students"
+    data-page-title="Alunos"
+    data-required-roles="admin,coordinator,teacher"
+  >
+    <!-- Acessibilidade -->
+    <a class="skip-link" href="#main-content"> Ir para o conteúdo principal </a>
+    <!-- =========================
+         CARREGAMENTO
+         ========================= -->
+    <div aria-hidden="true" class="page-loader">
+      <div class="page-loader-content">
+        <div class="page-loader-logo">
+          <i class="fa-solid fa-graduation-cap"></i>
+        </div>
+        <span class="loading-spinner"></span>
+        <p>Carregando alunos...</p>
+      </div>
+    </div>
+    <!-- =========================
+         APLICAÇÃO
+         ========================= -->
+    <div class="app-container">
+      <!-- =========================
+             SIDEBAR
+             ========================= -->
+      <aside aria-label="Navegação principal" class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+          <a
+            aria-label="Página inicial do SESI Connect"
+            class="sidebar-logo"
+            data-route="dashboard"
+            href="./dashboard.html"
+          >
+            <span class="sidebar-logo-icon">
+              <i class="fa-solid fa-graduation-cap"></i>
+            </span>
+            <span class="sidebar-logo-text">
+              <strong>SESI</strong>
+              <span>Connect</span>
+            </span>
+          </a>
+          <button
+            aria-controls="sidebar"
+            aria-expanded="false"
+            aria-label="Fechar menu"
+            class="sidebar-close-button mobile-only"
+            data-sidebar-toggle=""
+            type="button"
+          >
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+        <!-- Usuário -->
+        <div class="sidebar-user">
+          <div
+            aria-hidden="true"
+            class="sidebar-user-avatar"
+            data-user-initials=""
+          >
+            JS
+          </div>
+          <div class="sidebar-user-info">
+            <strong data-user-name=""> Jully Silva </strong>
+            <span data-user-role=""> Professora </span>
+          </div>
+        </div>
+        <!-- Navegação -->
+        <nav class="sidebar-navigation">
+          <div class="sidebar-navigation-group">
+            <span class="sidebar-section-title"> Principal </span>
+            <a
+              class="sidebar-link"
+              data-route="dashboard"
+              href="./dashboard.html"
+            >
+              <i class="fa-solid fa-chart-pie"></i>
+              <span class="sidebar-link-text"> Visão Geral </span>
+            </a>
+            <a class="sidebar-link" data-route="lessons" href="./lessons.html">
+              <i class="fa-solid fa-book-open"></i>
+              <span class="sidebar-link-text"> Mural de Aulas </span>
+            </a>
+            <a
+              class="sidebar-link"
+              data-route="schedule"
+              href="./schedule.html"
+            >
+              <i class="fa-solid fa-calendar-days"></i>
+              <span class="sidebar-link-text"> Cronograma </span>
+            </a>
+            <a
+              class="sidebar-link"
+              data-route="activities"
+              href="./activities.html"
+            >
+              <i class="fa-solid fa-list-check"></i>
+              <span class="sidebar-link-text"> Atividades </span>
+            </a>
+            <a
+              class="sidebar-link"
+              data-route="materials"
+              href="./materials.html"
+            >
+              <i class="fa-solid fa-folder-open"></i>
+              <span class="sidebar-link-text"> Materiais </span>
+            </a>
+            <a
+              class="sidebar-link sidebar-link--highlight"
+              data-route="ai"
+              href="./ai.html"
+            >
+              <i class="fa-solid fa-robot"></i>
+              <span class="sidebar-link-text"> Assistente IA </span>
+            </a>
+          </div>
+          <div class="sidebar-navigation-group">
+            <span class="sidebar-section-title"> Gestão </span>
+            <a
+              aria-current="page"
+              class="sidebar-link active"
+              data-roles="admin,coordinator,teacher"
+              data-route="students"
+              href="./students.html"
+            >
+              <i class="fa-solid fa-user-graduate"></i>
+              <span class="sidebar-link-text"> Alunos </span>
+            </a>
+            <a
+              class="sidebar-link"
+              data-roles="admin,coordinator"
+              data-route="teachers"
+              href="./teachers.html"
+            >
+              <i class="fa-solid fa-chalkboard-user"></i>
+              <span class="sidebar-link-text"> Professores </span>
+            </a>
+          </div>
+          <div class="sidebar-navigation-group">
+            <span class="sidebar-section-title"> Conta </span>
+            <a class="sidebar-link" data-route="profile" href="./profile.html">
+              <i class="fa-solid fa-user"></i>
+              <span class="sidebar-link-text"> Meu Perfil </span>
+            </a>
+            <a
+              class="sidebar-link"
+              data-route="settings"
+              href="./settings.html"
+            >
+              <i class="fa-solid fa-gear"></i>
+              <span class="sidebar-link-text"> Configurações </span>
+            </a>
+          </div>
+        </nav>
+        <div class="sidebar-footer">
+          <button
+            class="sidebar-link sidebar-logout-button"
+            data-logout=""
+            type="button"
+          >
+            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+            <span class="sidebar-link-text"> Sair </span>
+          </button>
+          <span class="sidebar-version"> SESI Connect v1.0 </span>
+        </div>
+      </aside>
+      <!-- Overlay mobile -->
+      <button
+        aria-label="Fechar menu lateral"
+        class="sidebar-overlay"
+        id="sidebar-overlay"
+        tabindex="-1"
+        type="button"
+      ></button>
+      <!-- =========================
+             ÁREA PRINCIPAL
+             ========================= -->
+      <div class="main-content">
+        <!-- =========================
+                 CABEÇALHO SUPERIOR
+                 ========================= -->
+        <header class="top-header">
+          <div class="top-header-left">
+            <button
+              aria-controls="sidebar"
+              aria-expanded="false"
+              aria-label="Abrir menu"
+              class="mobile-menu-button"
+              data-sidebar-toggle=""
+              type="button"
+            >
+              <i class="fa-solid fa-bars"></i>
+            </button>
+            <div class="top-header-heading">
+              <span class="top-header-title"> SESI Connect </span>
+              <span class="top-header-page"> Alunos </span>
+            </div>
+          </div>
+          <!-- Pesquisa global -->
+          <div class="top-header-search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input
+              aria-label="Pesquisar no sistema"
+              placeholder="Pesquisar no SESI Connect"
+              type="search"
+            />
+            <kbd>Ctrl K</kbd>
+          </div>
+          <!-- Ações -->
+          <div class="top-header-actions">
+            <button
+              aria-label="Alterar tema"
+              aria-pressed="false"
+              class="top-header-action theme-toggle-button"
+              data-theme-toggle=""
+              type="button"
+            >
+              <i class="fa-solid fa-moon" data-theme-icon=""></i>
+            </button>
+            <!-- Notificações -->
+            <div class="notification-wrapper">
+              <button
+                aria-controls="notification-panel"
+                aria-expanded="false"
+                aria-label="Notificações"
+                class="top-header-action notification-button"
+                data-notification-toggle=""
+                type="button"
+              >
+                <i class="fa-regular fa-bell"></i>
+                <span class="notification-badge" data-notification-count="">
+                  0
+                </span>
+              </button>
+              <section
+                aria-hidden="true"
+                class="notification-panel"
+                data-notification-panel=""
+                data-use-hidden=""
+                hidden=""
+                id="notification-panel"
+              >
+                <div class="notification-panel-header">
+                  <div>
+                    <h2>Notificações</h2>
+                    <p>Acompanhe as novidades.</p>
+                  </div>
+                  <button
+                    class="notification-header-action"
+                    data-notifications-read-all=""
+                    type="button"
+                  >
+                    Marcar como lidas
+                  </button>
+                </div>
+                <div class="notification-list" data-notification-list="">
+                  <!-- Gerado pelo JavaScript -->
+                </div>
+                <div class="notification-panel-footer">
+                  <button
+                    class="notification-clear-button"
+                    data-notifications-clear=""
+                    type="button"
+                  >
+                    <i class="fa-solid fa-trash"></i>
+                    Limpar notificações
+                  </button>
+                </div>
+              </section>
+            </div>
+            <!-- Perfil -->
+            <a
+              aria-label="Abrir perfil"
+              class="top-header-user"
+              data-route="profile"
+              href="./profile.html"
+            >
+              <div
+                aria-hidden="true"
+                class="top-header-user-avatar"
+                data-user-initials=""
+              >
+                JS
+              </div>
+              <div class="top-header-user-info">
+                <strong data-user-name=""> Jully Silva </strong>
+                <span data-user-role=""> Professora </span>
+              </div>
+              <i class="fa-solid fa-chevron-right"></i>
+            </a>
+          </div>
+        </header>
+        <!-- =========================
+                 CONTEÚDO
+                 ========================= -->
+        <main class="page-content students-content" id="main-content">
+          <!-- Cabeçalho -->
+          <section class="page-header">
+            <div class="page-header-content">
+              <span class="page-eyebrow"> Gestão escolar </span>
+              <h1>Alunos</h1>
+              <p>
+                Acompanhe matrículas, frequência e desempenho acadêmico dos
+                estudantes.
+              </p>
+            </div>
+            <div class="page-header-actions">
+              <button
+                class="btn btn-outline"
+                data-export-students=""
+                type="button"
+              >
+                <i class="fa-solid fa-file-export"></i>
+                Exportar
+              </button>
+              <button
+                class="btn btn-primary"
+                data-modal-open="student-form-modal"
+                data-roles="admin,coordinator"
+                type="button"
+              >
+                <i class="fa-solid fa-user-plus"></i>
+                Adicionar aluno
+              </button>
+            </div>
+          </section>
+          <!-- =========================
+                     RESUMO
+                     ========================= -->
+          <section
+            aria-label="Resumo dos alunos"
+            class="management-summary-grid"
+          >
+            <article class="management-summary-card">
+              <div class="management-summary-icon">
+                <i class="fa-solid fa-user-graduate"></i>
+              </div>
+              <div>
+                <span>Total de alunos</span>
+                <strong data-students-total="">1.248</strong>
+              </div>
+              <span class="management-summary-trend positive">
+                <i class="fa-solid fa-arrow-up"></i>
+                3,2%
+              </span>
+            </article>
+            <article class="management-summary-card">
+              <div class="management-summary-icon">
+                <i class="fa-solid fa-user-check"></i>
+              </div>
+              <div>
+                <span>Frequência média</span>
+                <strong data-students-attendance="">94%</strong>
+              </div>
+              <span class="management-summary-caption"> Este mês </span>
+            </article>
+            <article class="management-summary-card">
+              <div class="management-summary-icon">
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <div>
+                <span>Média geral</span>
+                <strong data-students-average="">8,2</strong>
+              </div>
+              <span class="management-summary-caption"> Ano letivo </span>
+            </article>
+            <article class="management-summary-card">
+              <div class="management-summary-icon">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+              </div>
+              <div>
+                <span>Precisam de atenção</span>
+                <strong data-students-alerts="">18</strong>
+              </div>
+              <span class="management-summary-caption">
+                Frequência abaixo de 75%
+              </span>
+            </article>
+          </section>
+          <!-- =========================
+                     FILTROS
+                     ========================= -->
+          <section class="content-card management-filters">
+            <div class="management-search">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <input
+                aria-label="Pesquisar alunos"
+                data-students-search=""
+                id="students-search"
+                placeholder="Pesquisar por nome ou matrícula"
+                type="search"
+              />
+            </div>
+            <div class="management-filter-group">
+              <label for="students-class-filter"> Turma </label>
+              <select data-students-class-filter="" id="students-class-filter">
+                <option value="all">Todas as turmas</option>
+                <option value="1a">1º Ano A</option>
+                <option value="1b">1º Ano B</option>
+                <option value="2a">2º Ano A</option>
+                <option value="2b">2º Ano B</option>
+                <option value="3a">3º Ano A</option>
+              </select>
+            </div>
+            <div class="management-filter-group">
+              <label for="students-status-filter"> Situação </label>
+              <select
+                data-students-status-filter=""
+                id="students-status-filter"
+              >
+                <option value="all">Todas</option>
+                <option value="active">Ativos</option>
+                <option value="attention">Atenção</option>
+                <option value="inactive">Inativos</option>
+              </select>
+            </div>
+            <button
+              class="btn btn-ghost"
+              data-students-clear-filters=""
+              type="button"
+            >
+              <i class="fa-solid fa-filter-circle-xmark"></i>
+              Limpar filtros
+            </button>
+          </section>
+          <!-- =========================
+                     LISTA DE ALUNOS
+                     ========================= -->
+          <section class="content-card management-list-card">
+            <div class="card-header">
+              <div>
+                <span class="card-eyebrow"> Estudantes cadastrados </span>
+                <h2>Lista de alunos</h2>
+              </div>
+              <div class="management-list-header-actions">
+                <span data-students-results="">
+                  Exibindo 6 de 1.248 alunos
+                </span>
+                <button
+                  aria-label="Atualizar lista"
+                  class="icon-button"
+                  data-students-refresh=""
+                  type="button"
+                >
+                  <i class="fa-solid fa-rotate"></i>
+                </button>
+              </div>
+            </div>
+            <!-- Tabela desktop -->
+            <div class="table-responsive desktop-table">
+              <table class="management-table students-table">
+                <thead>
+                  <tr>
+                    <th scope="col">Aluno</th>
+                    <th scope="col">Matrícula</th>
+                    <th scope="col">Turma</th>
+                    <th scope="col">Frequência</th>
+                    <th scope="col">Média</th>
+                    <th scope="col">Situação</th>
+                    <th scope="col">
+                      <span class="sr-only"> Ações </span>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody data-students-table-body="">
+                  <!-- Aluno 1 -->
+                  <tr
+                    data-student-class="2a"
+                    data-student-id="student-001"
+                    data-student-status="active"
+                  >
+                    <td>
+                      <div class="management-person">
+                        <div class="management-person-avatar">AM</div>
+                        <div class="management-person-info">
+                          <strong> Ana Martins </strong>
+                          <span> ana.martins@aluno.sesi.br </span>
+                        </div>
+                      </div>
+                    </td>
+                    <td>202600184</td>
+                    <td>2º Ano A</td>
+                    <td>
+                      <div class="table-progress">
+                        <span>97%</span>
+                        <div class="progress">
+                          <span class="progress-bar" style="width: 97%"></span>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <strong class="grade-positive"> 9,1 </strong>
+                    </td>
+                    <td>
+                      <span class="status-badge status-badge--success">
+                        Ativo
+                      </span>
+                    </td>
+                    <td>
+                      <button
+                        aria-label="Ver Ana Martins"
+                        class="table-action-button"
+                        data-modal-open="student-details-modal"
+                        data-student-open="student-001"
+                        type="button"
+                      >
+                        <i class="fa-solid fa-ellipsis"></i>
+                      </button>
+                    </td>
+                  </tr>
+                  <!-- Aluno 2 -->
+                  <tr
+                    data-student-class="2a"
+                    data-student-id="student-002"
+                    data-student-status="active"
+                  >
+                    <td>
+                      <div class="management-person">
+                        <div class="management-person-avatar">BR</div>
+                        <div class="management-person-info">
+                          <strong> Bruno Ribeiro </strong>
+                          <span> bruno.ribeiro@aluno.sesi.br </span>
+                        </div>
+                      </div>
+                    </td>
+                    <td>202600196</td>
+                    <td>2º Ano A</td>
+                    <td>
+                      <div class="table-progress">
+                        <span>91%</span>
+                        <div class="progress">
+                          <span class="progress-bar" style="width: 91%"></span>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <strong class="grade-positive"> 8,4 </strong>
+                    </td>
+                    <td>
+                      <span class="status-badge status-badge--success">
+                        Ativo
+                      </span>
+                    </td>
+                    <td>
+                      <button
+                        aria-label="Ver Bruno Ribeiro"
+                        class="table-action-button"
+                        data-modal-open="student-details-modal"
+                        data-student-open="student-002"
+                        type="button"
+                      >
+                        <i class="fa-solid fa-ellipsis"></i>
+                      </button>
+                    </td>
+                  </tr>
+                  <!-- Aluno 3 -->
+                  <tr
+                    data-student-class="1b"
+                    data-student-id="student-003"
+                    data-student-status="attention"
+                  >
+                    <td>
+                      <div class="management-person">
+                        <div class="management-person-avatar">CL</div>
+                        <div class="management-person-info">
+                          <strong> Camila Lopes </strong>
+                          <span> camila.lopes@aluno.sesi.br </span>
+                        </div>
+                      </div>
+                    </td>
+                    <td>202600247</td>
+                    <td>1º Ano B</td>
+                    <td>
+                      <div class="table-progress">
+                        <span>72%</span>
+                        <div class="progress">
+                          <span
+                            class="progress-bar progress-bar--warning"
+                            style="width: 72%"
+                          ></span>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <strong class="grade-warning"> 6,2 </strong>
+                    </td>
+                    <td>
+                      <span class="status-badge status-badge--warning">
+                        Atenção
+                      </span>
+                    </td>
+                    <td>
+                      <button
+                        aria-label="Ver Camila Lopes"
+                        class="table-action-button"
+                        data-modal-open="student-details-modal"
+                        data-student-open="student-003"
+                        type="button"
+                      >
+                        <i class="fa-solid fa-ellipsis"></i>
+                      </button>
+                    </td>
+                  </tr>
+                  <!-- Aluno 4 -->
+                  <tr
+                    data-student-class="3a"
+                    data-student-id="student-004"
+                    data-student-status="active"
+                  >
+                    <td>
+                      <div class="management-person">
+                        <div class="management-person-avatar">DS</div>
+                        <div class="management-person-info">
+                          <strong> Daniel Santos </strong>
+                          <span> daniel.santos@aluno.sesi.br </span>
+                        </div>
+                      </div>
+                    </td>
+                    <td>202600305</td>
+                    <td>3º Ano A</td>
+                    <td>
+                      <div class="table-progress">
+                        <span>95%</span>
+                        <div class="progress">
+                          <span class="progress-bar" style="width: 95%"></span>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <strong class="grade-positive"> 8,8 </strong>
+                    </td>
+                    <td>
+                      <span class="status-badge status-badge--success">
+                        Ativo
+                      </span>
+                    </td>
+                    <td>
+                      <button
+                        aria-label="Ver Daniel Santos"
+                        class="table-action-button"
+                        data-modal-open="student-details-modal"
+                        data-student-open="student-004"
+                        type="button"
+                      >
+                        <i class="fa-solid fa-ellipsis"></i>
+                      </button>
+                    </td>
+                  </tr>
+                  <!-- Aluno 5 -->
+                  <tr
+                    data-student-class="1a"
+                    data-student-id="student-005"
+                    data-student-status="attention"
+                  >
+                    <td>
+                      <div class="management-person">
+                        <div class="management-person-avatar">EC</div>
+                        <div class="management-person-info">
+                          <strong> Eduarda Costa </strong>
+                          <span> eduarda.costa@aluno.sesi.br </span>
+                        </div>
+                      </div>
+                    </td>
+                    <td>202600331</td>
+                    <td>1º Ano A</td>
+                    <td>
+                      <div class="table-progress">
+                        <span>68%</span>
+                        <div class="progress">
+                          <span
+                            class="progress-bar progress-bar--danger"
+                            style="width: 68%"
+                          ></span>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <strong class="grade-warning"> 5,9 </strong>
+                    </td>
+                    <td>
+                      <span class="status-badge status-badge--warning">
+                        Atenção
+                      </span>
+                    </td>
+                    <td>
+                      <button
+                        aria-label="Ver Eduarda Costa"
+                        class="table-action-button"
+                        data-modal-open="student-details-modal"
+                        data-student-open="student-005"
+                        type="button"
+                      >
+                        <i class="fa-solid fa-ellipsis"></i>
+                      </button>
+                    </td>
+                  </tr>
+                  <!-- Aluno 6 -->
+                  <tr
+                    data-student-class="2b"
+                    data-student-id="student-006"
+                    data-student-status="inactive"
+                  >
+                    <td>
+                      <div class="management-person">
+                        <div class="management-person-avatar">FS</div>
+                        <div class="management-person-info">
+                          <strong> Felipe Souza </strong>
+                          <span> felipe.souza@aluno.sesi.br </span>
+                        </div>
+                      </div>
+                    </td>
+                    <td>202600402</td>
+                    <td>2º Ano B</td>
+                    <td>
+                      <div class="table-progress">
+                        <span>—</span>
+                        <div class="progress">
+                          <span class="progress-bar" style="width: 0%"></span>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <strong>—</strong>
+                    </td>
+                    <td>
+                      <span class="status-badge status-badge--neutral">
+                        Inativo
+                      </span>
+                    </td>
+                    <td>
+                      <button
+                        aria-label="Ver Felipe Souza"
+                        class="table-action-button"
+                        data-modal-open="student-details-modal"
+                        data-student-open="student-006"
+                        type="button"
+                      >
+                        <i class="fa-solid fa-ellipsis"></i>
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <!-- Cartões mobile -->
+            <div class="management-mobile-list" data-students-cards="">
+              <article class="management-mobile-card">
+                <div class="management-mobile-card-header">
+                  <div class="management-person">
+                    <div class="management-person-avatar">AM</div>
+                    <div class="management-person-info">
+                      <strong>Ana Martins</strong>
+                      <span>2º Ano A</span>
+                    </div>
+                  </div>
+                  <span class="status-badge status-badge--success">
+                    Ativo
+                  </span>
+                </div>
+                <div class="management-mobile-card-grid">
+                  <div>
+                    <span>Matrícula</span>
+                    <strong>202600184</strong>
+                  </div>
+                  <div>
+                    <span>Frequência</span>
+                    <strong>97%</strong>
+                  </div>
+                  <div>
+                    <span>Média</span>
+                    <strong>9,1</strong>
+                  </div>
+                </div>
+                <button
+                  class="btn btn-outline btn-full"
+                  data-modal-open="student-details-modal"
+                  data-student-open="student-001"
+                  type="button"
+                >
+                  Ver perfil
+                </button>
+              </article>
+              <article class="management-mobile-card">
+                <div class="management-mobile-card-header">
+                  <div class="management-person">
+                    <div class="management-person-avatar">BR</div>
+                    <div class="management-person-info">
+                      <strong>Bruno Ribeiro</strong>
+                      <span>2º Ano A</span>
+                    </div>
+                  </div>
+                  <span class="status-badge status-badge--success">
+                    Ativo
+                  </span>
+                </div>
+                <div class="management-mobile-card-grid">
+                  <div>
+                    <span>Matrícula</span>
+                    <strong>202600196</strong>
+                  </div>
+                  <div>
+                    <span>Frequência</span>
+                    <strong>91%</strong>
+                  </div>
+                  <div>
+                    <span>Média</span>
+                    <strong>8,4</strong>
+                  </div>
+                </div>
+                <button
+                  class="btn btn-outline btn-full"
+                  data-modal-open="student-details-modal"
+                  data-student-open="student-002"
+                  type="button"
+                >
+                  Ver perfil
+                </button>
+              </article>
+            </div>
+            <!-- Estado vazio -->
+            <div
+              class="management-empty-state"
+              data-students-empty=""
+              hidden=""
+            >
+              <div class="management-empty-state-icon">
+                <i class="fa-solid fa-user-graduate"></i>
+              </div>
+              <h3>Nenhum aluno encontrado</h3>
+              <p>Tente alterar os filtros ou o termo pesquisado.</p>
+              <button
+                class="btn btn-outline"
+                data-students-clear-filters=""
+                type="button"
+              >
+                Limpar filtros
+              </button>
+            </div>
+            <!-- Paginação -->
+            <div class="management-pagination">
+              <span> Página 1 de 208 </span>
+              <div class="pagination-buttons">
+                <button
+                  aria-label="Página anterior"
+                  class="pagination-button"
+                  disabled=""
+                  type="button"
+                >
+                  <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <button
+                  aria-current="page"
+                  class="pagination-button active"
+                  type="button"
+                >
+                  1
+                </button>
+                <button class="pagination-button" type="button">2</button>
+                <button class="pagination-button" type="button">3</button>
+                <span class="pagination-ellipsis"> ... </span>
+                <button class="pagination-button" type="button">208</button>
+                <button
+                  aria-label="Próxima página"
+                  class="pagination-button"
+                  type="button"
+                >
+                  <i class="fa-solid fa-chevron-right"></i>
+                </button>
+              </div>
+            </div>
+          </section>
+        </main>
+        <!-- =========================
+                 RODAPÉ
+                 ========================= -->
+        <footer class="app-footer">
+          <p>
+            ©
+            <span data-current-year="">2026</span>
+            SESI Connect.
+          </p>
+          <div class="app-footer-links">
+            <a href="#">Privacidade</a>
+            <a href="#">Suporte</a>
+            <a href="#">Acessibilidade</a>
+          </div>
+        </footer>
+      </div>
+    </div>
+    <!-- =========================
+         MODAL DE DETALHES
+         ========================= -->
+    <div
+      aria-hidden="true"
+      aria-labelledby="student-details-title"
+      aria-modal="true"
+      class="modal"
+      id="student-details-modal"
+      role="dialog"
+    >
+      <div class="modal-overlay" data-modal-close=""></div>
+      <div class="modal-container modal-container--large">
+        <div class="modal-header">
+          <div>
+            <span class="modal-eyebrow"> Perfil acadêmico </span>
+            <h2 id="student-details-title">Informações do aluno</h2>
+          </div>
+          <button
+            aria-label="Fechar"
+            class="modal-close"
+            data-modal-close=""
+            type="button"
+          >
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="student-profile-header">
+            <div class="student-profile-avatar" data-student-detail="initials">
+              AM
+            </div>
+            <div class="student-profile-heading">
+              <h3 data-student-detail="name">Ana Martins</h3>
+              <p data-student-detail="email">ana.martins@aluno.sesi.br</p>
+              <div class="student-profile-badges">
+                <span
+                  class="status-badge status-badge--success"
+                  data-student-detail="status"
+                >
+                  Ativo
+                </span>
+                <span
+                  class="status-badge status-badge--neutral"
+                  data-student-detail="class"
+                >
+                  2º Ano A
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="student-profile-summary">
+            <article>
+              <span>Frequência</span>
+              <strong data-student-detail="attendance"> 97% </strong>
+            </article>
+            <article>
+              <span>Média geral</span>
+              <strong data-student-detail="average"> 9,1 </strong>
+            </article>
+            <article>
+              <span>Atividades</span>
+              <strong data-student-detail="activities"> 24/26 </strong>
+            </article>
+            <article>
+              <span>Matrícula</span>
+              <strong data-student-detail="registration"> 202600184 </strong>
+            </article>
+          </div>
+          <div class="student-profile-sections">
+            <section>
+              <h3>
+                <i class="fa-solid fa-chart-line"></i>
+                Desempenho por disciplina
+              </h3>
+              <div class="student-subject-list">
+                <div class="student-subject-item">
+                  <span>Matemática</span>
+                  <div class="progress">
+                    <span class="progress-bar" style="width: 92%"></span>
+                  </div>
+                  <strong>9,2</strong>
+                </div>
+                <div class="student-subject-item">
+                  <span>Português</span>
+                  <div class="progress">
+                    <span class="progress-bar" style="width: 88%"></span>
+                  </div>
+                  <strong>8,8</strong>
+                </div>
+                <div class="student-subject-item">
+                  <span>História</span>
+                  <div class="progress">
+                    <span class="progress-bar" style="width: 94%"></span>
+                  </div>
+                  <strong>9,4</strong>
+                </div>
+                <div class="student-subject-item">
+                  <span>Física</span>
+                  <div class="progress">
+                    <span class="progress-bar" style="width: 89%"></span>
+                  </div>
+                  <strong>8,9</strong>
+                </div>
+              </div>
+            </section>
+            <section>
+              <h3>
+                <i class="fa-solid fa-clock-rotate-left"></i>
+                Atividade recente
+              </h3>
+              <div class="student-timeline">
+                <article class="student-timeline-item">
+                  <span class="student-timeline-icon">
+                    <i class="fa-solid fa-circle-check"></i>
+                  </span>
+                  <div>
+                    <strong> Atividade entregue </strong>
+                    <p>Lista de exercícios de Matemática</p>
+                    <time> Hoje, às 10:24 </time>
+                  </div>
+                </article>
+                <article class="student-timeline-item">
+                  <span class="student-timeline-icon">
+                    <i class="fa-solid fa-star"></i>
+                  </span>
+                  <div>
+                    <strong> Nota publicada </strong>
+                    <p>História — Nota 9,4</p>
+                    <time> Ontem, às 15:40 </time>
+                  </div>
+                </article>
+              </div>
+            </section>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-outline" data-modal-close="" type="button">
+            Fechar
+          </button>
+          <button class="btn btn-primary" data-student-message="" type="button">
+            <i class="fa-solid fa-message"></i>
+            Enviar mensagem
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- =========================
+         MODAL DE CADASTRO
+         ========================= -->
+    <div
+      aria-hidden="true"
+      aria-labelledby="student-form-title"
+      aria-modal="true"
+      class="modal"
+      id="student-form-modal"
+      role="dialog"
+    >
+      <div class="modal-overlay" data-modal-close=""></div>
+      <div class="modal-container">
+        <div class="modal-header">
+          <div>
+            <span class="modal-eyebrow"> Novo cadastro </span>
+            <h2 id="student-form-title">Adicionar aluno</h2>
+          </div>
+          <button
+            aria-label="Fechar"
+            class="modal-close"
+            data-modal-close=""
+            type="button"
+          >
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+        <form class="modal-form" data-student-form="" id="student-form">
+          <div class="modal-body">
+            <div class="form-grid">
+              <div class="form-group form-group--full">
+                <label for="student-name"> Nome completo </label>
+                <input
+                  autocomplete="name"
+                  id="student-name"
+                  name="name"
+                  placeholder="Digite o nome do aluno"
+                  required=""
+                  type="text"
+                />
+              </div>
+              <div class="form-group form-group--full">
+                <label for="student-email"> E-mail institucional </label>
+                <input
+                  autocomplete="email"
+                  id="student-email"
+                  name="email"
+                  placeholder="aluno@aluno.sesi.br"
+                  required=""
+                  type="email"
+                />
+              </div>
+              <div class="form-group">
+                <label for="student-registration"> Matrícula </label>
+                <input
+                  id="student-registration"
+                  inputmode="numeric"
+                  name="registration"
+                  placeholder="202600000"
+                  required=""
+                  type="text"
+                />
+              </div>
+              <div class="form-group">
+                <label for="student-class"> Turma </label>
+                <select id="student-class" name="class" required="">
+                  <option value="">Selecione</option>
+                  <option value="1a">1º Ano A</option>
+                  <option value="1b">1º Ano B</option>
+                  <option value="2a">2º Ano A</option>
+                  <option value="2b">2º Ano B</option>
+                  <option value="3a">3º Ano A</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="student-birthdate"> Data de nascimento </label>
+                <input id="student-birthdate" name="birthdate" type="date" />
+              </div>
+              <div class="form-group">
+                <label for="student-status"> Situação </label>
+                <select id="student-status" name="status">
+                  <option value="active">Ativo</option>
+                  <option value="inactive">Inativo</option>
+                </select>
+              </div>
+              <div class="form-group form-group--full">
+                <label for="student-observations"> Observações </label>
+                <textarea
+                  id="student-observations"
+                  name="observations"
+                  placeholder="Informações adicionais sobre o aluno"
+                  rows="4"
+                ></textarea>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-outline" data-modal-close="" type="button">
+              Cancelar
+            </button>
+            <button class="btn btn-primary" type="submit">
+              <i class="fa-solid fa-floppy-disk"></i>
+              Salvar aluno
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- =========================
+         NAVEGAÇÃO MOBILE
+         ========================= -->
+    <nav aria-label="Navegação mobile" class="mobile-bottom-navigation">
+      <a
+        class="mobile-bottom-link"
+        data-route="dashboard"
+        href="./dashboard.html"
+      >
+        <i class="fa-solid fa-house"></i>
+        <span>Início</span>
+      </a>
+      <a class="mobile-bottom-link" data-route="lessons" href="./lessons.html">
+        <i class="fa-solid fa-book-open"></i>
+        <span>Aulas</span>
+      </a>
+      <a
+        class="mobile-bottom-link"
+        data-route="activities"
+        href="./activities.html"
+      >
+        <i class="fa-solid fa-list-check"></i>
+        <span>Atividades</span>
+      </a>
+      <a
+        aria-current="page"
+        class="mobile-bottom-link active"
+        data-route="students"
+        href="./students.html"
+      >
+        <i class="fa-solid fa-user-graduate"></i>
+        <span>Alunos</span>
+      </a>
+      <a class="mobile-bottom-link" data-route="profile" href="./profile.html">
+        <i class="fa-solid fa-user"></i>
+        <span>Perfil</span>
+      </a>
+    </nav>
+    <!-- Toasts -->
+    <div
+      aria-atomic="true"
+      aria-live="polite"
+      class="toast-container"
+      id="toast-container"
+    ></div>
+    <!-- Sem JavaScript -->
+    <noscript>
+      <div class="noscript-warning">
+        <strong>JavaScript desativado</strong>
+        <p>Ative o JavaScript para utilizar todos os recursos.</p>
+      </div>
+    </noscript>
+    <!-- =========================
+         JAVASCRIPT
+         ========================= -->
+    <!-- JavaScript revisado -->
+    <script src="../js/auth.js" type="module"></script>
+    <script src="../js/app.js" type="module"></script>
+    <script type="module">
+      const studentRows = [...document.querySelectorAll("[data-student-id]")];
+      const studentSearch = document.querySelector("[data-students-search]");
+      const studentClass = document.querySelector(
+        "[data-students-class-filter]",
+      );
+      const studentStatus = document.querySelector(
+        "[data-students-status-filter]",
+      );
+      const studentEmpty = document.querySelector("[data-students-empty]");
+      const studentResults = document.querySelector("[data-students-results]");
+
+      function normalized(value) {
+        return String(value || "")
+          .normalize("NFD")
+          .replace(/[\u0300-\u036f]/g, "")
+          .toLowerCase()
+          .trim();
+      }
+      function filterStudents() {
+        const q = normalized(studentSearch?.value);
+        const cls = studentClass?.value || "all";
+        const status = studentStatus?.value || "all";
+        let visible = 0;
+        studentRows.forEach((row) => {
+          const okQ = !q || normalized(row.textContent).includes(q);
+          const okC = cls === "all" || row.dataset.studentClass === cls;
+          const okS = status === "all" || row.dataset.studentStatus === status;
+          const show = okQ && okC && okS;
+          row.hidden = !show;
+          if (show) visible++;
+        });
+        if (studentResults)
+          studentResults.textContent = `${visible} aluno${visible === 1 ? "" : "s"} encontrado${visible === 1 ? "" : "s"}`;
+        if (studentEmpty) studentEmpty.hidden = visible !== 0;
+      }
+      [studentSearch, studentClass, studentStatus].forEach((el) =>
+        el?.addEventListener(
+          el === studentSearch ? "input" : "change",
+          filterStudents,
+        ),
+      );
+      document
+        .querySelectorAll("[data-students-clear-filters]")
+        .forEach((btn) =>
+          btn.addEventListener("click", () => {
+            if (studentSearch) studentSearch.value = "";
+            if (studentClass) studentClass.value = "all";
+            if (studentStatus) studentStatus.value = "all";
+            filterStudents();
+          }),
+        );
+      document
+        .querySelector("[data-students-refresh]")
+        ?.addEventListener("click", () => {
+          filterStudents();
+          window.SESIConnect?.showToast?.("Lista atualizada.", "success");
+        });
+
+      function openStudentDetails(id) {
+        const row = document.querySelector(`[data-student-id="${id}"]`);
+        if (!row) return;
+        const cells = [...row.children];
+        const name =
+          row
+            .querySelector(".management-person-info strong")
+            ?.textContent.trim() || "Aluno";
+        const email =
+          row
+            .querySelector(".management-person-info span")
+            ?.textContent.trim() || "";
+        const initials =
+          row.querySelector(".management-person-avatar")?.textContent.trim() ||
+          "";
+        const values = {
+          initials,
+          name,
+          email,
+          registration: cells[1]?.textContent.trim() || "—",
+          class: cells[2]?.textContent.trim() || "—",
+          attendance:
+            cells[3]?.querySelector("span")?.textContent.trim() || "—",
+          average: cells[4]?.textContent.trim() || "—",
+          status: cells[5]?.textContent.trim() || "—",
+          activities: "18",
+        };
+        document.querySelectorAll("[data-student-detail]").forEach((el) => {
+          const k = el.dataset.studentDetail;
+          if (values[k] !== undefined) el.textContent = values[k];
+        });
+      }
+      document
+        .querySelectorAll("[data-student-open]")
+        .forEach((btn) =>
+          btn.addEventListener("click", () =>
+            openStudentDetails(btn.dataset.studentOpen),
+          ),
+        );
+      document
+        .querySelector("[data-student-message]")
+        ?.addEventListener("click", () =>
+          window.SESIConnect?.showToast?.(
+            "Conversa com o aluno iniciada.",
+            "success",
+          ),
+        );
+      document
+        .querySelector("[data-student-form]")
+        ?.addEventListener("submit", (e) => {
+          e.preventDefault();
+          if (!e.currentTarget.checkValidity()) {
+            e.currentTarget.reportValidity();
+            return;
+          }
+          window.SESIConnect?.showToast?.(
+            "Aluno salvo no protótipo.",
+            "success",
+          );
+          window.SESIConnect?.closeModal?.("student-form-modal");
+          e.currentTarget.reset();
+        });
+      filterStudents();
+    </script>
+  </body>
+</html>

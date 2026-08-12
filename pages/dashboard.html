@@ -1,0 +1,789 @@
+<!doctype html>
+
+<html data-theme="light" lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="Painel principal do SESI Connect." name="description" />
+    <meta content="#f8fafc" name="theme-color" />
+    <title>Visão Geral | SESI Connect</title>
+    <link href="../assets/icons/favicon.svg" rel="icon" type="image/svg+xml" />
+    <!-- Font Awesome -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      rel="stylesheet"
+    />
+    <!-- Estilos do projeto -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+  <body
+    class="app-layout dashboard-page has-mobile-navigation"
+    data-app-name="SESI Connect"
+    data-auth-required="true"
+    data-page="dashboard"
+    data-page-title="Visão Geral"
+    data-restore-scroll="true"
+  >
+    <!-- Acessibilidade -->
+    <a class="skip-link" href="#main-content"> Ir para o conteúdo principal </a>
+    <!-- =========================
+         CARREGAMENTO
+         ========================= -->
+    <div aria-hidden="true" class="page-loader">
+      <div class="page-loader-content">
+        <div class="page-loader-logo">
+          <i class="fa-solid fa-graduation-cap"></i>
+        </div>
+        <span class="loading-spinner"></span>
+        <p>Carregando SESI Connect...</p>
+      </div>
+    </div>
+    <!-- =========================
+         ESTRUTURA PRINCIPAL
+         ========================= -->
+    <div class="app-container">
+      <!-- =========================
+             SIDEBAR
+             ========================= -->
+      <aside aria-label="Navegação principal" class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+          <a
+            aria-label="Página inicial do SESI Connect"
+            class="sidebar-logo"
+            data-route="dashboard"
+            href="./dashboard.html"
+          >
+            <span class="sidebar-logo-icon">
+              <i class="fa-solid fa-graduation-cap"></i>
+            </span>
+            <span class="sidebar-logo-text">
+              <strong>SESI</strong>
+              <span>Connect</span>
+            </span>
+          </a>
+          <button
+            aria-controls="sidebar"
+            aria-expanded="false"
+            aria-label="Fechar menu"
+            class="sidebar-close-button mobile-only"
+            data-sidebar-toggle=""
+            type="button"
+          >
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+        <!-- Perfil -->
+        <div class="sidebar-user">
+          <div
+            aria-hidden="true"
+            class="sidebar-user-avatar"
+            data-user-initials=""
+          >
+            JS
+          </div>
+          <div class="sidebar-user-info">
+            <strong data-user-name=""> Jully Silva </strong>
+            <span data-user-role=""> Estudante </span>
+          </div>
+        </div>
+        <!-- Menu -->
+        <nav class="sidebar-navigation">
+          <div class="sidebar-navigation-group" data-navigation-group="">
+            <span class="sidebar-section-title"> Principal </span>
+            <a
+              aria-current="page"
+              class="sidebar-link active"
+              data-route="dashboard"
+              href="./dashboard.html"
+            >
+              <i class="fa-solid fa-chart-pie"></i>
+              <span class="sidebar-link-text"> Visão Geral </span>
+            </a>
+            <a class="sidebar-link" data-route="lessons" href="./lessons.html">
+              <i class="fa-solid fa-book-open"></i>
+              <span class="sidebar-link-text"> Mural de Aulas </span>
+            </a>
+            <a
+              class="sidebar-link"
+              data-route="schedule"
+              href="./schedule.html"
+            >
+              <i class="fa-solid fa-calendar-days"></i>
+              <span class="sidebar-link-text"> Cronograma </span>
+            </a>
+            <a
+              class="sidebar-link"
+              data-route="activities"
+              href="./activities.html"
+            >
+              <i class="fa-solid fa-list-check"></i>
+              <span class="sidebar-link-text"> Atividades </span>
+              <span class="sidebar-link-badge" data-dashboard-activity-count="">
+                0
+              </span>
+            </a>
+            <a
+              class="sidebar-link"
+              data-route="materials"
+              href="./materials.html"
+            >
+              <i class="fa-solid fa-folder-open"></i>
+              <span class="sidebar-link-text"> Materiais </span>
+            </a>
+            <a
+              class="sidebar-link sidebar-link--highlight"
+              data-route="ai"
+              href="./ai.html"
+            >
+              <i class="fa-solid fa-robot"></i>
+              <span class="sidebar-link-text"> Assistente IA </span>
+            </a>
+          </div>
+          <div class="sidebar-navigation-group" data-navigation-group="">
+            <span class="sidebar-section-title"> Gestão </span>
+            <a
+              class="sidebar-link"
+              data-roles="admin,coordinator,teacher"
+              data-route="students"
+              href="./students.html"
+            >
+              <i class="fa-solid fa-user-graduate"></i>
+              <span class="sidebar-link-text"> Alunos </span>
+            </a>
+            <a
+              class="sidebar-link"
+              data-roles="admin,coordinator"
+              data-route="teachers"
+              href="./teachers.html"
+            >
+              <i class="fa-solid fa-chalkboard-user"></i>
+              <span class="sidebar-link-text"> Professores </span>
+            </a>
+          </div>
+          <div class="sidebar-navigation-group" data-navigation-group="">
+            <span class="sidebar-section-title"> Conta </span>
+            <a class="sidebar-link" data-route="profile" href="./profile.html">
+              <i class="fa-solid fa-user"></i>
+              <span class="sidebar-link-text"> Meu Perfil </span>
+            </a>
+            <a
+              class="sidebar-link"
+              data-route="settings"
+              href="./settings.html"
+            >
+              <i class="fa-solid fa-gear"></i>
+              <span class="sidebar-link-text"> Configurações </span>
+            </a>
+          </div>
+        </nav>
+        <!-- Rodapé da sidebar -->
+        <div class="sidebar-footer">
+          <button
+            class="sidebar-link sidebar-logout-button logout-button"
+            data-logout=""
+            type="button"
+          >
+            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+            <span class="sidebar-link-text"> Sair </span>
+          </button>
+          <span class="sidebar-version"> SESI Connect v1.0 </span>
+        </div>
+      </aside>
+      <!-- Fundo da sidebar mobile -->
+      <button
+        aria-label="Fechar menu lateral"
+        class="sidebar-overlay"
+        id="sidebar-overlay"
+        tabindex="-1"
+        type="button"
+      ></button>
+      <!-- =========================
+             CONTEÚDO
+             ========================= -->
+      <div class="main-content">
+        <!-- =========================
+                 CABEÇALHO
+                 ========================= -->
+        <header class="top-header">
+          <div class="top-header-left">
+            <button
+              aria-controls="sidebar"
+              aria-expanded="false"
+              aria-label="Abrir menu"
+              class="mobile-menu-button"
+              data-sidebar-toggle=""
+              type="button"
+            >
+              <i class="fa-solid fa-bars"></i>
+            </button>
+            <div class="top-header-heading">
+              <span class="top-header-title"> SESI Connect </span>
+              <span class="top-header-page"> Visão Geral </span>
+            </div>
+          </div>
+          <div class="top-header-search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input
+              aria-label="Pesquisar no sistema"
+              placeholder="Pesquisar no SESI Connect"
+              type="search"
+            />
+            <kbd>Ctrl K</kbd>
+          </div>
+          <div class="top-header-actions">
+            <!-- Tema -->
+            <button
+              aria-label="Ativar tema escuro"
+              aria-pressed="false"
+              class="top-header-action theme-toggle-button"
+              data-theme-toggle=""
+              type="button"
+            >
+              <i class="fa-solid fa-moon" data-theme-icon=""></i>
+            </button>
+            <!-- Notificações -->
+            <div class="notification-wrapper">
+              <button
+                aria-controls="notification-panel"
+                aria-expanded="false"
+                aria-label="Notificações"
+                class="top-header-action notification-button"
+                data-notification-toggle=""
+                type="button"
+              >
+                <i class="fa-regular fa-bell"></i>
+                <span
+                  class="notification-badge"
+                  data-notification-count=""
+                  id="notification-count"
+                >
+                  0
+                </span>
+              </button>
+              <!-- Painel de notificações -->
+              <section
+                aria-hidden="true"
+                class="notification-panel"
+                data-notification-panel=""
+                data-use-hidden=""
+                hidden=""
+                id="notification-panel"
+              >
+                <div class="notification-panel-header">
+                  <div>
+                    <h2>Notificações</h2>
+                    <p>Acompanhe suas novidades.</p>
+                  </div>
+                  <button
+                    class="notification-header-action"
+                    data-notifications-read-all=""
+                    type="button"
+                  >
+                    Marcar como lidas
+                  </button>
+                </div>
+                <div
+                  class="notification-list"
+                  data-notification-list=""
+                  id="notification-list"
+                >
+                  <!-- Gerado pelo notifications.js -->
+                </div>
+                <div class="notification-panel-footer">
+                  <button
+                    class="notification-clear-button"
+                    data-notifications-clear=""
+                    type="button"
+                  >
+                    <i class="fa-solid fa-trash"></i>
+                    Limpar notificações
+                  </button>
+                </div>
+              </section>
+            </div>
+            <!-- Perfil -->
+            <a
+              aria-label="Abrir meu perfil"
+              class="top-header-user"
+              data-route="profile"
+              href="./profile.html"
+            >
+              <div
+                aria-hidden="true"
+                class="top-header-user-avatar"
+                data-user-initials=""
+              >
+                JS
+              </div>
+              <div class="top-header-user-info">
+                <strong class="top-header-user-name" data-user-name="">
+                  Jully Silva
+                </strong>
+                <span class="top-header-user-role" data-user-role="">
+                  Estudante
+                </span>
+              </div>
+              <i class="fa-solid fa-chevron-right"></i>
+            </a>
+          </div>
+        </header>
+        <!-- =========================
+                 CONTEÚDO PRINCIPAL
+                 ========================= -->
+        <main class="page-content dashboard-content" id="main-content">
+          <!-- Cabeçalho da página -->
+          <section class="page-header dashboard-header">
+            <div class="page-header-content">
+              <div class="dashboard-welcome">
+                <span class="dashboard-welcome-icon">
+                  <i class="fa-solid fa-sun"></i>
+                </span>
+                <div>
+                  <h1 data-dashboard-greeting="">Boa tarde, Jully!</h1>
+                  <p>
+                    Acompanhe suas aulas, atividades e compromissos escolares.
+                  </p>
+                </div>
+              </div>
+              <div class="dashboard-current-date">
+                <i class="fa-regular fa-calendar"></i>
+                <span data-dashboard-date=""> Quinta-feira, 06 de agosto </span>
+              </div>
+            </div>
+            <div class="page-header-actions">
+              <span class="dashboard-last-update" data-dashboard-last-update="">
+                Atualizado agora
+              </span>
+              <button
+                class="btn btn-outline"
+                data-dashboard-refresh=""
+                type="button"
+              >
+                <i class="fa-solid fa-rotate"></i>
+                Atualizar
+              </button>
+            </div>
+          </section>
+          <!-- =========================
+                     ESTATÍSTICAS
+                     ========================= -->
+          <section aria-label="Resumo acadêmico" class="dashboard-statistics">
+            <!-- Frequência -->
+            <article class="dashboard-stat-card">
+              <div class="dashboard-stat-card-header">
+                <div
+                  class="dashboard-stat-icon dashboard-stat-icon--attendance"
+                >
+                  <i class="fa-solid fa-user-check"></i>
+                </div>
+                <span class="dashboard-stat-trend positive">
+                  <i class="fa-solid fa-arrow-up"></i>
+                  2%
+                </span>
+              </div>
+              <div class="dashboard-stat-card-content">
+                <span class="dashboard-stat-label"> Frequência </span>
+                <strong
+                  class="dashboard-stat-value"
+                  data-dashboard-stat="attendance"
+                >
+                  94%
+                </strong>
+              </div>
+              <div
+                aria-label="Frequência"
+                aria-valuemax="100"
+                aria-valuemin="0"
+                aria-valuenow="94"
+                class="progress"
+                role="progressbar"
+              >
+                <span
+                  class="progress-bar"
+                  data-dashboard-progress="attendance"
+                ></span>
+              </div>
+            </article>
+            <!-- Média -->
+            <article class="dashboard-stat-card">
+              <div class="dashboard-stat-card-header">
+                <div class="dashboard-stat-icon dashboard-stat-icon--grade">
+                  <i class="fa-solid fa-star"></i>
+                </div>
+                <span class="dashboard-stat-caption"> Média geral </span>
+              </div>
+              <div class="dashboard-stat-card-content">
+                <span class="dashboard-stat-label"> Desempenho </span>
+                <strong
+                  class="dashboard-stat-value"
+                  data-dashboard-stat="averageGrade"
+                >
+                  8.4
+                </strong>
+              </div>
+              <div
+                aria-label="Média escolar"
+                aria-valuemax="100"
+                aria-valuemin="0"
+                aria-valuenow="84"
+                class="progress"
+                role="progressbar"
+              >
+                <span
+                  class="progress-bar"
+                  data-dashboard-progress="averageGrade"
+                ></span>
+              </div>
+            </article>
+            <!-- Atividades -->
+            <article class="dashboard-stat-card">
+              <div class="dashboard-stat-card-header">
+                <div
+                  class="dashboard-stat-icon dashboard-stat-icon--activities"
+                >
+                  <i class="fa-solid fa-circle-check"></i>
+                </div>
+                <a
+                  class="dashboard-stat-link"
+                  data-route="activities"
+                  href="./activities.html"
+                >
+                  Ver todas
+                </a>
+              </div>
+              <div class="dashboard-stat-card-content">
+                <span class="dashboard-stat-label">
+                  Atividades concluídas
+                </span>
+                <strong
+                  class="dashboard-stat-value"
+                  data-dashboard-stat="completedActivities"
+                >
+                  18
+                </strong>
+              </div>
+              <p class="dashboard-stat-description">
+                <span data-dashboard-stat="pendingActivities"> 0 </span>
+                atividades pendentes
+              </p>
+            </article>
+            <!-- Horas de estudo -->
+            <article class="dashboard-stat-card">
+              <div class="dashboard-stat-card-header">
+                <div class="dashboard-stat-icon dashboard-stat-icon--hours">
+                  <i class="fa-solid fa-clock"></i>
+                </div>
+                <span class="dashboard-stat-caption"> Neste mês </span>
+              </div>
+              <div class="dashboard-stat-card-content">
+                <span class="dashboard-stat-label"> Horas de estudo </span>
+                <strong
+                  class="dashboard-stat-value"
+                  data-dashboard-stat="studyHours"
+                >
+                  32h
+                </strong>
+              </div>
+              <p class="dashboard-stat-description">
+                Continue mantendo sua rotina.
+              </p>
+            </article>
+          </section>
+          <!-- =========================
+                     GRADE PRINCIPAL
+                     ========================= -->
+          <div class="dashboard-grid">
+            <!-- Coluna principal -->
+            <div class="dashboard-main-column">
+              <!-- Próxima aula -->
+              <section class="content-card dashboard-section">
+                <div class="card-header">
+                  <div>
+                    <span class="card-eyebrow"> Próximo compromisso </span>
+                    <h2>Próxima aula</h2>
+                  </div>
+                  <a
+                    class="card-header-link"
+                    data-route="lessons"
+                    href="./lessons.html"
+                  >
+                    Ver mural
+
+                    <i class="fa-solid fa-arrow-right"></i>
+                  </a>
+                </div>
+                <div
+                  class="dashboard-next-lesson"
+                  data-dashboard-next-lesson=""
+                >
+                  <!-- Gerado pelo dashboard.js -->
+                </div>
+              </section>
+              <!-- Atividades pendentes -->
+              <section class="content-card dashboard-section">
+                <div class="card-header">
+                  <div>
+                    <span class="card-eyebrow"> Organize suas entregas </span>
+                    <h2>Atividades pendentes</h2>
+                  </div>
+                  <a
+                    class="card-header-link"
+                    data-route="activities"
+                    href="./activities.html"
+                  >
+                    Ver todas
+
+                    <i class="fa-solid fa-arrow-right"></i>
+                  </a>
+                </div>
+                <div
+                  class="dashboard-activities-list"
+                  data-dashboard-activities=""
+                >
+                  <!-- Gerado pelo dashboard.js -->
+                </div>
+              </section>
+              <!-- Materiais recentes -->
+              <section class="content-card dashboard-section">
+                <div class="card-header">
+                  <div>
+                    <span class="card-eyebrow"> Biblioteca </span>
+                    <h2>Materiais recentes</h2>
+                  </div>
+                  <a
+                    class="card-header-link"
+                    data-route="materials"
+                    href="./materials.html"
+                  >
+                    Ver materiais
+
+                    <i class="fa-solid fa-arrow-right"></i>
+                  </a>
+                </div>
+                <div
+                  class="dashboard-materials-list"
+                  data-dashboard-materials=""
+                >
+                  <!-- Gerado pelo dashboard.js -->
+                </div>
+              </section>
+            </div>
+            <!-- Coluna lateral -->
+            <aside class="dashboard-side-column">
+              <!-- Calendário -->
+              <section
+                class="content-card dashboard-calendar"
+                data-calendar=""
+                data-calendar-compact="true"
+              >
+                <div class="card-header">
+                  <div>
+                    <span class="card-eyebrow"> Agenda </span>
+                    <h2 class="calendar-title" data-calendar-title="">
+                      Agosto de 2026
+                    </h2>
+                  </div>
+                  <div class="calendar-navigation">
+                    <button
+                      aria-label="Mês anterior"
+                      class="calendar-navigation-button"
+                      data-calendar-previous=""
+                      type="button"
+                    >
+                      <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+                    <button
+                      aria-label="Próximo mês"
+                      class="calendar-navigation-button"
+                      data-calendar-next=""
+                      type="button"
+                    >
+                      <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                  </div>
+                </div>
+                <button
+                  class="calendar-today-button"
+                  data-calendar-today=""
+                  type="button"
+                >
+                  Ir para hoje
+                </button>
+                <div
+                  aria-label="Calendário"
+                  class="calendar-grid"
+                  data-calendar-grid=""
+                >
+                  <!-- Gerado pelo calendar.js -->
+                </div>
+                <div class="dashboard-calendar-events">
+                  <div class="dashboard-calendar-events-header">
+                    <h3
+                      class="calendar-selected-title"
+                      data-calendar-selected-title=""
+                    >
+                      Compromissos do dia
+                    </h3>
+                    <a data-route="schedule" href="./schedule.html">
+                      Abrir agenda
+                    </a>
+                  </div>
+                  <div class="calendar-events" data-calendar-events="">
+                    <!-- Gerado pelo calendar.js -->
+                  </div>
+                </div>
+              </section>
+              <!-- Assistente IA -->
+              <section class="content-card dashboard-ai-card">
+                <div class="dashboard-ai-decoration">
+                  <i class="fa-solid fa-sparkles"></i>
+                </div>
+                <div class="dashboard-ai-icon">
+                  <i class="fa-solid fa-robot"></i>
+                </div>
+                <div class="dashboard-ai-content">
+                  <span class="card-eyebrow"> Assistente educacional </span>
+                  <h2>Precisa de ajuda?</h2>
+                  <p>
+                    Peça explicações, resumos, exercícios ou ajuda para
+                    organizar seus estudos.
+                  </p>
+                  <a class="btn btn-primary" data-route="ai" href="./ai.html">
+                    <i class="fa-solid fa-message"></i>
+                    Conversar com a IA
+                  </a>
+                </div>
+              </section>
+              <!-- Comunicados -->
+              <section class="content-card dashboard-section">
+                <div class="card-header">
+                  <div>
+                    <span class="card-eyebrow"> Escola </span>
+                    <h2>Comunicados</h2>
+                  </div>
+                  <span
+                    class="card-header-count"
+                    data-dashboard-announcement-count=""
+                  >
+                    0
+                  </span>
+                </div>
+                <div
+                  class="dashboard-announcements"
+                  data-dashboard-announcements=""
+                >
+                  <!-- Gerado pelo dashboard.js -->
+                </div>
+              </section>
+            </aside>
+          </div>
+        </main>
+        <!-- =========================
+                 RODAPÉ
+                 ========================= -->
+        <footer class="app-footer">
+          <p>
+            ©
+            <span data-current-year="">2026</span>
+            SESI Connect.
+          </p>
+          <div class="app-footer-links">
+            <a href="#">Privacidade</a>
+            <a href="#">Suporte</a>
+            <a href="#">Acessibilidade</a>
+          </div>
+        </footer>
+      </div>
+    </div>
+    <!-- =========================
+         NAVEGAÇÃO MOBILE
+         ========================= -->
+    <nav aria-label="Navegação mobile" class="mobile-bottom-navigation">
+      <a
+        aria-current="page"
+        class="mobile-bottom-link active"
+        data-route="dashboard"
+        href="./dashboard.html"
+      >
+        <i class="fa-solid fa-house"></i>
+        <span>Início</span>
+      </a>
+      <a class="mobile-bottom-link" data-route="lessons" href="./lessons.html">
+        <i class="fa-solid fa-book-open"></i>
+        <span>Aulas</span>
+      </a>
+      <a
+        class="mobile-bottom-link"
+        data-route="activities"
+        href="./activities.html"
+      >
+        <i class="fa-solid fa-list-check"></i>
+        <span>Atividades</span>
+      </a>
+      <a class="mobile-bottom-link" data-route="ai" href="./ai.html">
+        <i class="fa-solid fa-robot"></i>
+        <span>IA</span>
+      </a>
+      <a class="mobile-bottom-link" data-route="profile" href="./profile.html">
+        <i class="fa-solid fa-user"></i>
+        <span>Perfil</span>
+      </a>
+    </nav>
+    <!-- =========================
+         TOASTS
+         ========================= -->
+    <div
+      aria-atomic="true"
+      aria-live="polite"
+      class="toast-container"
+      id="toast-container"
+    ></div>
+    <!-- =========================
+         SEM JAVASCRIPT
+         ========================= -->
+    <noscript>
+      <div class="noscript-warning">
+        <strong>JavaScript desativado</strong>
+        <p>
+          Ative o JavaScript do navegador para utilizar todos os recursos do
+          SESI Connect.
+        </p>
+      </div>
+    </noscript>
+    <!-- =========================
+         JAVASCRIPT
+         ========================= -->
+    <script>
+      window.addEventListener("load", () => {
+        const loader = document.querySelector(".page-loader");
+
+        if (!loader) return;
+
+        loader.style.opacity = "0";
+        loader.style.pointerEvents = "none";
+
+        setTimeout(() => {
+          loader.remove();
+        }, 300);
+      });
+
+      // Segurança: nunca deixar o site preso no loader
+      setTimeout(() => {
+        const loader = document.querySelector(".page-loader");
+
+        if (!loader) return;
+
+        loader.style.opacity = "0";
+        loader.style.pointerEvents = "none";
+
+        setTimeout(() => {
+          loader.remove();
+        }, 300);
+      }, 2500);
+    </script>
+    <!-- JavaScript revisado -->
+    <script src="../js/auth.js" type="module"></script>
+    <script src="../js/app.js" type="module"></script>
+    <script src="../js/modules/dashboard.js" type="module"></script>
+  </body>
+</html>
