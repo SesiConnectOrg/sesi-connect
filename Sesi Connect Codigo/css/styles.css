@@ -1,0 +1,67 @@
+/* =========================================================
+   SESI CONNECT
+   Arquivo principal de estilos
+   ========================================================= */
+
+/* =========================
+   BASE
+   ========================= */
+
+@import url("./bases/variables.css");
+@import url("./bases/reset.css");
+@import url("./bases/typography.css");
+@import url("./bases/layout.css");
+
+/* =========================
+   COMPONENTES
+   ========================= */
+
+@import url("./components/buttons.css");
+@import url("./components/cards.css");
+@import url("./components/forms.css");
+@import url("./components/tables.css");
+@import url("./components/sidebar.css");
+@import url("./components/header.css");
+@import url("./components/modals.css");
+@import url("./components/notifications.css");
+@import url("./components/calendar.css");
+
+/* =========================
+   PÁGINAS
+   ========================= */
+
+@import url("./pages/login.css");
+@import url("./pages/dashboard.css");
+@import url("./pages/students.css");
+@import url("./pages/teachers.css");
+@import url("./pages/lessons.css");
+@import url("./pages/lesson.css");
+@import url("./pages/schedule.css");
+@import url("./pages/activities.css");
+@import url("./pages/essay.css");
+@import url("./pages/materials.css");
+@import url("./pages/ai.css");
+@import url("./pages/profile.css");
+@import url("./pages/settings.css");
+
+/* =========================
+   UTILITÁRIOS
+   ========================= */
+
+@import url("./utils/animations.css");
+@import url("./utils/responsive.css");
+
+/* Camada final da versão atual */
+@import url("./current.css");
+
+.page-loader {
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease;
+}
+
+.page-loader.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}

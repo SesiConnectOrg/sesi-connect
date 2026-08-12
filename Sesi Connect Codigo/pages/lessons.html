@@ -1,0 +1,1475 @@
+<!doctype html>
+
+<html data-theme="light" lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="Mural de aulas do SESI Connect." name="description" />
+    <meta content="#f8fafc" name="theme-color" />
+    <title>Mural de Aulas | SESI Connect</title>
+    <link href="../assets/icons/favicon.svg" rel="icon" type="image/svg+xml" />
+    <!-- Font Awesome -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      rel="stylesheet"
+    />
+    <!-- Estilos -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+  <body
+    class="app-layout lessons-page has-mobile-navigation"
+    data-auth-required="true"
+    data-page="lessons"
+    data-page-title="Mural de Aulas"
+    data-restore-scroll="true"
+  >
+    <!-- Acessibilidade -->
+    <a class="skip-link" href="#main-content"> Ir para o conteúdo principal </a>
+    <!-- =========================
+         CARREGAMENTO
+         ========================= -->
+    <div aria-hidden="true" class="page-loader">
+      <div class="page-loader-content">
+        <div class="page-loader-logo">
+          <i class="fa-solid fa-graduation-cap"></i>
+        </div>
+        <span class="loading-spinner"></span>
+        <p>Carregando suas aulas...</p>
+      </div>
+    </div>
+    <!-- =========================
+         APLICAÇÃO
+         ========================= -->
+    <div class="app-container">
+      <!-- =========================
+             SIDEBAR
+             ========================= -->
+      <aside aria-label="Navegação principal" class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+          <a
+            aria-label="Página inicial do SESI Connect"
+            class="sidebar-logo"
+            data-route="dashboard"
+            href="./dashboard.html"
+          >
+            <span class="sidebar-logo-icon">
+              <i class="fa-solid fa-graduation-cap"></i>
+            </span>
+            <span class="sidebar-logo-text">
+              <strong>SESI</strong>
+              <span>Connect</span>
+            </span>
+          </a>
+          <button
+            aria-controls="sidebar"
+            aria-expanded="false"
+            aria-label="Fechar menu"
+            class="sidebar-close-button mobile-only"
+            data-sidebar-toggle=""
+            type="button"
+          >
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+        <!-- Usuário -->
+        <div class="sidebar-user">
+          <div
+            aria-hidden="true"
+            class="sidebar-user-avatar"
+            data-user-initials=""
+          >
+            JS
+          </div>
+          <div class="sidebar-user-info">
+            <strong data-user-name=""> Jully Silva </strong>
+            <span data-user-role=""> Estudante </span>
+          </div>
+        </div>
+        <!-- Navegação -->
+        <nav class="sidebar-navigation">
+          <div class="sidebar-navigation-group">
+            <span class="sidebar-section-title"> Principal </span>
+            <a
+              class="sidebar-link"
+              data-route="dashboard"
+              href="./dashboard.html"
+            >
+              <i class="fa-solid fa-chart-pie"></i>
+              <span class="sidebar-link-text"> Visão Geral </span>
+            </a>
+            <a
+              aria-current="page"
+              class="sidebar-link active"
+              data-route="lessons"
+              href="./lessons.html"
+            >
+              <i class="fa-solid fa-book-open"></i>
+              <span class="sidebar-link-text"> Mural de Aulas </span>
+            </a>
+            <a
+              class="sidebar-link"
+              data-route="schedule"
+              href="./schedule.html"
+            >
+              <i class="fa-solid fa-calendar-days"></i>
+              <span class="sidebar-link-text"> Cronograma </span>
+            </a>
+            <a
+              class="sidebar-link"
+              data-route="activities"
+              href="./activities.html"
+            >
+              <i class="fa-solid fa-list-check"></i>
+              <span class="sidebar-link-text"> Atividades </span>
+              <span class="sidebar-link-badge"> 3 </span>
+            </a>
+            <a
+              class="sidebar-link"
+              data-route="materials"
+              href="./materials.html"
+            >
+              <i class="fa-solid fa-folder-open"></i>
+              <span class="sidebar-link-text"> Materiais </span>
+            </a>
+            <a
+              class="sidebar-link sidebar-link--highlight"
+              data-route="ai"
+              href="./ai.html"
+            >
+              <i class="fa-solid fa-robot"></i>
+              <span class="sidebar-link-text"> Assistente IA </span>
+            </a>
+          </div>
+          <div class="sidebar-navigation-group">
+            <span class="sidebar-section-title"> Gestão </span>
+            <a
+              class="sidebar-link"
+              data-roles="admin,coordinator,teacher"
+              data-route="students"
+              href="./students.html"
+            >
+              <i class="fa-solid fa-user-graduate"></i>
+              <span class="sidebar-link-text"> Alunos </span>
+            </a>
+            <a
+              class="sidebar-link"
+              data-roles="admin,coordinator"
+              data-route="teachers"
+              href="./teachers.html"
+            >
+              <i class="fa-solid fa-chalkboard-user"></i>
+              <span class="sidebar-link-text"> Professores </span>
+            </a>
+          </div>
+          <div class="sidebar-navigation-group">
+            <span class="sidebar-section-title"> Conta </span>
+            <a class="sidebar-link" data-route="profile" href="./profile.html">
+              <i class="fa-solid fa-user"></i>
+              <span class="sidebar-link-text"> Meu Perfil </span>
+            </a>
+            <a
+              class="sidebar-link"
+              data-route="settings"
+              href="./settings.html"
+            >
+              <i class="fa-solid fa-gear"></i>
+              <span class="sidebar-link-text"> Configurações </span>
+            </a>
+          </div>
+        </nav>
+        <!-- Rodapé da sidebar -->
+        <div class="sidebar-footer">
+          <button
+            class="sidebar-link sidebar-logout-button"
+            data-logout=""
+            type="button"
+          >
+            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+            <span class="sidebar-link-text"> Sair </span>
+          </button>
+          <span class="sidebar-version"> SESI Connect v1.0 </span>
+        </div>
+      </aside>
+      <!-- Overlay mobile -->
+      <button
+        aria-label="Fechar menu lateral"
+        class="sidebar-overlay"
+        id="sidebar-overlay"
+        tabindex="-1"
+        type="button"
+      ></button>
+      <!-- =========================
+             CONTEÚDO PRINCIPAL
+             ========================= -->
+      <div class="main-content">
+        <!-- =========================
+                 CABEÇALHO SUPERIOR
+                 ========================= -->
+        <header class="top-header">
+          <div class="top-header-left">
+            <button
+              aria-controls="sidebar"
+              aria-expanded="false"
+              aria-label="Abrir menu"
+              class="mobile-menu-button"
+              data-sidebar-toggle=""
+              type="button"
+            >
+              <i class="fa-solid fa-bars"></i>
+            </button>
+            <div class="top-header-heading">
+              <span class="top-header-title"> SESI Connect </span>
+              <span class="top-header-page"> Mural de Aulas </span>
+            </div>
+          </div>
+          <!-- Pesquisa global -->
+          <div class="top-header-search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input
+              aria-label="Pesquisar no sistema"
+              placeholder="Pesquisar no SESI Connect"
+              type="search"
+            />
+            <kbd>Ctrl K</kbd>
+          </div>
+          <!-- Ações -->
+          <div class="top-header-actions">
+            <!-- Tema -->
+            <button
+              aria-label="Alterar tema"
+              aria-pressed="false"
+              class="top-header-action theme-toggle-button"
+              data-theme-toggle=""
+              type="button"
+            >
+              <i class="fa-solid fa-moon" data-theme-icon=""></i>
+            </button>
+            <!-- Notificações -->
+            <div class="notification-wrapper">
+              <button
+                aria-controls="notification-panel"
+                aria-expanded="false"
+                aria-label="Notificações"
+                class="top-header-action notification-button"
+                data-notification-toggle=""
+                type="button"
+              >
+                <i class="fa-regular fa-bell"></i>
+                <span class="notification-badge" data-notification-count="">
+                  0
+                </span>
+              </button>
+              <section
+                aria-hidden="true"
+                class="notification-panel"
+                data-notification-panel=""
+                data-use-hidden=""
+                hidden=""
+                id="notification-panel"
+              >
+                <div class="notification-panel-header">
+                  <div>
+                    <h2>Notificações</h2>
+                    <p>Acompanhe suas novidades.</p>
+                  </div>
+                  <button
+                    class="notification-header-action"
+                    data-notifications-read-all=""
+                    type="button"
+                  >
+                    Marcar como lidas
+                  </button>
+                </div>
+                <div class="notification-list" data-notification-list="">
+                  <!-- Gerado pelo notifications.js -->
+                </div>
+                <div class="notification-panel-footer">
+                  <button
+                    class="notification-clear-button"
+                    data-notifications-clear=""
+                    type="button"
+                  >
+                    <i class="fa-solid fa-trash"></i>
+                    Limpar notificações
+                  </button>
+                </div>
+              </section>
+            </div>
+            <!-- Perfil -->
+            <a
+              aria-label="Abrir meu perfil"
+              class="top-header-user"
+              data-route="profile"
+              href="./profile.html"
+            >
+              <div
+                aria-hidden="true"
+                class="top-header-user-avatar"
+                data-user-initials=""
+              >
+                JS
+              </div>
+              <div class="top-header-user-info">
+                <strong data-user-name=""> Jully Silva </strong>
+                <span data-user-role=""> Estudante </span>
+              </div>
+              <i class="fa-solid fa-chevron-right"></i>
+            </a>
+          </div>
+        </header>
+        <!-- =========================
+                 CONTEÚDO
+                 ========================= -->
+        <main class="page-content lessons-content" id="main-content">
+          <!-- Cabeçalho -->
+          <section class="page-header">
+            <div class="page-header-content">
+              <span class="page-eyebrow"> Ambiente de aprendizagem </span>
+              <h1>Mural de Aulas</h1>
+              <p>
+                Acesse suas aulas, acompanhe o progresso e continue seus estudos
+                de onde parou.
+              </p>
+            </div>
+            <div class="page-header-actions">
+              <a
+                class="btn btn-outline"
+                data-route="schedule"
+                href="./schedule.html"
+              >
+                <i class="fa-regular fa-calendar"></i>
+                Ver cronograma
+              </a>
+              <button
+                class="btn btn-primary"
+                data-lessons-continue=""
+                type="button"
+              >
+                <i class="fa-solid fa-circle-play"></i>
+                Continuar estudando
+              </button>
+            </div>
+          </section>
+          <!-- =========================
+                     RESUMO
+                     ========================= -->
+          <section aria-label="Resumo das aulas" class="lessons-summary-grid">
+            <article class="lessons-summary-card">
+              <div class="lessons-summary-icon lessons-summary-icon--today">
+                <i class="fa-solid fa-calendar-day"></i>
+              </div>
+              <div class="lessons-summary-content">
+                <span>Aulas de hoje</span>
+                <strong data-lessons-today="">4</strong>
+              </div>
+              <span class="lessons-summary-caption"> Próxima às 14:00 </span>
+            </article>
+            <article class="lessons-summary-card">
+              <div class="lessons-summary-icon lessons-summary-icon--progress">
+                <i class="fa-solid fa-spinner"></i>
+              </div>
+              <div class="lessons-summary-content">
+                <span>Em andamento</span>
+                <strong data-lessons-progress="">2</strong>
+              </div>
+              <span class="lessons-summary-caption"> Continue estudando </span>
+            </article>
+            <article class="lessons-summary-card">
+              <div class="lessons-summary-icon lessons-summary-icon--completed">
+                <i class="fa-solid fa-circle-check"></i>
+              </div>
+              <div class="lessons-summary-content">
+                <span>Concluídas</span>
+                <strong data-lessons-completed="">18</strong>
+              </div>
+              <span class="lessons-summary-caption"> Neste bimestre </span>
+            </article>
+            <article class="lessons-summary-card">
+              <div class="lessons-summary-icon lessons-summary-icon--time">
+                <i class="fa-solid fa-clock"></i>
+              </div>
+              <div class="lessons-summary-content">
+                <span>Tempo de estudo</span>
+                <strong data-lessons-study-time="">12h</strong>
+              </div>
+              <span class="lessons-summary-caption"> Nesta semana </span>
+            </article>
+          </section>
+          <!-- =========================
+                     PRÓXIMA AULA
+                     ========================= -->
+          <section class="content-card featured-lesson-card">
+            <div class="featured-lesson-decoration">
+              <i class="fa-solid fa-function"></i>
+            </div>
+            <div class="featured-lesson-content">
+              <div class="featured-lesson-top">
+                <span class="subject-badge subject-badge--math">
+                  Matemática
+                </span>
+                <span class="status-badge status-badge--info">
+                  Próxima aula
+                </span>
+              </div>
+              <span class="card-eyebrow"> Hoje, às 14:00 </span>
+              <h2>Funções do segundo grau</h2>
+              <p>
+                Aprenda a identificar os coeficientes da função, calcular suas
+                raízes e interpretar o gráfico da parábola.
+              </p>
+              <div class="featured-lesson-meta">
+                <span>
+                  <i class="fa-solid fa-chalkboard-user"></i>
+                  Prof. Ricardo Alves
+                </span>
+                <span>
+                  <i class="fa-regular fa-clock"></i>
+                  45 minutos
+                </span>
+                <span>
+                  <i class="fa-solid fa-location-dot"></i>
+                  Sala 12
+                </span>
+              </div>
+              <div class="featured-lesson-actions">
+                <a
+                  class="btn btn-primary"
+                  data-lesson-duration="2700"
+                  data-lesson-room="Sala 12"
+                  data-lesson-subject="Matemática"
+                  data-lesson-teacher="Prof. Ricardo Alves"
+                  data-lesson-title="Funções do segundo grau"
+                  data-open-lesson="lesson-math-functions"
+                  href="./lesson.html"
+                >
+                  <i class="fa-solid fa-circle-play"></i>
+                  Abrir aula
+                </a>
+                <a
+                  class="btn btn-outline"
+                  data-route="materials"
+                  href="./materials.html"
+                >
+                  <i class="fa-solid fa-folder-open"></i>
+                  Ver materiais
+                </a>
+              </div>
+            </div>
+            <div class="featured-lesson-progress">
+              <div class="featured-lesson-progress-header">
+                <span>Progresso da aula</span>
+                <strong>0%</strong>
+              </div>
+              <div
+                aria-label="Progresso da aula"
+                aria-valuemax="100"
+                aria-valuemin="0"
+                aria-valuenow="0"
+                class="progress"
+                role="progressbar"
+              >
+                <span class="progress-bar" style="width: 0%"></span>
+              </div>
+              <p>A aula ainda não foi iniciada.</p>
+            </div>
+          </section>
+          <!-- =========================
+                     FILTROS
+                     ========================= -->
+          <section class="content-card lessons-filters">
+            <div class="lessons-search">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <input
+                aria-label="Pesquisar aulas"
+                data-lessons-search=""
+                id="lessons-search"
+                placeholder="Pesquisar aulas"
+                type="search"
+              />
+            </div>
+            <div class="lessons-filter-group">
+              <label for="lessons-subject-filter"> Disciplina </label>
+              <select
+                data-lessons-subject-filter=""
+                id="lessons-subject-filter"
+              >
+                <option value="all">Todas as disciplinas</option>
+                <option value="math">Matemática</option>
+                <option value="portuguese">Língua Portuguesa</option>
+                <option value="history">História</option>
+                <option value="physics">Física</option>
+                <option value="chemistry">Química</option>
+                <option value="biology">Biologia</option>
+                <option value="geography">Geografia</option>
+              </select>
+            </div>
+            <div class="lessons-filter-group">
+              <label for="lessons-status-filter"> Situação </label>
+              <select data-lessons-status-filter="" id="lessons-status-filter">
+                <option value="all">Todas</option>
+                <option value="scheduled">Agendadas</option>
+                <option value="progress">Em andamento</option>
+                <option value="completed">Concluídas</option>
+              </select>
+            </div>
+            <div class="lessons-view-buttons">
+              <button
+                aria-label="Visualização em cartões"
+                aria-pressed="true"
+                class="icon-button active"
+                data-lessons-view="grid"
+                type="button"
+              >
+                <i class="fa-solid fa-grip"></i>
+              </button>
+              <button
+                aria-label="Visualização em lista"
+                aria-pressed="false"
+                class="icon-button"
+                data-lessons-view="list"
+                type="button"
+              >
+                <i class="fa-solid fa-list"></i>
+              </button>
+            </div>
+          </section>
+          <!-- =========================
+                     AULAS DA SEMANA
+                     ========================= -->
+          <section class="lessons-section">
+            <div class="section-header">
+              <div>
+                <span class="card-eyebrow"> 03 a 07 de agosto </span>
+                <h2>Aulas desta semana</h2>
+                <p>6 aulas disponíveis</p>
+              </div>
+              <div class="section-header-actions">
+                <button
+                  aria-label="Semana anterior"
+                  class="icon-button"
+                  data-lessons-previous-week=""
+                  type="button"
+                >
+                  <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <button
+                  class="btn btn-ghost"
+                  data-lessons-current-week=""
+                  type="button"
+                >
+                  Semana atual
+                </button>
+                <button
+                  aria-label="Próxima semana"
+                  class="icon-button"
+                  data-lessons-next-week=""
+                  type="button"
+                >
+                  <i class="fa-solid fa-chevron-right"></i>
+                </button>
+              </div>
+            </div>
+            <div class="lessons-grid" data-lessons-container="">
+              <!-- Matemática -->
+              <article
+                class="lesson-card"
+                data-lesson-card=""
+                data-lesson-id="lesson-math-functions"
+                data-lesson-status="scheduled"
+                data-lesson-subject="math"
+              >
+                <div class="lesson-card-cover lesson-card-cover--math">
+                  <div class="lesson-card-cover-icon">
+                    <i class="fa-solid fa-calculator"></i>
+                  </div>
+                  <span class="lesson-card-date"> Hoje • 14:00 </span>
+                  <button
+                    aria-label="Adicionar aos favoritos"
+                    class="lesson-card-favorite"
+                    data-lesson-favorite=""
+                    type="button"
+                  >
+                    <i class="fa-regular fa-bookmark"></i>
+                  </button>
+                </div>
+                <div class="lesson-card-content">
+                  <div class="lesson-card-subject">
+                    <span class="subject-badge subject-badge--math">
+                      Matemática
+                    </span>
+                    <span class="status-badge status-badge--info">
+                      Agendada
+                    </span>
+                  </div>
+                  <h3>Funções do segundo grau</h3>
+                  <p>
+                    Coeficientes, raízes, vértice e representação gráfica da
+                    parábola.
+                  </p>
+                  <div class="lesson-card-teacher">
+                    <div class="lesson-card-teacher-avatar">RA</div>
+                    <div>
+                      <strong>Ricardo Alves</strong>
+                      <span>Professor</span>
+                    </div>
+                  </div>
+                  <div class="lesson-card-meta">
+                    <span>
+                      <i class="fa-regular fa-clock"></i>
+                      45 min
+                    </span>
+                    <span>
+                      <i class="fa-solid fa-folder-open"></i>
+                      3 materiais
+                    </span>
+                  </div>
+                  <div class="lesson-card-footer">
+                    <div class="lesson-card-progress">
+                      <div class="progress">
+                        <span class="progress-bar" style="width: 0%"></span>
+                      </div>
+                      <span>0%</span>
+                    </div>
+                    <a
+                      class="btn btn-primary btn-small"
+                      data-lesson-duration="2700"
+                      data-lesson-room="Sala 12"
+                      data-lesson-subject-name="Matemática"
+                      data-lesson-teacher="Prof. Ricardo Alves"
+                      data-lesson-title="Funções do segundo grau"
+                      data-open-lesson="lesson-math-functions"
+                      href="./lesson.html"
+                    >
+                      Abrir aula
+                    </a>
+                  </div>
+                </div>
+              </article>
+              <!-- Português -->
+              <article
+                class="lesson-card"
+                data-lesson-card=""
+                data-lesson-id="lesson-portuguese-argumentation"
+                data-lesson-status="progress"
+                data-lesson-subject="portuguese"
+              >
+                <div class="lesson-card-cover lesson-card-cover--portuguese">
+                  <div class="lesson-card-cover-icon">
+                    <i class="fa-solid fa-book"></i>
+                  </div>
+                  <span class="lesson-card-date"> Hoje • 10:00 </span>
+                  <button
+                    aria-label="Remover dos favoritos"
+                    class="lesson-card-favorite is-active"
+                    data-lesson-favorite=""
+                    type="button"
+                  >
+                    <i class="fa-solid fa-bookmark"></i>
+                  </button>
+                </div>
+                <div class="lesson-card-content">
+                  <div class="lesson-card-subject">
+                    <span class="subject-badge subject-badge--portuguese">
+                      Língua Portuguesa
+                    </span>
+                    <span class="status-badge status-badge--warning">
+                      Em andamento
+                    </span>
+                  </div>
+                  <h3>Estratégias de argumentação</h3>
+                  <p>
+                    Aprenda a construir argumentos consistentes para textos
+                    dissertativos.
+                  </p>
+                  <div class="lesson-card-teacher">
+                    <div class="lesson-card-teacher-avatar">RS</div>
+                    <div>
+                      <strong>Renata Souza</strong>
+                      <span>Professora</span>
+                    </div>
+                  </div>
+                  <div class="lesson-card-meta">
+                    <span>
+                      <i class="fa-regular fa-clock"></i>
+                      50 min
+                    </span>
+                    <span>
+                      <i class="fa-solid fa-folder-open"></i>
+                      4 materiais
+                    </span>
+                  </div>
+                  <div class="lesson-card-footer">
+                    <div class="lesson-card-progress">
+                      <div class="progress">
+                        <span class="progress-bar" style="width: 64%"></span>
+                      </div>
+                      <span>64%</span>
+                    </div>
+                    <a
+                      class="btn btn-primary btn-small"
+                      data-lesson-duration="3000"
+                      data-lesson-room="Sala 06"
+                      data-lesson-subject-name="Língua Portuguesa"
+                      data-lesson-teacher="Profa. Renata Souza"
+                      data-lesson-title="Estratégias de argumentação"
+                      data-open-lesson="lesson-portuguese-argumentation"
+                      href="./lesson.html"
+                    >
+                      Continuar
+                    </a>
+                  </div>
+                </div>
+              </article>
+              <!-- História -->
+              <article
+                class="lesson-card"
+                data-lesson-card=""
+                data-lesson-id="lesson-history-industrial"
+                data-lesson-status="completed"
+                data-lesson-subject="history"
+              >
+                <div class="lesson-card-cover lesson-card-cover--history">
+                  <div class="lesson-card-cover-icon">
+                    <i class="fa-solid fa-landmark"></i>
+                  </div>
+                  <span class="lesson-card-date"> Quarta • 08:00 </span>
+                  <button
+                    aria-label="Adicionar aos favoritos"
+                    class="lesson-card-favorite"
+                    data-lesson-favorite=""
+                    type="button"
+                  >
+                    <i class="fa-regular fa-bookmark"></i>
+                  </button>
+                </div>
+                <div class="lesson-card-content">
+                  <div class="lesson-card-subject">
+                    <span class="subject-badge subject-badge--history">
+                      História
+                    </span>
+                    <span class="status-badge status-badge--success">
+                      Concluída
+                    </span>
+                  </div>
+                  <h3>Revolução Industrial</h3>
+                  <p>
+                    Transformações econômicas, sociais e tecnológicas ocorridas
+                    a partir do século XVIII.
+                  </p>
+                  <div class="lesson-card-teacher">
+                    <div class="lesson-card-teacher-avatar">ML</div>
+                    <div>
+                      <strong>Marcelo Lima</strong>
+                      <span>Professor</span>
+                    </div>
+                  </div>
+                  <div class="lesson-card-meta">
+                    <span>
+                      <i class="fa-regular fa-clock"></i>
+                      42 min
+                    </span>
+                    <span>
+                      <i class="fa-solid fa-folder-open"></i>
+                      5 materiais
+                    </span>
+                  </div>
+                  <div class="lesson-card-footer">
+                    <div class="lesson-card-progress">
+                      <div class="progress">
+                        <span class="progress-bar" style="width: 100%"></span>
+                      </div>
+                      <span>100%</span>
+                    </div>
+                    <a
+                      class="btn btn-outline btn-small"
+                      data-lesson-duration="2520"
+                      data-lesson-room="Sala 08"
+                      data-lesson-subject-name="História"
+                      data-lesson-teacher="Prof. Marcelo Lima"
+                      data-lesson-title="Revolução Industrial"
+                      data-open-lesson="lesson-history-industrial"
+                      href="./lesson.html"
+                    >
+                      Rever aula
+                    </a>
+                  </div>
+                </div>
+              </article>
+              <!-- Física -->
+              <article
+                class="lesson-card"
+                data-lesson-card=""
+                data-lesson-id="lesson-physics-motion"
+                data-lesson-status="scheduled"
+                data-lesson-subject="physics"
+              >
+                <div class="lesson-card-cover lesson-card-cover--physics">
+                  <div class="lesson-card-cover-icon">
+                    <i class="fa-solid fa-atom"></i>
+                  </div>
+                  <span class="lesson-card-date"> Sexta • 09:50 </span>
+                  <button
+                    aria-label="Adicionar aos favoritos"
+                    class="lesson-card-favorite"
+                    data-lesson-favorite=""
+                    type="button"
+                  >
+                    <i class="fa-regular fa-bookmark"></i>
+                  </button>
+                </div>
+                <div class="lesson-card-content">
+                  <div class="lesson-card-subject">
+                    <span class="subject-badge subject-badge--physics">
+                      Física
+                    </span>
+                    <span class="status-badge status-badge--info">
+                      Agendada
+                    </span>
+                  </div>
+                  <h3>Movimento uniforme</h3>
+                  <p>
+                    Velocidade média, função horária e interpretação de
+                    gráficos.
+                  </p>
+                  <div class="lesson-card-teacher">
+                    <div class="lesson-card-teacher-avatar">CR</div>
+                    <div>
+                      <strong>Camila Rocha</strong>
+                      <span>Professora</span>
+                    </div>
+                  </div>
+                  <div class="lesson-card-meta">
+                    <span>
+                      <i class="fa-regular fa-clock"></i>
+                      48 min
+                    </span>
+                    <span>
+                      <i class="fa-solid fa-folder-open"></i>
+                      3 materiais
+                    </span>
+                  </div>
+                  <div class="lesson-card-footer">
+                    <div class="lesson-card-progress">
+                      <div class="progress">
+                        <span class="progress-bar" style="width: 0%"></span>
+                      </div>
+                      <span>0%</span>
+                    </div>
+                    <a
+                      class="btn btn-primary btn-small"
+                      data-lesson-duration="2880"
+                      data-lesson-room="Laboratório 02"
+                      data-lesson-subject-name="Física"
+                      data-lesson-teacher="Profa. Camila Rocha"
+                      data-lesson-title="Movimento uniforme"
+                      data-open-lesson="lesson-physics-motion"
+                      href="./lesson.html"
+                    >
+                      Abrir aula
+                    </a>
+                  </div>
+                </div>
+              </article>
+              <!-- Química -->
+              <article
+                class="lesson-card"
+                data-lesson-card=""
+                data-lesson-id="lesson-chemistry-bonds"
+                data-lesson-status="progress"
+                data-lesson-subject="chemistry"
+              >
+                <div class="lesson-card-cover lesson-card-cover--chemistry">
+                  <div class="lesson-card-cover-icon">
+                    <i class="fa-solid fa-flask"></i>
+                  </div>
+                  <span class="lesson-card-date"> Terça • 13:10 </span>
+                  <button
+                    aria-label="Adicionar aos favoritos"
+                    class="lesson-card-favorite"
+                    data-lesson-favorite=""
+                    type="button"
+                  >
+                    <i class="fa-regular fa-bookmark"></i>
+                  </button>
+                </div>
+                <div class="lesson-card-content">
+                  <div class="lesson-card-subject">
+                    <span class="subject-badge subject-badge--chemistry">
+                      Química
+                    </span>
+                    <span class="status-badge status-badge--warning">
+                      Em andamento
+                    </span>
+                  </div>
+                  <h3>Ligações químicas</h3>
+                  <p>
+                    Ligações iônicas, covalentes e metálicas, com exemplos
+                    práticos.
+                  </p>
+                  <div class="lesson-card-teacher">
+                    <div class="lesson-card-teacher-avatar">FP</div>
+                    <div>
+                      <strong>Fernanda Prado</strong>
+                      <span>Professora</span>
+                    </div>
+                  </div>
+                  <div class="lesson-card-meta">
+                    <span>
+                      <i class="fa-regular fa-clock"></i>
+                      46 min
+                    </span>
+                    <span>
+                      <i class="fa-solid fa-folder-open"></i>
+                      4 materiais
+                    </span>
+                  </div>
+                  <div class="lesson-card-footer">
+                    <div class="lesson-card-progress">
+                      <div class="progress">
+                        <span class="progress-bar" style="width: 28%"></span>
+                      </div>
+                      <span>28%</span>
+                    </div>
+                    <a
+                      class="btn btn-primary btn-small"
+                      data-lesson-duration="2760"
+                      data-lesson-room="Laboratório 01"
+                      data-lesson-subject-name="Química"
+                      data-lesson-teacher="Profa. Fernanda Prado"
+                      data-lesson-title="Ligações químicas"
+                      data-open-lesson="lesson-chemistry-bonds"
+                      href="./lesson.html"
+                    >
+                      Continuar
+                    </a>
+                  </div>
+                </div>
+              </article>
+              <!-- Geografia -->
+              <article
+                class="lesson-card"
+                data-lesson-card=""
+                data-lesson-id="lesson-geography-globalization"
+                data-lesson-status="scheduled"
+                data-lesson-subject="geography"
+              >
+                <div class="lesson-card-cover lesson-card-cover--geography">
+                  <div class="lesson-card-cover-icon">
+                    <i class="fa-solid fa-earth-americas"></i>
+                  </div>
+                  <span class="lesson-card-date"> Sexta • 14:50 </span>
+                  <button
+                    aria-label="Adicionar aos favoritos"
+                    class="lesson-card-favorite"
+                    data-lesson-favorite=""
+                    type="button"
+                  >
+                    <i class="fa-regular fa-bookmark"></i>
+                  </button>
+                </div>
+                <div class="lesson-card-content">
+                  <div class="lesson-card-subject">
+                    <span class="subject-badge subject-badge--geography">
+                      Geografia
+                    </span>
+                    <span class="status-badge status-badge--info">
+                      Agendada
+                    </span>
+                  </div>
+                  <h3>Globalização e redes mundiais</h3>
+                  <p>
+                    Fluxos econômicos, tecnológicos e culturais no espaço
+                    globalizado.
+                  </p>
+                  <div class="lesson-card-teacher">
+                    <div class="lesson-card-teacher-avatar">LM</div>
+                    <div>
+                      <strong>Lucas Moreira</strong>
+                      <span>Professor</span>
+                    </div>
+                  </div>
+                  <div class="lesson-card-meta">
+                    <span>
+                      <i class="fa-regular fa-clock"></i>
+                      44 min
+                    </span>
+                    <span>
+                      <i class="fa-solid fa-folder-open"></i>
+                      2 materiais
+                    </span>
+                  </div>
+                  <div class="lesson-card-footer">
+                    <div class="lesson-card-progress">
+                      <div class="progress">
+                        <span class="progress-bar" style="width: 0%"></span>
+                      </div>
+                      <span>0%</span>
+                    </div>
+                    <a
+                      class="btn btn-primary btn-small"
+                      data-lesson-duration="2640"
+                      data-lesson-room="Sala 10"
+                      data-lesson-subject-name="Geografia"
+                      data-lesson-teacher="Prof. Lucas Moreira"
+                      data-lesson-title="Globalização e redes mundiais"
+                      data-open-lesson="lesson-geography-globalization"
+                      href="./lesson.html"
+                    >
+                      Abrir aula
+                    </a>
+                  </div>
+                </div>
+              </article>
+            </div>
+            <!-- Estado vazio -->
+            <div class="lessons-empty-state" data-lessons-empty="" hidden="">
+              <div class="lessons-empty-icon">
+                <i class="fa-solid fa-book-open"></i>
+              </div>
+              <h3>Nenhuma aula encontrada</h3>
+              <p>
+                Tente alterar os filtros ou utilizar outro termo de pesquisa.
+              </p>
+              <button
+                class="btn btn-outline"
+                data-lessons-clear-filters=""
+                type="button"
+              >
+                Limpar filtros
+              </button>
+            </div>
+          </section>
+          <!-- =========================
+                     CONTINUE ESTUDANDO
+                     ========================= -->
+          <section class="content-card lessons-continue-section">
+            <div class="card-header">
+              <div>
+                <span class="card-eyebrow"> Retome de onde parou </span>
+                <h2>Continue estudando</h2>
+              </div>
+              <span class="card-header-count"> 2 </span>
+            </div>
+            <div class="continue-lessons-list">
+              <!-- Português -->
+              <article class="continue-lesson-item">
+                <div
+                  class="continue-lesson-icon continue-lesson-icon--portuguese"
+                >
+                  <i class="fa-solid fa-book"></i>
+                </div>
+                <div class="continue-lesson-content">
+                  <span class="continue-lesson-subject">
+                    Língua Portuguesa
+                  </span>
+                  <strong> Estratégias de argumentação </strong>
+                  <div class="continue-lesson-progress">
+                    <div class="progress">
+                      <span class="progress-bar" style="width: 64%"></span>
+                    </div>
+                    <span>64%</span>
+                  </div>
+                </div>
+                <a
+                  aria-label="Continuar Estratégias de argumentação"
+                  class="continue-lesson-button"
+                  data-lesson-duration="3000"
+                  data-lesson-room="Sala 06"
+                  data-lesson-subject-name="Língua Portuguesa"
+                  data-lesson-teacher="Profa. Renata Souza"
+                  data-lesson-title="Estratégias de argumentação"
+                  data-open-lesson="lesson-portuguese-argumentation"
+                  href="./lesson.html"
+                >
+                  <i class="fa-solid fa-play"></i>
+                </a>
+              </article>
+              <!-- Química -->
+              <article class="continue-lesson-item">
+                <div
+                  class="continue-lesson-icon continue-lesson-icon--chemistry"
+                >
+                  <i class="fa-solid fa-flask"></i>
+                </div>
+                <div class="continue-lesson-content">
+                  <span class="continue-lesson-subject"> Química </span>
+                  <strong> Ligações químicas </strong>
+                  <div class="continue-lesson-progress">
+                    <div class="progress">
+                      <span class="progress-bar" style="width: 28%"></span>
+                    </div>
+                    <span>28%</span>
+                  </div>
+                </div>
+                <a
+                  aria-label="Continuar Ligações químicas"
+                  class="continue-lesson-button"
+                  data-lesson-duration="2760"
+                  data-lesson-room="Laboratório 01"
+                  data-lesson-subject-name="Química"
+                  data-lesson-teacher="Profa. Fernanda Prado"
+                  data-lesson-title="Ligações químicas"
+                  data-open-lesson="lesson-chemistry-bonds"
+                  href="./lesson.html"
+                >
+                  <i class="fa-solid fa-play"></i>
+                </a>
+              </article>
+            </div>
+          </section>
+          <!-- =========================
+                     AULAS CONCLUÍDAS
+                     ========================= -->
+          <section class="content-card completed-lessons-section">
+            <div class="card-header">
+              <div>
+                <span class="card-eyebrow"> Seu histórico </span>
+                <h2>Aulas concluídas recentemente</h2>
+              </div>
+              <button
+                class="card-header-link"
+                data-show-all-completed=""
+                type="button"
+              >
+                Ver histórico
+
+                <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+            <div class="completed-lessons-list">
+              <article class="completed-lesson-item">
+                <span class="completed-lesson-check">
+                  <i class="fa-solid fa-check"></i>
+                </span>
+                <div class="completed-lesson-content">
+                  <strong> Revolução Industrial </strong>
+                  <span> História • Prof. Marcelo Lima </span>
+                </div>
+                <time datetime="2026-08-05"> Concluída ontem </time>
+                <a
+                  aria-label="Rever Revolução Industrial"
+                  class="completed-lesson-action"
+                  data-lesson-duration="2520"
+                  data-lesson-room="Sala 08"
+                  data-lesson-subject-name="História"
+                  data-lesson-teacher="Prof. Marcelo Lima"
+                  data-lesson-title="Revolução Industrial"
+                  data-open-lesson="lesson-history-industrial"
+                  href="./lesson.html"
+                >
+                  <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </article>
+              <article class="completed-lesson-item">
+                <span class="completed-lesson-check">
+                  <i class="fa-solid fa-check"></i>
+                </span>
+                <div class="completed-lesson-content">
+                  <strong> Sistema respiratório </strong>
+                  <span> Biologia • Prof. Gustavo Silva </span>
+                </div>
+                <time datetime="2026-08-04"> Concluída há 2 dias </time>
+                <a
+                  aria-label="Rever Sistema respiratório"
+                  class="completed-lesson-action"
+                  data-lesson-duration="2580"
+                  data-lesson-room="Laboratório 03"
+                  data-lesson-subject-name="Biologia"
+                  data-lesson-teacher="Prof. Gustavo Silva"
+                  data-lesson-title="Sistema respiratório"
+                  data-open-lesson="lesson-biology-respiratory"
+                  href="./lesson.html"
+                >
+                  <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </article>
+              <article class="completed-lesson-item">
+                <span class="completed-lesson-check">
+                  <i class="fa-solid fa-check"></i>
+                </span>
+                <div class="completed-lesson-content">
+                  <strong> Progressão aritmética </strong>
+                  <span> Matemática • Prof. Ricardo Alves </span>
+                </div>
+                <time datetime="2026-08-03"> Concluída há 3 dias </time>
+                <a
+                  aria-label="Rever Progressão aritmética"
+                  class="completed-lesson-action"
+                  data-lesson-duration="2700"
+                  data-lesson-room="Sala 12"
+                  data-lesson-subject-name="Matemática"
+                  data-lesson-teacher="Prof. Ricardo Alves"
+                  data-lesson-title="Progressão aritmética"
+                  data-open-lesson="lesson-math-progression"
+                  href="./lesson.html"
+                >
+                  <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </article>
+            </div>
+          </section>
+        </main>
+        <!-- =========================
+                 RODAPÉ
+                 ========================= -->
+        <footer class="app-footer">
+          <p>
+            ©
+            <span data-current-year="">2026</span>
+            SESI Connect.
+          </p>
+          <div class="app-footer-links">
+            <a href="#">Privacidade</a>
+            <a href="#">Suporte</a>
+            <a href="#">Acessibilidade</a>
+          </div>
+        </footer>
+      </div>
+    </div>
+    <!-- =========================
+         NAVEGAÇÃO MOBILE
+         ========================= -->
+    <nav aria-label="Navegação mobile" class="mobile-bottom-navigation">
+      <a
+        class="mobile-bottom-link"
+        data-route="dashboard"
+        href="./dashboard.html"
+      >
+        <i class="fa-solid fa-house"></i>
+        <span>Início</span>
+      </a>
+      <a
+        aria-current="page"
+        class="mobile-bottom-link active"
+        data-route="lessons"
+        href="./lessons.html"
+      >
+        <i class="fa-solid fa-book-open"></i>
+        <span>Aulas</span>
+      </a>
+      <a
+        class="mobile-bottom-link"
+        data-route="schedule"
+        href="./schedule.html"
+      >
+        <i class="fa-solid fa-calendar-days"></i>
+        <span>Agenda</span>
+      </a>
+      <a
+        class="mobile-bottom-link"
+        data-route="activities"
+        href="./activities.html"
+      >
+        <i class="fa-solid fa-list-check"></i>
+        <span>Atividades</span>
+      </a>
+      <a class="mobile-bottom-link" data-route="profile" href="./profile.html">
+        <i class="fa-solid fa-user"></i>
+        <span>Perfil</span>
+      </a>
+    </nav>
+    <!-- =========================
+         TOASTS
+         ========================= -->
+    <div
+      aria-atomic="true"
+      aria-live="polite"
+      class="toast-container"
+      id="toast-container"
+    ></div>
+    <!-- =========================
+         SEM JAVASCRIPT
+         ========================= -->
+    <noscript>
+      <div class="noscript-warning">
+        <strong>JavaScript desativado</strong>
+        <p>Ative o JavaScript para utilizar todos os recursos.</p>
+      </div>
+    </noscript>
+    <!-- =========================
+         JAVASCRIPT
+         ========================= -->
+    <!-- Seleção das aulas do mural -->
+    <!-- JavaScript revisado -->
+    <script src="../js/auth.js" type="module"></script>
+    <script src="../js/app.js" type="module"></script>
+    <script type="module">
+      const lessonLinks = document.querySelectorAll("[data-open-lesson]");
+
+      lessonLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          const selectedLesson = {
+            id: link.dataset.openLesson || "lesson-default",
+
+            title: link.dataset.lessonTitle || "Aula",
+
+            subject:
+              link.dataset.lessonSubjectName ||
+              link.dataset.lessonSubject ||
+              "Disciplina",
+
+            teacher: link.dataset.lessonTeacher || "Professor não informado",
+
+            room: link.dataset.lessonRoom || "Sala não informada",
+
+            duration: Number(link.dataset.lessonDuration) || 2700,
+
+            selectedAt: new Date().toISOString(),
+          };
+
+          try {
+            sessionStorage.setItem(
+              "sesi-connect-selected-lesson",
+              JSON.stringify(selectedLesson),
+            );
+          } catch (error) {
+            console.warn(
+              "[SESI Connect] Não foi possível selecionar a aula.",
+              error,
+            );
+          }
+        });
+      });
+
+      const favoriteButtons = document.querySelectorAll(
+        "[data-lesson-favorite]",
+      );
+
+      favoriteButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const active = button.classList.toggle("is-active");
+
+          const icon = button.querySelector("i");
+
+          if (icon) {
+            icon.className = active
+              ? "fa-solid fa-bookmark"
+              : "fa-regular fa-bookmark";
+          }
+
+          button.setAttribute(
+            "aria-label",
+            active ? "Remover dos favoritos" : "Adicionar aos favoritos",
+          );
+        });
+      });
+
+      const searchInput = document.querySelector("[data-lessons-search]");
+
+      const subjectFilter = document.querySelector(
+        "[data-lessons-subject-filter]",
+      );
+
+      const statusFilter = document.querySelector(
+        "[data-lessons-status-filter]",
+      );
+
+      const lessonCards = [...document.querySelectorAll("[data-lesson-card]")];
+
+      const emptyState = document.querySelector("[data-lessons-empty]");
+
+      function normalizeText(value) {
+        return String(value || "")
+          .normalize("NFD")
+          .replace(/[\u0300-\u036f]/g, "")
+          .toLowerCase()
+          .trim();
+      }
+
+      function filterLessons() {
+        const query = normalizeText(searchInput?.value);
+
+        const subject = subjectFilter?.value || "all";
+
+        const status = statusFilter?.value || "all";
+
+        let visibleCount = 0;
+
+        lessonCards.forEach((card) => {
+          const searchableText = normalizeText(card.textContent);
+
+          const matchesSearch = !query || searchableText.includes(query);
+
+          const matchesSubject =
+            subject === "all" || card.dataset.lessonSubject === subject;
+
+          const matchesStatus =
+            status === "all" || card.dataset.lessonStatus === status;
+
+          const visible = matchesSearch && matchesSubject && matchesStatus;
+
+          card.hidden = !visible;
+
+          if (visible) {
+            visibleCount += 1;
+          }
+        });
+
+        if (emptyState) {
+          emptyState.hidden = visibleCount !== 0;
+        }
+      }
+
+      searchInput?.addEventListener("input", filterLessons);
+
+      subjectFilter?.addEventListener("change", filterLessons);
+
+      statusFilter?.addEventListener("change", filterLessons);
+
+      document
+        .querySelectorAll("[data-lessons-clear-filters]")
+        .forEach((button) => {
+          button.addEventListener("click", () => {
+            if (searchInput) {
+              searchInput.value = "";
+            }
+
+            if (subjectFilter) {
+              subjectFilter.value = "all";
+            }
+
+            if (statusFilter) {
+              statusFilter.value = "all";
+            }
+
+            filterLessons();
+          });
+        });
+
+      const lessonsContainer = document.querySelector(
+        "[data-lessons-container]",
+      );
+
+      document.querySelectorAll("[data-lessons-view]").forEach((button) => {
+        button.addEventListener("click", () => {
+          const view = button.dataset.lessonsView;
+
+          document
+            .querySelectorAll("[data-lessons-view]")
+            .forEach((viewButton) => {
+              const active = viewButton === button;
+
+              viewButton.classList.toggle("active", active);
+
+              viewButton.setAttribute("aria-pressed", String(active));
+            });
+
+          lessonsContainer?.classList.toggle(
+            "lessons-grid--list",
+            view === "list",
+          );
+        });
+      });
+
+      document
+        .querySelector("[data-lessons-continue]")
+        ?.addEventListener("click", () => {
+          const continueLink = document.querySelector(
+            '.lesson-card[data-lesson-status="progress"] [data-open-lesson]',
+          );
+
+          continueLink?.click();
+        });
+    </script>
+  </body>
+</html>

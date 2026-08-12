@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 72" role="img" aria-labelledby="title">
+  <title id="title">SESI Connect</title>
+  <rect x="2" y="4" width="64" height="64" rx="18" fill="#0284c7"/>
+  <path d="M13 29 34 18l21 11-21 11-21-11Z" fill="#fff"/>
+  <path d="M22 36v10c0 4 5 8 12 8s12-4 12-8V36l-12 6-12-6Z" fill="#e0f2fe"/>
+  <text x="82" y="34" font-family="Inter,Arial,sans-serif" font-size="24" font-weight="800" fill="#0f172a">SESI</text>
+  <text x="82" y="57" font-family="Inter,Arial,sans-serif" font-size="21" font-weight="600" fill="#0284c7">Connect</text>
+</svg>
