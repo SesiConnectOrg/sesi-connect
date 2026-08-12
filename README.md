@@ -99,23 +99,23 @@ A interface foi planejada para possuir um design **moderno, intuitivo e responsi
 
 ### Tela de Login
 
-![Tela de Login](docs/imagens/login.png)
+![Tela de Login](docs/img/login.png)
 
 ### Dashboard
 
-![Dashboard](docs/img/dashboard)
+![Dashboard](docs/img/dashboard.png)
 
 ### Mural de Aulas
 
-![Mural de Aulas](docs/imagens/aulas.png)
+![Mural de Aulas](docs/img/aulas.png)
 
 ### Mural de Atividades
 
-![Mural de Atividades](docs/imagens/atividades.png)
+![Mural de Atividades](docs/img/atividades.png)
 
 ### Inteligência Artificial
 
-![IA Educacional](docs/imagens/ia.png)
+![IA Educacional](docs/img/ia.png)
 
 > As imagens serão atualizadas conforme o desenvolvimento do projeto.
 
@@ -124,7 +124,7 @@ A interface foi planejada para possuir um design **moderno, intuitivo e responsi
 ## 🔗 Link do Projeto
 
 **Repositório:**
-[GitHub — SESI Connect](https://github.com/davirlima7-debug/sesi-connect)
+[GitHub SESI Connect](https://github.com/davirlima7-debug/sesi-connect)
 
 **Demonstração:**
 [Acessar Sesi Connect](#)
