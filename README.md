@@ -55,6 +55,10 @@ Desenvolver uma plataforma educacional capaz de centralizar materiais pedagógic
 
 ---
 
+## 🎨 Identidade Visual
+
+A identidade visual do **SESI Connect** foi concebida e desenvolvida por **Jael Feijó**, responsável pela criação da logo, conceito visual e elementos gráficos que representam a identidade da plataforma.
+
 ## 💻 Tecnologias Utilizadas
 
 ### Front-end
@@ -143,7 +147,6 @@ O SESI Connect é desenvolvido por:
 | **Eduardo Lucas**  |
 | **Emmanuel Vitor** |
 | **Gabriel Lima**   |
-| **Jael Feijó**     |
 | **Kauã Riquelme**  |
 | **Manoel Ricardo** |
 | **Nicolas Maciel** |
