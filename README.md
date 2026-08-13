@@ -133,19 +133,22 @@ A interface foi planejada para possuir um design **moderno, intuitivo e responsi
 
 ---
 
-## 👨‍💻 Integrantes
+## 👥 Equipe
 
-| Integrante     |
-| -------------- |
-| Jael Feijó     |
-| Davi Raposo    |
-| Emmanuel Vitor |
-| Kauã Riquelme  |
-| Eduardo Lucas  |
-| Rafael Rocha   |
-| Gabriel Lima   |
-| Manoel Ricardo |
-| Nicolas Maciel |
+O SESI Connect é desenvolvido por:
+
+| Integrante         |
+| ------------------ |
+| **Davi Raposo**    |
+| **Eduardo Lucas**  |
+| **Emmanuel Vitor** |
+| **Gabriel Lima**   |
+| **Jael Feijó**     |
+| **Kauã Riquelme**  |
+| **Manoel Ricardo** |
+| **Nicolas Maciel** |
+| **Rafael Rocha**   |
+
 
 ---
 
