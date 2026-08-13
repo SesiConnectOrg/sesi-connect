@@ -57,7 +57,7 @@ Desenvolver uma plataforma educacional capaz de centralizar materiais pedagógic
 
 ## 🎨 Identidade Visual
 
-A identidade visual do **SESI Connect** foi concebida e desenvolvida por **Jael Feijó**, responsável pela criação da logo, conceito visual e elementos gráficos que representam a identidade da plataforma.
+A identidade visual do **SESI Connect** foi concebida e desenvolvida por [**Jael Feijó**]([https://instagram.com/usuario](https://www.instagram.com/jaelfeijo_/)), responsável pela criação da logo, conceito visual e elementos gráficos que representam a identidade da plataforma.
 
 ## 💻 Tecnologias Utilizadas
 
