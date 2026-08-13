@@ -133,7 +133,7 @@ A interface foi planejada para possuir um design **moderno, intuitivo e responsi
 
 ---
 
-## 👥 Equipe
+## 👥 Integrantes
 
 O SESI Connect é desenvolvido por:
 
