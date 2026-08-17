@@ -1,0 +1,1119 @@
+<!doctype html>
+
+<html data-theme="light" lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="Ambiente de aula do SESI Connect." name="description" />
+    <meta content="#f8fafc" name="theme-color" />
+    <title>Aula | SESI Connect</title>
+    <link href="../assets/icons/favicon.svg" rel="icon" type="image/svg+xml" />
+    <!-- Font Awesome -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      rel="stylesheet"
+    />
+    <!-- Estilos -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+  <body
+    class="app-layout lesson-page has-mobile-navigation"
+    data-auth-required="true"
+    data-page="lesson"
+    data-page-title="Aula"
+    data-restore-scroll="true"
+  >
+    <!-- Acessibilidade -->
+    <a class="skip-link" href="#main-content"> Ir para o conteúdo principal </a>
+    <!-- =========================
+         CARREGAMENTO
+         ========================= -->
+    <div aria-hidden="true" class="page-loader">
+      <div class="page-loader-content">
+        <div class="page-loader-logo">
+          <i class="fa-solid fa-graduation-cap"></i>
+        </div>
+        <span class="loading-spinner"></span>
+        <p>Carregando aula...</p>
+      </div>
+    </div>
+    <!-- =========================
+         APLICAÇÃO
+         ========================= -->
+    <div class="app-container">
+      <!-- =========================
+             SIDEBAR
+             ========================= -->
+      <aside aria-label="Navegação principal" class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+          <a
+            aria-label="Página inicial do SESI Connect"
+            class="sidebar-logo"
+            data-route="dashboard"
+            href="./dashboard.html"
+          >
+            <span class="sidebar-logo-icon">
+              <i class="fa-solid fa-graduation-cap"></i>
+            </span>
+            <span class="sidebar-logo-text">
+              <strong>SESI</strong>
+              <span>Connect</span>
+            </span>
+          </a>
+          <button
+            aria-controls="sidebar"
+            aria-expanded="false"
+            aria-label="Fechar menu"
+            class="sidebar-close-button mobile-only"
+            data-sidebar-toggle=""
+            type="button"
+          >
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+        <!-- Usuário -->
+        <div class="sidebar-user">
+          <div
+            aria-hidden="true"
+            class="sidebar-user-avatar"
+            data-user-initials=""
+          >
+            JS
+          </div>
+          <div class="sidebar-user-info">
+            <strong data-user-name=""> Jully Silva </strong>
+            <span data-user-role=""> Estudante </span>
+          </div>
+        </div>
+        <!-- Navegação -->
+        <nav class="sidebar-navigation">
+          <div class="sidebar-navigation-group">
+            <span class="sidebar-section-title"> Principal </span>
+            <a
+              class="sidebar-link"
+              data-route="dashboard"
+              href="./dashboard.html"
+            >
+              <i class="fa-solid fa-chart-pie"></i>
+              <span class="sidebar-link-text"> Visão Geral </span>
+            </a>
+            <a
+              aria-current="page"
+              class="sidebar-link active"
+              data-route="lessons"
+              href="./lessons.html"
+            >
+              <i class="fa-solid fa-book-open"></i>
+              <span class="sidebar-link-text"> Mural de Aulas </span>
+            </a>
+            <a
+              class="sidebar-link"
+              data-route="schedule"
+              href="./schedule.html"
+            >
+              <i class="fa-solid fa-calendar-days"></i>
+              <span class="sidebar-link-text"> Cronograma </span>
+            </a>
+            <a
+              class="sidebar-link"
+              data-route="activities"
+              href="./activities.html"
+            >
+              <i class="fa-solid fa-list-check"></i>
+              <span class="sidebar-link-text"> Atividades </span>
+              <span class="sidebar-link-badge"> 3 </span>
+            </a>
+            <a
+              class="sidebar-link"
+              data-route="materials"
+              href="./materials.html"
+            >
+              <i class="fa-solid fa-folder-open"></i>
+              <span class="sidebar-link-text"> Materiais </span>
+            </a>
+            <a
+              class="sidebar-link sidebar-link--highlight"
+              data-route="ai"
+              href="./ai.html"
+            >
+              <i class="fa-solid fa-robot"></i>
+              <span class="sidebar-link-text"> Assistente IA </span>
+            </a>
+          </div>
+          <div class="sidebar-navigation-group">
+            <span class="sidebar-section-title"> Gestão </span>
+            <a
+              class="sidebar-link"
+              data-roles="admin,coordinator,teacher"
+              data-route="students"
+              href="./students.html"
+            >
+              <i class="fa-solid fa-user-graduate"></i>
+              <span class="sidebar-link-text"> Alunos </span>
+            </a>
+            <a
+              class="sidebar-link"
+              data-roles="admin,coordinator"
+              data-route="teachers"
+              href="./teachers.html"
+            >
+              <i class="fa-solid fa-chalkboard-user"></i>
+              <span class="sidebar-link-text"> Professores </span>
+            </a>
+          </div>
+          <div class="sidebar-navigation-group">
+            <span class="sidebar-section-title"> Conta </span>
+            <a class="sidebar-link" data-route="profile" href="./profile.html">
+              <i class="fa-solid fa-user"></i>
+              <span class="sidebar-link-text"> Meu Perfil </span>
+            </a>
+            <a
+              class="sidebar-link"
+              data-route="settings"
+              href="./settings.html"
+            >
+              <i class="fa-solid fa-gear"></i>
+              <span class="sidebar-link-text"> Configurações </span>
+            </a>
+          </div>
+        </nav>
+        <!-- Rodapé da sidebar -->
+        <div class="sidebar-footer">
+          <button
+            class="sidebar-link sidebar-logout-button"
+            data-logout=""
+            type="button"
+          >
+            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+            <span class="sidebar-link-text"> Sair </span>
+          </button>
+          <span class="sidebar-version"> SESI Connect v1.0 </span>
+        </div>
+      </aside>
+      <!-- Overlay mobile -->
+      <button
+        aria-label="Fechar menu lateral"
+        class="sidebar-overlay"
+        id="sidebar-overlay"
+        tabindex="-1"
+        type="button"
+      ></button>
+      <!-- =========================
+             ÁREA PRINCIPAL
+             ========================= -->
+      <div class="main-content">
+        <!-- =========================
+                 CABEÇALHO SUPERIOR
+                 ========================= -->
+        <header class="top-header">
+          <div class="top-header-left">
+            <button
+              aria-controls="sidebar"
+              aria-expanded="false"
+              aria-label="Abrir menu"
+              class="mobile-menu-button"
+              data-sidebar-toggle=""
+              type="button"
+            >
+              <i class="fa-solid fa-bars"></i>
+            </button>
+            <div class="top-header-heading">
+              <span class="top-header-title"> SESI Connect </span>
+              <span class="top-header-page"> Ambiente de aula </span>
+            </div>
+          </div>
+          <!-- Pesquisa global -->
+          <div class="top-header-search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input
+              aria-label="Pesquisar no sistema"
+              placeholder="Pesquisar no SESI Connect"
+              type="search"
+            />
+            <kbd>Ctrl K</kbd>
+          </div>
+          <!-- Ações -->
+          <div class="top-header-actions">
+            <!-- Tema -->
+            <button
+              aria-label="Alterar tema"
+              aria-pressed="false"
+              class="top-header-action theme-toggle-button"
+              data-theme-toggle=""
+              type="button"
+            >
+              <i class="fa-solid fa-moon" data-theme-icon=""></i>
+            </button>
+            <!-- Notificações -->
+            <div class="notification-wrapper">
+              <button
+                aria-controls="notification-panel"
+                aria-expanded="false"
+                aria-label="Notificações"
+                class="top-header-action notification-button"
+                data-notification-toggle=""
+                type="button"
+              >
+                <i class="fa-regular fa-bell"></i>
+                <span class="notification-badge" data-notification-count="">
+                  0
+                </span>
+              </button>
+              <section
+                aria-hidden="true"
+                class="notification-panel"
+                data-notification-panel=""
+                data-use-hidden=""
+                hidden=""
+                id="notification-panel"
+              >
+                <div class="notification-panel-header">
+                  <div>
+                    <h2>Notificações</h2>
+                    <p>Acompanhe suas novidades.</p>
+                  </div>
+                  <button
+                    class="notification-header-action"
+                    data-notifications-read-all=""
+                    type="button"
+                  >
+                    Marcar como lidas
+                  </button>
+                </div>
+                <div class="notification-list" data-notification-list="">
+                  <!-- Gerado pelo notifications.js -->
+                </div>
+                <div class="notification-panel-footer">
+                  <button
+                    class="notification-clear-button"
+                    data-notifications-clear=""
+                    type="button"
+                  >
+                    <i class="fa-solid fa-trash"></i>
+                    Limpar notificações
+                  </button>
+                </div>
+              </section>
+            </div>
+            <!-- Perfil -->
+            <a
+              aria-label="Abrir meu perfil"
+              class="top-header-user"
+              data-route="profile"
+              href="./profile.html"
+            >
+              <div
+                aria-hidden="true"
+                class="top-header-user-avatar"
+                data-user-initials=""
+              >
+                JS
+              </div>
+              <div class="top-header-user-info">
+                <strong data-user-name=""> Jully Silva </strong>
+                <span data-user-role=""> Estudante </span>
+              </div>
+              <i class="fa-solid fa-chevron-right"></i>
+            </a>
+          </div>
+        </header>
+        <!-- =========================
+                 CONTEÚDO
+                 ========================= -->
+        <main
+          class="page-content lesson-content"
+          data-lesson-page=""
+          id="main-content"
+        >
+          <!-- Navegação superior -->
+          <div class="lesson-breadcrumb">
+            <button
+              class="lesson-back-button"
+              data-lesson-back=""
+              type="button"
+            >
+              <i class="fa-solid fa-arrow-left"></i>
+              <span>Voltar para o mural</span>
+            </button>
+            <nav aria-label="Navegação estrutural" class="breadcrumb">
+              <a data-route="dashboard" href="./dashboard.html"> Início </a>
+              <i class="fa-solid fa-chevron-right"></i>
+              <a data-route="lessons" href="./lessons.html"> Aulas </a>
+              <i class="fa-solid fa-chevron-right"></i>
+              <span data-lesson-title=""> Funções do segundo grau </span>
+            </nav>
+          </div>
+          <!-- =========================
+                     CABEÇALHO DA AULA
+                     ========================= -->
+          <section class="lesson-header-card">
+            <div class="lesson-header-main">
+              <div class="lesson-header-badges">
+                <span
+                  class="subject-badge subject-badge--math"
+                  data-lesson-subject=""
+                >
+                  Matemática
+                </span>
+                <span
+                  class="status-badge status-badge--warning"
+                  data-lesson-completion-status=""
+                >
+                  Não iniciada
+                </span>
+              </div>
+              <h1 data-lesson-title="">Funções do segundo grau</h1>
+              <p data-lesson-description="">
+                Nesta aula, você aprenderá os principais conceitos das funções
+                do segundo grau, a representação gráfica da parábola e as formas
+                de encontrar suas raízes.
+              </p>
+              <div class="lesson-header-meta">
+                <span>
+                  <i class="fa-solid fa-chalkboard-user"></i>
+                  <span data-lesson-teacher=""> Prof. Ricardo Alves </span>
+                </span>
+                <span>
+                  <i class="fa-regular fa-calendar"></i>
+                  <span data-lesson-info="date"> 06/08/2026, 14:00 </span>
+                </span>
+                <span>
+                  <i class="fa-solid fa-location-dot"></i>
+                  <span data-lesson-info="room"> Sala 12 </span>
+                </span>
+                <span>
+                  <i class="fa-regular fa-clock"></i>
+                  <span data-lesson-info="duration"> 45:00 </span>
+                </span>
+              </div>
+            </div>
+            <div class="lesson-header-actions">
+              <button
+                class="btn btn-outline"
+                data-lesson-ai-help=""
+                type="button"
+              >
+                <i class="fa-solid fa-robot"></i>
+                Pedir ajuda à IA
+              </button>
+              <button class="btn btn-primary" data-lesson-play="" type="button">
+                <i class="fa-solid fa-play"></i>
+                <span data-lesson-play-text=""> Iniciar aula </span>
+              </button>
+            </div>
+          </section>
+          <!-- =========================
+                     MENSAGEM DE CONCLUSÃO
+                     ========================= -->
+          <section
+            class="lesson-completed-message"
+            data-lesson-completed-message=""
+            hidden=""
+          >
+            <div class="lesson-completed-icon">
+              <i class="fa-solid fa-trophy"></i>
+            </div>
+            <div>
+              <h2>Parabéns! Aula concluída.</h2>
+              <p>
+                Você concluiu esta aula em
+                <strong data-lesson-completed-at=""> — </strong>.
+              </p>
+            </div>
+            <button
+              class="btn btn-outline"
+              data-lesson-reopen=""
+              hidden=""
+              type="button"
+            >
+              <i class="fa-solid fa-rotate-left"></i>
+              Reabrir aula
+            </button>
+          </section>
+          <!-- =========================
+                     GRADE PRINCIPAL
+                     ========================= -->
+          <div class="lesson-layout">
+            <!-- Coluna principal -->
+            <div class="lesson-main-column">
+              <!-- Player -->
+              <section class="content-card lesson-player-card">
+                <div
+                  class="lesson-video-container"
+                  data-lesson-video=""
+                  id="lesson-video"
+                >
+                  <!-- Gerado pelo lesson.js -->
+                </div>
+                <div class="lesson-player-controls">
+                  <div class="lesson-player-progress-info">
+                    <div>
+                      <span>Progresso da aula</span>
+                      <strong data-lesson-progress-value=""> 0% </strong>
+                    </div>
+                    <div class="lesson-player-times">
+                      <span>
+                        Assistido:
+                        <strong data-lesson-watched-time=""> 0:00 </strong>
+                      </span>
+                      <span>
+                        Restante:
+                        <strong data-lesson-remaining-time=""> 45:00 </strong>
+                      </span>
+                    </div>
+                  </div>
+                  <div
+                    aria-label="Progresso da aula"
+                    aria-valuemax="100"
+                    aria-valuemin="0"
+                    aria-valuenow="0"
+                    class="progress lesson-main-progress"
+                    role="progressbar"
+                  >
+                    <span
+                      class="progress-bar"
+                      data-lesson-progress-bar=""
+                      style="width: 0%"
+                    ></span>
+                  </div>
+                  <div class="lesson-player-actions">
+                    <button
+                      class="btn btn-primary"
+                      data-lesson-play=""
+                      type="button"
+                    >
+                      <i class="fa-solid fa-play"></i>
+                      <span data-lesson-play-text=""> Iniciar aula </span>
+                    </button>
+                    <button
+                      class="btn btn-outline"
+                      data-lesson-complete=""
+                      type="button"
+                    >
+                      <i class="fa-solid fa-circle-check"></i>
+                      <span data-complete-text=""> Marcar como concluída </span>
+                    </button>
+                  </div>
+                </div>
+              </section>
+              <!-- =========================
+                             ABAS
+                             ========================= -->
+              <section class="content-card lesson-details-card">
+                <div
+                  aria-label="Conteúdo da aula"
+                  class="lesson-tabs"
+                  role="tablist"
+                >
+                  <button
+                    aria-controls="lesson-panel-overview"
+                    aria-selected="true"
+                    class="lesson-tab active"
+                    data-lesson-tab="overview"
+                    role="tab"
+                    type="button"
+                  >
+                    <i class="fa-solid fa-align-left"></i>
+                    Visão geral
+                  </button>
+                  <button
+                    aria-controls="lesson-panel-content"
+                    aria-selected="false"
+                    class="lesson-tab"
+                    data-lesson-tab="content"
+                    role="tab"
+                    type="button"
+                  >
+                    <i class="fa-solid fa-list-ol"></i>
+                    Conteúdo
+                  </button>
+                  <button
+                    aria-controls="lesson-panel-materials"
+                    aria-selected="false"
+                    class="lesson-tab"
+                    data-lesson-tab="materials"
+                    role="tab"
+                    type="button"
+                  >
+                    <i class="fa-solid fa-folder-open"></i>
+                    Materiais
+                  </button>
+                  <button
+                    aria-controls="lesson-panel-notes"
+                    aria-selected="false"
+                    class="lesson-tab"
+                    data-lesson-tab="notes"
+                    role="tab"
+                    type="button"
+                  >
+                    <i class="fa-solid fa-note-sticky"></i>
+                    Anotações
+                  </button>
+                </div>
+                <!-- Visão geral -->
+                <div
+                  class="lesson-panel active"
+                  data-lesson-panel="overview"
+                  id="lesson-panel-overview"
+                  role="tabpanel"
+                >
+                  <section class="lesson-overview-section">
+                    <div class="lesson-section-heading">
+                      <span class="lesson-section-icon">
+                        <i class="fa-solid fa-bullseye"></i>
+                      </span>
+                      <div>
+                        <h2>Objetivos da aula</h2>
+                        <p>
+                          O que você deverá compreender ao concluir este
+                          conteúdo.
+                        </p>
+                      </div>
+                    </div>
+                    <ol
+                      class="lesson-objectives-list"
+                      data-lesson-objectives=""
+                    >
+                      <!-- Gerado pelo lesson.js -->
+                    </ol>
+                  </section>
+                  <section class="lesson-overview-section">
+                    <div class="lesson-section-heading">
+                      <span class="lesson-section-icon">
+                        <i class="fa-solid fa-circle-info"></i>
+                      </span>
+                      <div>
+                        <h2>Sobre esta aula</h2>
+                        <p>
+                          Informações gerais sobre o conteúdo e sua aplicação.
+                        </p>
+                      </div>
+                    </div>
+                    <div class="lesson-about-content">
+                      <p data-lesson-info="description">
+                        Nesta aula, você aprenderá os principais conceitos das
+                        funções do segundo grau.
+                      </p>
+                      <div class="lesson-about-grid">
+                        <article>
+                          <span>
+                            <i class="fa-solid fa-book"></i>
+                            Disciplina
+                          </span>
+                          <strong data-lesson-info="subject">
+                            Matemática
+                          </strong>
+                        </article>
+                        <article>
+                          <span>
+                            <i class="fa-solid fa-chalkboard-user"></i>
+                            Professor
+                          </span>
+                          <strong data-lesson-info="teacher">
+                            Prof. Ricardo Alves
+                          </strong>
+                        </article>
+                        <article>
+                          <span>
+                            <i class="fa-regular fa-clock"></i>
+                            Duração
+                          </span>
+                          <strong data-lesson-info="duration"> 45:00 </strong>
+                        </article>
+                        <article>
+                          <span>
+                            <i class="fa-solid fa-location-dot"></i>
+                            Local
+                          </span>
+                          <strong data-lesson-info="room"> Sala 12 </strong>
+                        </article>
+                      </div>
+                    </div>
+                  </section>
+                </div>
+                <!-- Conteúdo -->
+                <div
+                  class="lesson-panel"
+                  data-lesson-panel="content"
+                  hidden=""
+                  id="lesson-panel-content"
+                  role="tabpanel"
+                >
+                  <div class="lesson-section-heading">
+                    <span class="lesson-section-icon">
+                      <i class="fa-solid fa-list-check"></i>
+                    </span>
+                    <div>
+                      <h2>Conteúdo da aula</h2>
+                      <p>Acompanhe os tópicos e o progresso de cada etapa.</p>
+                    </div>
+                  </div>
+                  <div class="lesson-topics-list" data-lesson-topics="">
+                    <!-- Gerado pelo lesson.js -->
+                  </div>
+                </div>
+                <!-- Materiais -->
+                <div
+                  class="lesson-panel"
+                  data-lesson-panel="materials"
+                  hidden=""
+                  id="lesson-panel-materials"
+                  role="tabpanel"
+                >
+                  <div class="lesson-section-heading">
+                    <span class="lesson-section-icon">
+                      <i class="fa-solid fa-folder-open"></i>
+                    </span>
+                    <div>
+                      <h2>Materiais da aula</h2>
+                      <p>
+                        Arquivos e recursos para acompanhar e revisar o
+                        conteúdo.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="lesson-resources-list" data-lesson-resources="">
+                    <!-- Gerado pelo lesson.js -->
+                  </div>
+                </div>
+                <!-- Anotações -->
+                <div
+                  class="lesson-panel"
+                  data-lesson-panel="notes"
+                  hidden=""
+                  id="lesson-panel-notes"
+                  role="tabpanel"
+                >
+                  <div class="lesson-notes-header">
+                    <div class="lesson-section-heading">
+                      <span class="lesson-section-icon">
+                        <i class="fa-solid fa-note-sticky"></i>
+                      </span>
+                      <div>
+                        <h2>Minhas anotações</h2>
+                        <p>
+                          Registre dúvidas, conceitos e observações importantes.
+                        </p>
+                      </div>
+                    </div>
+                    <span
+                      class="lesson-notes-status"
+                      data-lesson-notes-status=""
+                    >
+                      Nenhuma anotação
+                    </span>
+                  </div>
+                  <div class="lesson-notes-editor">
+                    <label class="sr-only" for="lesson-notes">
+                      Anotações da aula
+                    </label>
+                    <textarea
+                      class="lesson-notes-textarea"
+                      data-lesson-notes=""
+                      id="lesson-notes"
+                      name="lesson-notes"
+                      placeholder="Escreva suas anotações sobre a aula..."
+                      rows="14"
+                    ></textarea>
+                    <div class="lesson-notes-footer">
+                      <div class="lesson-notes-count">
+                        <span>
+                          <strong data-lesson-notes-words=""> 0 </strong>
+                          palavras
+                        </span>
+                        <span>
+                          <strong data-lesson-notes-characters=""> 0 </strong>
+                          caracteres
+                        </span>
+                      </div>
+                      <div class="lesson-notes-actions">
+                        <button
+                          class="btn btn-ghost"
+                          data-lesson-notes-clear=""
+                          type="button"
+                        >
+                          <i class="fa-solid fa-trash"></i>
+                          Limpar
+                        </button>
+                        <button
+                          class="btn btn-outline"
+                          data-lesson-notes-download=""
+                          type="button"
+                        >
+                          <i class="fa-solid fa-download"></i>
+                          Baixar
+                        </button>
+                        <button
+                          class="btn btn-primary"
+                          data-lesson-notes-save=""
+                          type="button"
+                        >
+                          <i class="fa-solid fa-floppy-disk"></i>
+                          Salvar
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+            <!-- =========================
+                         COLUNA LATERAL
+                         ========================= -->
+            <aside class="lesson-side-column">
+              <!-- Progresso -->
+              <section class="content-card lesson-progress-card">
+                <div class="lesson-progress-circle">
+                  <svg aria-hidden="true" viewbox="0 0 120 120">
+                    <circle
+                      class="lesson-progress-circle-background"
+                      cx="60"
+                      cy="60"
+                      r="52"
+                    ></circle>
+                    <circle
+                      class="lesson-progress-circle-value"
+                      cx="60"
+                      cy="60"
+                      data-lesson-progress-circle=""
+                      r="52"
+                    ></circle>
+                  </svg>
+                  <div class="lesson-progress-circle-content">
+                    <strong data-lesson-progress-value=""> 0% </strong>
+                    <span>concluído</span>
+                  </div>
+                </div>
+                <h2>Seu progresso</h2>
+                <p>Continue avançando para concluir esta aula.</p>
+                <div class="lesson-progress-details">
+                  <div>
+                    <span>Tempo assistido</span>
+                    <strong data-lesson-watched-time=""> 0:00 </strong>
+                  </div>
+                  <div>
+                    <span>Duração total</span>
+                    <strong data-lesson-total-time=""> 45:00 </strong>
+                  </div>
+                  <div>
+                    <span>Tempo restante</span>
+                    <strong data-lesson-remaining-time=""> 45:00 </strong>
+                  </div>
+                </div>
+                <button
+                  class="btn btn-primary btn-full"
+                  data-lesson-play=""
+                  type="button"
+                >
+                  <i class="fa-solid fa-play"></i>
+                  <span data-lesson-play-text=""> Iniciar aula </span>
+                </button>
+              </section>
+              <!-- Professor -->
+              <section class="content-card lesson-teacher-card">
+                <div class="card-header">
+                  <div>
+                    <span class="card-eyebrow"> Responsável </span>
+                    <h2>Professor</h2>
+                  </div>
+                </div>
+                <div class="lesson-teacher-profile">
+                  <div class="lesson-teacher-avatar">RA</div>
+                  <div>
+                    <strong data-lesson-teacher="">
+                      Prof. Ricardo Alves
+                    </strong>
+                    <span data-lesson-subject=""> Matemática </span>
+                  </div>
+                </div>
+                <button
+                  class="btn btn-outline btn-full"
+                  data-lesson-teacher-message=""
+                  type="button"
+                >
+                  <i class="fa-solid fa-message"></i>
+                  Enviar mensagem
+                </button>
+              </section>
+              <!-- Dica -->
+              <section class="content-card lesson-tip-card">
+                <div class="lesson-tip-icon">
+                  <i class="fa-solid fa-lightbulb"></i>
+                </div>
+                <div>
+                  <span class="card-eyebrow"> Dica de estudo </span>
+                  <h2>Faça anotações</h2>
+                  <p>
+                    Registrar conceitos com suas próprias palavras ajuda a
+                    memorizar e identificar dúvidas.
+                  </p>
+                </div>
+                <button
+                  class="btn btn-outline btn-full"
+                  data-lesson-tab-shortcut="notes"
+                  onclick="
+                    window.SESILesson?.setActiveTab('notes');
+                    document.querySelector('[data-lesson-notes]')?.focus();
+                  "
+                  type="button"
+                >
+                  <i class="fa-solid fa-note-sticky"></i>
+                  Abrir anotações
+                </button>
+              </section>
+              <!-- IA -->
+              <section class="content-card lesson-ai-card">
+                <div class="lesson-ai-icon">
+                  <i class="fa-solid fa-robot"></i>
+                </div>
+                <div>
+                  <span class="card-eyebrow"> Assistente educacional </span>
+                  <h2>Ficou com dúvida?</h2>
+                  <p>
+                    Peça uma explicação mais simples ou gere perguntas para
+                    revisar esta aula.
+                  </p>
+                </div>
+                <button
+                  class="btn btn-primary btn-full"
+                  data-lesson-ai-help=""
+                  type="button"
+                >
+                  <i class="fa-solid fa-sparkles"></i>
+                  Pedir ajuda à IA
+                </button>
+              </section>
+            </aside>
+          </div>
+          <!-- =========================
+                     NAVEGAÇÃO ENTRE AULAS
+                     ========================= -->
+          <section class="lesson-navigation">
+            <a
+              class="lesson-navigation-card lesson-navigation-card--previous"
+              data-open-lesson="lesson-math-progression"
+              href="./lesson.html"
+            >
+              <span class="lesson-navigation-direction">
+                <i class="fa-solid fa-arrow-left"></i>
+                Aula anterior
+              </span>
+              <strong> Progressão aritmética </strong>
+              <span> Matemática </span>
+            </a>
+            <a
+              class="lesson-navigation-card lesson-navigation-card--next"
+              data-open-lesson="lesson-math-inequalities"
+              href="./lesson.html"
+            >
+              <span class="lesson-navigation-direction">
+                Próxima aula
+                <i class="fa-solid fa-arrow-right"></i>
+              </span>
+              <strong> Inequações do segundo grau </strong>
+              <span> Matemática </span>
+            </a>
+          </section>
+        </main>
+        <!-- =========================
+                 RODAPÉ
+                 ========================= -->
+        <footer class="app-footer">
+          <p>
+            ©
+            <span data-current-year="">2026</span>
+            SESI Connect.
+          </p>
+          <div class="app-footer-links">
+            <a href="#">Privacidade</a>
+            <a href="#">Suporte</a>
+            <a href="#">Acessibilidade</a>
+          </div>
+        </footer>
+      </div>
+    </div>
+    <!-- =========================
+         NAVEGAÇÃO MOBILE
+         ========================= -->
+    <nav aria-label="Navegação mobile" class="mobile-bottom-navigation">
+      <a
+        class="mobile-bottom-link"
+        data-route="dashboard"
+        href="./dashboard.html"
+      >
+        <i class="fa-solid fa-house"></i>
+        <span>Início</span>
+      </a>
+      <a
+        aria-current="page"
+        class="mobile-bottom-link active"
+        data-route="lessons"
+        href="./lessons.html"
+      >
+        <i class="fa-solid fa-book-open"></i>
+        <span>Aulas</span>
+      </a>
+      <a
+        class="mobile-bottom-link"
+        data-route="schedule"
+        href="./schedule.html"
+      >
+        <i class="fa-solid fa-calendar-days"></i>
+        <span>Agenda</span>
+      </a>
+      <a
+        class="mobile-bottom-link"
+        data-route="activities"
+        href="./activities.html"
+      >
+        <i class="fa-solid fa-list-check"></i>
+        <span>Atividades</span>
+      </a>
+      <a class="mobile-bottom-link" data-route="profile" href="./profile.html">
+        <i class="fa-solid fa-user"></i>
+        <span>Perfil</span>
+      </a>
+    </nav>
+    <!-- =========================
+         TOASTS
+         ========================= -->
+    <div
+      aria-atomic="true"
+      aria-live="polite"
+      class="toast-container"
+      id="toast-container"
+    ></div>
+    <!-- =========================
+         SEM JAVASCRIPT
+         ========================= -->
+    <noscript>
+      <div class="noscript-warning">
+        <strong>JavaScript desativado</strong>
+        <p>
+          Ative o JavaScript para utilizar todos os recursos do ambiente de
+          aula.
+        </p>
+      </div>
+    </noscript>
+    <!-- =========================
+         JAVASCRIPT
+         ========================= -->
+    <!-- Atualização visual do círculo de progresso -->
+    <!-- JavaScript revisado -->
+    <script src="../js/auth.js" type="module"></script>
+    <script src="../js/app.js" type="module"></script>
+    <script src="../js/modules/lesson.js" type="module"></script>
+    <script type="module">
+      const progressCircle = document.querySelector(
+        "[data-lesson-progress-circle]",
+      );
+
+      const progressElements = document.querySelectorAll(
+        "[data-lesson-progress-value]",
+      );
+
+      const circumference = 2 * Math.PI * 52;
+
+      if (progressCircle) {
+        progressCircle.style.strokeDasharray = String(circumference);
+
+        progressCircle.style.strokeDashoffset = String(circumference);
+      }
+
+      function updateProgressCircle() {
+        if (!progressCircle) {
+          return;
+        }
+
+        const progressText =
+          [...progressElements]
+            .map((element) => Number.parseFloat(element.textContent))
+            .find(Number.isFinite) || 0;
+
+        const percentage = Math.min(100, Math.max(0, progressText));
+
+        const offset = circumference - (percentage / 100) * circumference;
+
+        progressCircle.style.strokeDashoffset = String(offset);
+      }
+
+      const progressObserver = new MutationObserver(updateProgressCircle);
+
+      progressElements.forEach((element) => {
+        progressObserver.observe(element, {
+          childList: true,
+          characterData: true,
+          subtree: true,
+        });
+      });
+
+      updateProgressCircle();
+
+      document.querySelectorAll("[data-open-lesson]").forEach((link) => {
+        link.addEventListener("click", () => {
+          const isPrevious =
+            link.dataset.openLesson === "lesson-math-progression";
+
+          const selectedLesson = isPrevious
+            ? {
+                id: "lesson-math-progression",
+
+                title: "Progressão aritmética",
+
+                subject: "Matemática",
+
+                subjectSlug: "math",
+
+                teacher: "Prof. Ricardo Alves",
+
+                room: "Sala 12",
+
+                duration: 2700,
+
+                description:
+                  "Aprenda os elementos de uma progressão aritmética, sua razão e as fórmulas para calcular termos e somas.",
+              }
+            : {
+                id: "lesson-math-inequalities",
+
+                title: "Inequações do segundo grau",
+
+                subject: "Matemática",
+
+                subjectSlug: "math",
+
+                teacher: "Prof. Ricardo Alves",
+
+                room: "Sala 12",
+
+                duration: 2700,
+
+                description:
+                  "Estude a resolução e a análise dos sinais das inequações do segundo grau.",
+              };
+
+          try {
+            sessionStorage.setItem(
+              "sesi-connect-selected-lesson",
+              JSON.stringify(selectedLesson),
+            );
+          } catch (error) {
+            console.warn(
+              "[SESI Connect] Não foi possível selecionar a aula.",
+              error,
+            );
+          }
+        });
+      });
+
+      document
+        .querySelector("[data-lesson-teacher-message]")
+        ?.addEventListener("click", () => {
+          window.SESIConnect?.showToast(
+            "Conversa com o professor iniciada.",
+            "success",
+          );
+        });
+    </script>
+  </body>
+</html>
