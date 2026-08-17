@@ -163,16 +163,6 @@ Utilização de modelos de IA para auxiliar na criação de questões, listas de
 
 A identidade visual do **SESI Connect** foi concebida e desenvolvida por **[Jael Feijó](https://www.instagram.com/jaelfeijo_/)**, responsável pela criação da logo, conceito visual e elementos gráficos utilizados na plataforma.
 
-A identidade visual foi desenvolvida com foco nos conceitos de **educação, tecnologia, confiança e desenvolvimento**.
-
-| Cor    | Conceito                                    |
-| ------ | ------------------------------------------- |
-| Azul   | Confiança, tecnologia e educação            |
-| Verde  | Crescimento, desenvolvimento e aprendizagem |
-| Branco | Simplicidade, organização e clareza         |
-
-A interface foi projetada para apresentar um design moderno, intuitivo e responsivo, proporcionando uma experiência adequada em diferentes dispositivos.
-
 ---
 
 # Interface
