@@ -1,7 +1,7 @@
 # <div align="center">
-
-<img src="docs/brand/logo.png" alt="SESI Connect" width="180">
-
+<div align="center">
+<img src="docs/brand/logo.png" alt="SESI Connect" width="360">
+</div>
 ### SESI Connect
 
 **Plataforma educacional para alunos e professores da rede SESI**
@@ -283,7 +283,7 @@ Este projeto foi desenvolvido para fins acadêmicos.
 
 <div align="center">
 
-<img src="docs/brand/logo.png" alt="SESI Connect" width="120">
+<img src="docs/brand/logo.png" alt="SESI Connect" width="256">
 
 <br>
 
