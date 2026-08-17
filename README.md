@@ -1,32 +1,74 @@
-# SESI Connect
+# <div align="center">
 
-> Plataforma educacional para centralização de materiais pedagógicos, atividades, aulas e recursos de Inteligência Artificial para alunos e professores da rede SESI.
+<img src="docs/brand/logo.png" alt="SESI Connect" width="180">
+
+### SESI Connect
+
+**Plataforma educacional para alunos e professores da rede SESI**
+
+<br>
+
+[![Status](https://img.shields.io/badge/status-em%20desenvolvimento-2ea44f?style=for-the-badge)](#status-do-projeto)
+[![License](https://img.shields.io/badge/license-acadêmico-007ec6?style=for-the-badge)](#licença)
+[![GitHub](https://img.shields.io/badge/GitHub-repositório-181717?style=for-the-badge\&logo=github)](https://github.com/davirlima7-debug/sesi-connect)
+
+</div>
 
 ---
 
 ## Sobre o Projeto
 
-### Problema
+O **SESI Connect** é uma plataforma educacional desenvolvida para centralizar materiais pedagógicos, atividades, aulas e recursos de Inteligência Artificial em um único ambiente digital.
 
-Durante a rotina escolar, alunos podem enfrentar dificuldades para acessar e organizar os materiais pedagógicos disponibilizados pelos professores após as aulas. A ausência de um ambiente centralizado pode dificultar a revisão dos conteúdos, o acompanhamento das atividades e a preparação para avaliações.
+A proposta é facilitar o acesso dos alunos aos conteúdos disponibilizados pelos professores, permitindo que materiais, atividades, cronogramas, apostilas, questões e gravações de aulas estejam organizados em uma única plataforma.
 
-Além disso, parte dos alunos não consegue participar de aulões preparatórios para o ENEM realizados aos finais de semana devido a cursos, atividades extracurriculares, compromissos pessoais ou outros fatores. Como consequência, esses estudantes podem perder conteúdos relevantes para sua preparação.
+O sistema também contará com recursos de **Inteligência Artificial** destinados ao suporte dos professores na criação de questões, listas de exercícios e sugestões de atividades educacionais.
 
-### Solução
+---
 
-O **SESI Connect** é uma plataforma educacional desenvolvida para centralizar, em um único ambiente, os principais recursos utilizados durante o processo de aprendizagem.
+## Problema
 
-A plataforma permite o acesso organizado a aulas, atividades, cronogramas, materiais pedagógicos, apostilas, questões, listas de exercícios e gravações de aulas e aulões.
+Durante a rotina escolar, alunos podem enfrentar dificuldades para acessar e organizar os materiais pedagógicos disponibilizados pelos professores após as aulas.
 
-O sistema também contará com recursos de **Inteligência Artificial**, destinados principalmente ao suporte aos professores na elaboração de questões, listas de exercícios e sugestões de atividades com base nos conteúdos trabalhados em sala de aula.
+A ausência de um ambiente centralizado pode dificultar:
 
-Dessa forma, o SESI Connect busca proporcionar um ambiente mais organizado, acessível e eficiente para o acompanhamento das atividades escolares e para o estudo dos alunos.
+* A revisão dos conteúdos;
+* O acompanhamento das atividades;
+* A organização dos materiais;
+* A preparação para avaliações;
+* O acesso a conteúdos apresentados em aulas e aulões.
+
+Além disso, alguns alunos não conseguem participar de aulões preparatórios para o ENEM realizados aos finais de semana devido a cursos, atividades extracurriculares, compromissos pessoais ou outros fatores.
+
+Como consequência, esses estudantes podem perder conteúdos importantes para sua preparação.
+
+---
+
+## Solução
+
+O **SESI Connect** centraliza os principais recursos utilizados durante o processo de aprendizagem em um único ambiente digital.
+
+A plataforma permite o acesso organizado a:
+
+* Aulas;
+* Atividades;
+* Cronogramas;
+* Materiais pedagógicos;
+* Apostilas;
+* Questões;
+* Listas de exercícios;
+* Gravações de aulas;
+* Aulões preparatórios.
+
+Além disso, recursos de **Inteligência Artificial** poderão auxiliar professores na elaboração de conteúdos e atividades educacionais.
 
 ---
 
 ## Objetivo
 
-Desenvolver uma plataforma educacional capaz de centralizar materiais pedagógicos, atividades, aulas e recursos complementares em um único ambiente digital, facilitando o acesso ao conteúdo por alunos e professores e contribuindo para uma experiência de aprendizagem mais organizada e eficiente.
+Desenvolver uma plataforma educacional capaz de centralizar materiais pedagógicos, atividades, aulas e recursos complementares em um único ambiente digital.
+
+O objetivo é facilitar o acesso ao conteúdo por alunos e professores, contribuindo para uma experiência de aprendizagem mais organizada, acessível e eficiente.
 
 ---
 
@@ -34,8 +76,8 @@ Desenvolver uma plataforma educacional capaz de centralizar materiais pedagógic
 
 O SESI Connect é destinado principalmente a:
 
-* Alunos da rede SESI;
-* Professores da rede SESI.
+* **Alunos da rede SESI**
+* **Professores da rede SESI**
 
 ---
 
@@ -63,71 +105,130 @@ O SESI Connect é destinado principalmente a:
 
 * Auxílio na criação de questões;
 * Geração de listas de exercícios;
-* Sugestões de atividades educacionais;
+* Sugestões de atividades;
 * Suporte aos professores na elaboração de conteúdos.
 
 ---
 
-## Tecnologias Utilizadas
+## Tecnologias
+
+<div align="center">
+
+<img src="https://skillicons.dev/icons?i=html,css,js,php,mysql,git,github,vscode" alt="Tecnologias utilizadas">
+
+</div>
 
 ### Front-end
 
-* **HTML5** — estrutura e organização das páginas;
-* **CSS3** — estilização, responsividade e identidade visual;
-* **JavaScript** — interatividade e funcionalidades da interface.
+**HTML5**
+Estrutura e organização das páginas.
+
+**CSS3**
+Estilização, responsividade e identidade visual.
+
+**JavaScript**
+Interatividade e funcionalidades da interface.
 
 ### Back-end
 
-* **PHP** — desenvolvimento da lógica de negócio e comunicação com o banco de dados.
+**PHP**
+Desenvolvimento da lógica de negócio e comunicação com o banco de dados.
 
 ### Banco de Dados
 
-* **MySQL** — armazenamento, organização e gerenciamento dos dados da plataforma.
+**MySQL**
+Armazenamento, organização e gerenciamento dos dados da plataforma.
 
 ### Inteligência Artificial
 
-* **API de Inteligência Artificial generativa** — utilização de modelos de IA para auxiliar na criação de questões, listas de exercícios e atividades educacionais.
+**API de Inteligência Artificial generativa**
+Utilização de modelos de IA para auxiliar na criação de questões, listas de exercícios e atividades educacionais.
 
-### Ferramentas de Desenvolvimento
+### Ferramentas
 
-* **Git** — controle de versão;
-* **GitHub** — hospedagem do código-fonte e gerenciamento do projeto;
-* **Visual Studio Code** — ambiente de desenvolvimento.
+**Git** — controle de versão.
+
+**GitHub** — hospedagem do código-fonte e gerenciamento do projeto.
+
+**Visual Studio Code** — ambiente de desenvolvimento.
 
 ---
 
 ## Identidade Visual
 
-A identidade visual do **SESI Connect** foi concebida e desenvolvida por **[Jael Feijó](https://www.instagram.com/jaelfeijo_/)**, responsável pela criação da logo, conceito visual e demais elementos gráficos utilizados na plataforma.
+<div align="center">
+
+<img src="docs/brand/logo.png" alt="Logo SESI Connect" width="220">
+
+</div>
+
+A identidade visual do **SESI Connect** foi concebida e desenvolvida por **[Jael Feijó](https://www.instagram.com/jaelfeijo_/)**, responsável pela criação da logo, conceito visual e elementos gráficos utilizados na plataforma.
+
+A identidade visual foi desenvolvida com foco nos conceitos de **educação, tecnologia, confiança e desenvolvimento**.
+
+| Cor    | Conceito                                    |
+| ------ | ------------------------------------------- |
+| Azul   | Confiança, tecnologia e educação            |
+| Verde  | Crescimento, desenvolvimento e aprendizagem |
+| Branco | Simplicidade, organização e clareza         |
+
+A interface foi projetada para apresentar um design moderno, intuitivo e responsivo, proporcionando uma experiência adequada em diferentes dispositivos.
 
 ---
 
-## Imagens do Projeto
+# Interface
 
-### Tela de Login
+## Tela de Login
 
-![Tela de Login](docs/img/login.png)
+<div align="center">
 
-### Dashboard
+<img src="docs/img/login.png" alt="Tela de Login" width="800">
 
-![Dashboard](docs/img/dashboard.png)
+</div>
 
-### Mural de Aulas
+---
 
-![Mural de Aulas](docs/img/aulas.png)
+## Dashboard
 
-### Mural de Atividades
+<div align="center">
 
-![Mural de Atividades](docs/img/atividades.png)
+<img src="docs/img/dashboard.png" alt="Dashboard" width="800">
 
-### Inteligência Artificial
+</div>
 
-![IA Educacional](docs/img/ia.png)
+---
+
+## Mural de Aulas
+
+<div align="center">
+
+<img src="docs/img/aulas.png" alt="Mural de Aulas" width="800">
+
+</div>
+
+---
+
+## Mural de Atividades
+
+<div align="center">
+
+<img src="docs/img/atividades.png" alt="Mural de Atividades" width="800">
+
+</div>
+
+---
+
+## Inteligência Artificial
+
+<div align="center">
+
+<img src="docs/img/ia.png" alt="IA Educacional" width="800">
+
+</div>
 
 > As imagens serão atualizadas conforme o desenvolvimento e evolução da plataforma.
 
 ---
-
 
 ## Equipe
 
@@ -148,11 +249,27 @@ O **SESI Connect** é desenvolvido por:
 
 **Jael Feijó** — responsável pela criação da identidade visual, logo e elementos gráficos do projeto.
 
+[Instagram — Jael Feijó](https://www.instagram.com/jaelfeijo_/)
+
+---
+
+## Repositório
+
+<div align="center">
+
+[![GitHub](https://img.shields.io/badge/Acessar%20Repositório-GitHub-181717?style=for-the-badge\&logo=github)](https://github.com/davirlima7-debug/sesi-connect)
+
+</div>
+
 ---
 
 ## Status do Projeto
 
+<div align="center">
+
 **Em desenvolvimento**
+
+</div>
 
 O SESI Connect está sendo desenvolvido como um projeto acadêmico. As funcionalidades estão sendo implementadas e aprimoradas progressivamente ao longo do desenvolvimento.
 
@@ -161,3 +278,17 @@ O SESI Connect está sendo desenvolvido como um projeto acadêmico. As funcional
 ## Licença
 
 Este projeto foi desenvolvido para fins acadêmicos.
+
+---
+
+<div align="center">
+
+<img src="docs/brand/logo.png" alt="SESI Connect" width="120">
+
+<br>
+
+**SESI Connect**
+
+*Tecnologia, educação e aprendizagem em um único ambiente.*
+
+</div>
