@@ -4,100 +4,105 @@
 
 ---
 
-## 📚 Sobre o Projeto
+## Sobre o Projeto
 
 ### Problema
 
-Durante a rotina escolar, identificamos que muitos alunos enfrentam dificuldades para acessar os materiais pedagógicos disponibilizados pelos professores após as aulas. Essa dificuldade pode prejudicar a revisão dos conteúdos e a preparação para avaliações e provas.
+Durante a rotina escolar, alunos podem enfrentar dificuldades para acessar e organizar os materiais pedagógicos disponibilizados pelos professores após as aulas. A ausência de um ambiente centralizado pode dificultar a revisão dos conteúdos, o acompanhamento das atividades e a preparação para avaliações.
 
-Também observamos que nem todos os alunos conseguem participar dos aulões preparatórios para o ENEM realizados aos finais de semana. Compromissos como cursos, atividades extracurriculares ou até mesmo a necessidade de descanso podem impedir a participação nesses encontros, fazendo com que alguns estudantes percam conteúdos importantes.
+Além disso, parte dos alunos não consegue participar de aulões preparatórios para o ENEM realizados aos finais de semana devido a cursos, atividades extracurriculares, compromissos pessoais ou outros fatores. Como consequência, esses estudantes podem perder conteúdos relevantes para sua preparação.
 
 ### Solução
 
-O **SESI Connect** foi desenvolvido como uma plataforma educacional que centraliza materiais pedagógicos e recursos de aprendizagem em um único ambiente digital.
+O **SESI Connect** é uma plataforma educacional desenvolvida para centralizar, em um único ambiente, os principais recursos utilizados durante o processo de aprendizagem.
 
-A plataforma permite que alunos e professores tenham acesso organizado a aulas, atividades, cronogramas, apostilas, questões, listas de exercícios e gravações de aulões.
+A plataforma permite o acesso organizado a aulas, atividades, cronogramas, materiais pedagógicos, apostilas, questões, listas de exercícios e gravações de aulas e aulões.
 
-Além disso, o sistema contará com recursos de **Inteligência Artificial**, que poderão auxiliar os professores na criação de questões, listas de exercícios e sugestões de atividades com base nos conteúdos trabalhados em aula.
+O sistema também contará com recursos de **Inteligência Artificial**, destinados principalmente ao suporte aos professores na elaboração de questões, listas de exercícios e sugestões de atividades com base nos conteúdos trabalhados em sala de aula.
 
-Dessa forma, o SESI Connect busca tornar o acesso ao conteúdo mais **organizado, acessível e eficiente**, permitindo que os alunos estudem no momento mais conveniente para eles.
-
----
-
-## 🎯 Objetivo
-
-Desenvolver uma plataforma educacional capaz de centralizar materiais pedagógicos, atividades e gravações de aulas em um único ambiente, facilitando o acesso ao conteúdo por alunos e professores e contribuindo para uma aprendizagem mais organizada e eficiente.
+Dessa forma, o SESI Connect busca proporcionar um ambiente mais organizado, acessível e eficiente para o acompanhamento das atividades escolares e para o estudo dos alunos.
 
 ---
 
-## 👥 Público-Alvo
+## Objetivo
+
+Desenvolver uma plataforma educacional capaz de centralizar materiais pedagógicos, atividades, aulas e recursos complementares em um único ambiente digital, facilitando o acesso ao conteúdo por alunos e professores e contribuindo para uma experiência de aprendizagem mais organizada e eficiente.
+
+---
+
+## Público-Alvo
+
+O SESI Connect é destinado principalmente a:
 
 * Alunos da rede SESI;
 * Professores da rede SESI.
 
 ---
 
-## ⚙️ Funcionalidades
+## Funcionalidades
 
-* 🔐 Login e autenticação de usuários;
-* 👨‍🎓 Cadastro de alunos;
-* 👨‍🏫 Cadastro de professores;
-* 📚 Mural de aulas;
-* 📝 Mural de atividades;
-* 📅 Cronograma de aulas;
-* 📂 Repositório de materiais pedagógicos;
-* 🎥 Acesso a gravações de aulas e aulões;
-* 📖 Apostilas e materiais de apoio;
-* ❓ Questões e listas de exercícios;
-* 🤖 Inteligência Artificial para auxílio aos professores;
-* 👤 Gerenciamento de perfil;
-* ⚙️ Configurações da plataforma.
+### Autenticação e Usuários
 
----
+* Sistema de login e autenticação;
+* Cadastro de alunos;
+* Cadastro de professores;
+* Gerenciamento de perfil;
+* Configurações da plataforma.
 
-## 💻 Tecnologias Utilizadas
+### Recursos Educacionais
 
-### Front-end
-
-* HTML5 — estrutura das páginas;
-* CSS3 — estilização e identidade visual;
-* JavaScript — interatividade e funcionalidades da interface.
-
-### Back-end
-
-* PHP — desenvolvimento da lógica do sistema e comunicação com o banco de dados.
-
-### Banco de Dados
-
-* MySQL — armazenamento e gerenciamento dos dados da plataforma.
+* Mural de aulas;
+* Mural de atividades;
+* Cronograma de aulas;
+* Repositório de materiais pedagógicos;
+* Apostilas e materiais de apoio;
+* Questões e listas de exercícios;
+* Gravações de aulas e aulões.
 
 ### Inteligência Artificial
 
-* API de Inteligência Artificial generativa — utilização de modelos de IA para auxiliar na criação de questões, listas de exercícios e atividades educacionais.
-
-### Ferramentas
-
-* Git — controle de versão;
-* GitHub — hospedagem do código e gerenciamento do projeto;
-* Visual Studio Code — ambiente de desenvolvimento.
+* Auxílio na criação de questões;
+* Geração de listas de exercícios;
+* Sugestões de atividades educacionais;
+* Suporte aos professores na elaboração de conteúdos.
 
 ---
 
-## 🎨 Identidade Visual
+## Tecnologias Utilizadas
 
-A identidade visual do **SESI Connect** foi concebida e desenvolvida por [**Jael Feijó**](https://www.instagram.com/jaelfeijo_/), responsável pela criação da logo, conceito visual e elementos gráficos que representam a identidade da plataforma.
+### Front-end
 
-A identidade visual do SESI Connect utiliza uma combinação de cores voltada para educação e tecnologia:
+* **HTML5** — estrutura e organização das páginas;
+* **CSS3** — estilização, responsividade e identidade visual;
+* **JavaScript** — interatividade e funcionalidades da interface.
 
-* 🔵 **Azul:** confiança, tecnologia e educação;
-* 🟢 **Verde:** crescimento, desenvolvimento e aprendizagem;
-* ⚪ **Branco:** simplicidade, organização e facilidade de leitura.
+### Back-end
 
-A interface foi planejada para possuir um design **moderno, intuitivo e responsivo**, proporcionando uma boa experiência em computadores e dispositivos móveis.
+* **PHP** — desenvolvimento da lógica de negócio e comunicação com o banco de dados.
+
+### Banco de Dados
+
+* **MySQL** — armazenamento, organização e gerenciamento dos dados da plataforma.
+
+### Inteligência Artificial
+
+* **API de Inteligência Artificial generativa** — utilização de modelos de IA para auxiliar na criação de questões, listas de exercícios e atividades educacionais.
+
+### Ferramentas de Desenvolvimento
+
+* **Git** — controle de versão;
+* **GitHub** — hospedagem do código-fonte e gerenciamento do projeto;
+* **Visual Studio Code** — ambiente de desenvolvimento.
 
 ---
 
-## 🖼️ Imagens do Projeto
+## Identidade Visual
+
+A identidade visual do **SESI Connect** foi concebida e desenvolvida por **[Jael Feijó](https://www.instagram.com/jaelfeijo_/)**, responsável pela criação da logo, conceito visual e demais elementos gráficos utilizados na plataforma.
+
+---
+
+## Imagens do Projeto
 
 ### Tela de Login
 
@@ -119,48 +124,40 @@ A interface foi planejada para possuir um design **moderno, intuitivo e responsi
 
 ![IA Educacional](docs/img/ia.png)
 
-> As imagens serão atualizadas conforme o desenvolvimento do projeto.
+> As imagens serão atualizadas conforme o desenvolvimento e evolução da plataforma.
 
 ---
 
-## 🔗 Link do Projeto
 
-**Repositório:**
-[GitHub SESI Connect](https://github.com/davirlima7-debug/sesi-connect)
+## Equipe
 
-**Demonstração:**
-[Acessar Sesi Connect](#)
+O **SESI Connect** é desenvolvido por:
 
-> Os links serão adicionados após a publicação do projeto.
+| Integrante     |
+| -------------- |
+| Davi Raposo    |
+| Eduardo Lucas  |
+| Emmanuel Vitor |
+| Gabriel Lima   |
+| Kauã Riquelme  |
+| Manoel Ricardo |
+| Nicolas Maciel |
+| Rafael Rocha   |
 
----
+### Identidade Visual
 
-## 👥 Integrantes
-
-O SESI Connect é desenvolvido por:
-
-| Integrante         |
-| ------------------ |
-| **Davi Raposo**    |
-| **Eduardo Lucas**  |
-| **Emmanuel Vitor** |
-| **Gabriel Lima**   |
-| **Kauã Riquelme**  |
-| **Manoel Ricardo** |
-| **Nicolas Maciel** |
-| **Rafael Rocha**   |
-
+**Jael Feijó** — responsável pela criação da identidade visual, logo e elementos gráficos do projeto.
 
 ---
 
-## 📌 Status do Projeto
+## Status do Projeto
 
-🚧 **Em desenvolvimento**
+**Em desenvolvimento**
 
-O SESI Connect está sendo desenvolvido como um projeto acadêmico, com funcionalidades sendo implementadas gradualmente.
+O SESI Connect está sendo desenvolvido como um projeto acadêmico. As funcionalidades estão sendo implementadas e aprimoradas progressivamente ao longo do desenvolvimento.
 
 ---
 
-## 📄 Licença
+## Licença
 
 Este projeto foi desenvolvido para fins acadêmicos.
