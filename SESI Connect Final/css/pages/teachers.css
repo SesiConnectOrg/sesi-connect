@@ -1,0 +1,859 @@
+/* =========================================================
+   SESI CONNECT
+   Página de cadastro e gerenciamento de professores
+   ========================================================= */
+
+/* =========================
+   ESTRUTURA DA PÁGINA
+   ========================= */
+
+.teachers-page {
+  min-height: 100vh;
+  background-color: var(--bg-main);
+}
+
+.teachers-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-5);
+}
+
+/* =========================
+   CABEÇALHO
+   ========================= */
+
+.teachers-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-5);
+}
+
+.teachers-header-content {
+  min-width: 0;
+}
+
+.teachers-header h1 {
+  margin-bottom: var(--spacing-1);
+
+  color: var(--text-color);
+
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-weight: 700;
+}
+
+.teachers-header p {
+  color: var(--text-muted);
+
+  font-size: 0.875rem;
+}
+
+.teachers-header-actions {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: var(--spacing-3);
+}
+
+/* =========================
+   RESUMO DOS PROFESSORES
+   ========================= */
+
+.teachers-summary {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--spacing-4);
+}
+
+.teachers-summary-card {
+  display: flex;
+  min-height: 110px;
+  padding: var(--spacing-5);
+  align-items: center;
+  gap: var(--spacing-4);
+
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-lg);
+
+  background-color: var(--bg-card);
+  box-shadow: var(--shadow-sm);
+
+  transition:
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.teachers-summary-card:hover {
+  border-color: var(--primary);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.teachers-summary-icon {
+  display: inline-flex;
+  width: 48px;
+  height: 48px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  border-radius: var(--border-radius-md);
+
+  background-color: var(--primary-light);
+  color: var(--primary);
+
+  font-size: 1.125rem;
+}
+
+.teachers-summary-icon--success {
+  background-color: var(--success-light);
+  color: var(--success);
+}
+
+.teachers-summary-icon--warning {
+  background-color: var(--warning-light);
+  color: var(--warning-hover);
+}
+
+.teachers-summary-icon--purple {
+  background-color: var(--purple-light);
+  color: var(--purple);
+}
+
+.teachers-summary-content {
+  min-width: 0;
+}
+
+.teachers-summary-value {
+  display: block;
+
+  margin-bottom: 2px;
+
+  color: var(--text-color);
+
+  font-size: 1.375rem;
+  font-weight: 700;
+}
+
+.teachers-summary-label {
+  color: var(--text-muted);
+
+  font-size: 0.75rem;
+}
+
+/* =========================
+   FILTROS
+   ========================= */
+
+.teachers-filters {
+  display: flex;
+  padding: var(--spacing-4);
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-4);
+
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-lg);
+
+  background-color: var(--bg-card);
+  box-shadow: var(--shadow-sm);
+}
+
+.teachers-search {
+  position: relative;
+
+  width: 100%;
+  max-width: 420px;
+}
+
+.teachers-search i {
+  position: absolute;
+  top: 50%;
+  left: 14px;
+
+  color: var(--text-muted);
+
+  transform: translateY(-50%);
+}
+
+.teachers-search .form-control {
+  padding-left: 42px;
+}
+
+.teachers-filter-actions {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: var(--spacing-3);
+}
+
+.teachers-filter-select {
+  width: 190px;
+}
+
+/* =========================
+   CONTÊINER DA TABELA
+   ========================= */
+
+.teachers-table-card {
+  overflow: hidden;
+
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-lg);
+
+  background-color: var(--bg-card);
+  box-shadow: var(--shadow-sm);
+}
+
+.teachers-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.teachers-table {
+  width: 100%;
+  min-width: 900px;
+
+  border-collapse: collapse;
+}
+
+.teachers-table th,
+.teachers-table td {
+  padding: 15px 16px;
+
+  border-bottom: 1px solid var(--border-color);
+
+  text-align: left;
+  vertical-align: middle;
+}
+
+.teachers-table th {
+  background-color: var(--bg-main);
+  color: var(--text-secondary);
+
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.teachers-table td {
+  color: var(--text-secondary);
+
+  font-size: 0.875rem;
+}
+
+.teachers-table tbody tr {
+  transition: background-color var(--transition-fast);
+}
+
+.teachers-table tbody tr:hover {
+  background-color: var(--primary-soft);
+}
+
+.teachers-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+/* =========================
+   PERFIL DO PROFESSOR
+   ========================= */
+
+.teacher-table-profile {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+}
+
+.teacher-table-avatar {
+  display: inline-flex;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background-color: var(--primary-light);
+  color: var(--primary);
+
+  font-size: 0.8125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.teacher-table-image {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+
+  border: 2px solid var(--border-color);
+  border-radius: 50%;
+
+  object-fit: cover;
+}
+
+.teacher-table-info {
+  min-width: 0;
+}
+
+.teacher-table-name {
+  display: block;
+  overflow: hidden;
+
+  max-width: 220px;
+
+  color: var(--text-color);
+
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.teacher-table-registration {
+  display: block;
+
+  margin-top: 2px;
+
+  color: var(--text-muted);
+
+  font-size: 0.6875rem;
+}
+
+/* =========================
+   DISCIPLINA
+   ========================= */
+
+.teacher-subject {
+  display: inline-flex;
+  min-height: 28px;
+  padding: 5px 10px;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: var(--border-radius-round);
+
+  background-color: var(--primary-light);
+  color: var(--primary-hover);
+
+  font-size: 0.6875rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.teacher-subject--portuguese {
+  background-color: var(--info-light);
+  color: var(--info-hover);
+}
+
+.teacher-subject--physics {
+  background-color: var(--success-light);
+  color: var(--success-hover);
+}
+
+.teacher-subject--history {
+  background-color: var(--warning-light);
+  color: #92400e;
+}
+
+.teacher-subject--chemistry {
+  background-color: var(--pink-light);
+  color: var(--pink);
+}
+
+.teacher-subject--biology {
+  background-color: var(--teal-light);
+  color: var(--teal);
+}
+
+.teacher-subject--geography {
+  background-color: var(--orange-light);
+  color: var(--orange);
+}
+
+.teacher-subject--physical-education {
+  background-color: var(--purple-light);
+  color: var(--purple);
+}
+
+/* =========================
+   CONTATO
+   ========================= */
+
+.teacher-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.teacher-email {
+  overflow: hidden;
+
+  max-width: 240px;
+
+  color: var(--text-secondary);
+
+  font-size: 0.8125rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.teacher-phone {
+  color: var(--text-muted);
+
+  font-size: 0.75rem;
+}
+
+/* =========================
+   CARGA HORÁRIA
+   ========================= */
+
+.teacher-workload {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.teacher-workload-value {
+  color: var(--text-color);
+
+  font-size: 0.8125rem;
+  font-weight: 600;
+}
+
+.teacher-workload-label {
+  color: var(--text-muted);
+
+  font-size: 0.6875rem;
+}
+
+/* =========================
+   STATUS
+   ========================= */
+
+.teacher-status {
+  display: inline-flex;
+  min-height: 26px;
+  padding: 5px 10px;
+  align-items: center;
+  gap: var(--spacing-1);
+
+  border-radius: var(--border-radius-round);
+
+  font-size: 0.6875rem;
+  font-weight: 700;
+}
+
+.teacher-status::before {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  content: "";
+}
+
+.teacher-status--active {
+  background-color: var(--success-light);
+  color: var(--success-hover);
+}
+
+.teacher-status--active::before {
+  background-color: var(--success);
+}
+
+.teacher-status--inactive {
+  background-color: var(--danger-light);
+  color: var(--danger-hover);
+}
+
+.teacher-status--inactive::before {
+  background-color: var(--danger);
+}
+
+.teacher-status--vacation {
+  background-color: var(--warning-light);
+  color: #92400e;
+}
+
+.teacher-status--vacation::before {
+  background-color: var(--warning);
+}
+
+/* =========================
+   AÇÕES DA TABELA
+   ========================= */
+
+.teacher-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--spacing-1);
+}
+
+.teacher-action-button {
+  display: inline-flex;
+  width: 34px;
+  height: 34px;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: var(--border-radius-sm);
+
+  color: var(--text-muted);
+
+  transition:
+    background-color var(--transition-fast),
+    color var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.teacher-action-button:hover {
+  transform: translateY(-1px);
+}
+
+.teacher-action-button--view:hover {
+  background-color: var(--info-light);
+  color: var(--info);
+}
+
+.teacher-action-button--edit:hover {
+  background-color: var(--primary-light);
+  color: var(--primary);
+}
+
+.teacher-action-button--delete:hover {
+  background-color: var(--danger-light);
+  color: var(--danger);
+}
+
+/* =========================
+   RODAPÉ DA TABELA
+   ========================= */
+
+.teachers-table-footer {
+  display: flex;
+  padding: var(--spacing-4);
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-4);
+
+  border-top: 1px solid var(--border-color);
+
+  background-color: var(--bg-card);
+}
+
+.teachers-results {
+  color: var(--text-muted);
+
+  font-size: 0.75rem;
+}
+
+/* =========================
+   FORMULÁRIO DE PROFESSOR
+   ========================= */
+
+.teacher-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-5);
+}
+
+.teacher-form-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+}
+
+.teacher-form-section + .teacher-form-section {
+  padding-top: var(--spacing-5);
+
+  border-top: 1px solid var(--border-color);
+}
+
+.teacher-form-title {
+  color: var(--text-color);
+
+  font-size: 0.9375rem;
+  font-weight: 700;
+}
+
+.teacher-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--spacing-4);
+}
+
+.teacher-form-grid--3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.teacher-form-full {
+  grid-column: 1 / -1;
+}
+
+/* =========================
+   FOTO DO PROFESSOR
+   ========================= */
+
+.teacher-photo-upload {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-5);
+}
+
+.teacher-photo-preview {
+  display: inline-flex;
+  width: 86px;
+  height: 86px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  overflow: hidden;
+
+  border: 2px dashed var(--border-color-dark);
+  border-radius: 50%;
+
+  background-color: var(--bg-main);
+  color: var(--text-light);
+
+  font-size: 1.5rem;
+}
+
+.teacher-photo-preview img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+.teacher-photo-actions {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: var(--spacing-2);
+}
+
+.teacher-photo-help {
+  color: var(--text-muted);
+
+  font-size: 0.6875rem;
+}
+
+/* =========================
+   DISCIPLINAS SELECIONADAS
+   ========================= */
+
+.teacher-subjects-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-2);
+}
+
+.teacher-subject-tag {
+  display: inline-flex;
+  min-height: 30px;
+  padding: 6px 10px;
+  align-items: center;
+  gap: var(--spacing-2);
+
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-round);
+
+  background-color: var(--bg-main);
+  color: var(--text-secondary);
+
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.teacher-subject-tag button {
+  display: inline-flex;
+  width: 18px;
+  height: 18px;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  color: var(--text-muted);
+
+  transition:
+    background-color var(--transition-fast),
+    color var(--transition-fast);
+}
+
+.teacher-subject-tag button:hover {
+  background-color: var(--danger-light);
+  color: var(--danger);
+}
+
+/* =========================
+   ESTADO VAZIO
+   ========================= */
+
+.teachers-empty {
+  display: flex;
+  min-height: 320px;
+  padding: var(--spacing-8);
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: var(--spacing-3);
+
+  text-align: center;
+}
+
+.teachers-empty-icon {
+  display: inline-flex;
+  width: 70px;
+  height: 70px;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background-color: var(--primary-light);
+  color: var(--primary);
+
+  font-size: 1.75rem;
+}
+
+.teachers-empty h3 {
+  font-size: 1.0625rem;
+}
+
+.teachers-empty p {
+  max-width: 400px;
+
+  color: var(--text-muted);
+
+  font-size: 0.8125rem;
+}
+
+/* =========================
+   TEMA ESCURO
+   ========================= */
+
+html[data-theme="dark"] .teachers-table tbody tr:hover {
+  background-color: rgba(56, 189, 248, 0.08);
+}
+
+html[data-theme="dark"] .teacher-table-avatar,
+html[data-theme="dark"] .teacher-subject {
+  background-color: rgba(56, 189, 248, 0.12);
+  color: var(--primary);
+}
+
+html[data-theme="dark"] .teacher-status--active {
+  background-color: rgba(16, 185, 129, 0.12);
+  color: #6ee7b7;
+}
+
+html[data-theme="dark"] .teacher-status--inactive {
+  background-color: rgba(239, 68, 68, 0.12);
+  color: #fca5a5;
+}
+
+html[data-theme="dark"] .teacher-status--vacation {
+  background-color: rgba(245, 158, 11, 0.12);
+  color: #fde68a;
+}
+
+/* =========================
+   RESPONSIVIDADE
+   ========================= */
+
+@media (max-width: 1100px) {
+  .teachers-summary {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  .teachers-filters {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .teachers-search {
+    max-width: none;
+  }
+
+  .teachers-filter-actions {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .teachers-filter-select {
+    flex: 1;
+    width: auto;
+    min-width: 180px;
+  }
+}
+
+@media (max-width: 768px) {
+  .teachers-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .teachers-header-actions {
+    width: 100%;
+  }
+
+  .teachers-header-actions .btn,
+  .teachers-header-actions .btn-primary {
+    width: 100%;
+  }
+
+  .teacher-form-grid,
+  .teacher-form-grid--3 {
+    grid-template-columns: 1fr;
+  }
+
+  .teachers-table-footer {
+    align-items: center;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 600px) {
+  .teachers-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .teachers-filter-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .teachers-filter-select {
+    width: 100%;
+  }
+
+  .teacher-photo-upload {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .teachers-summary-card,
+  .teachers-filters {
+    padding: var(--spacing-4);
+  }
+
+  .teachers-summary-card {
+    min-height: 96px;
+  }
+
+  .teachers-summary-icon {
+    width: 44px;
+    height: 44px;
+  }
+}

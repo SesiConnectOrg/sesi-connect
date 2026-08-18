@@ -1,0 +1,573 @@
+<!doctype html>
+
+<html data-theme="light" lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="Painel principal do SESI Connect." name="description" />
+    <meta content="#f8fafc" name="theme-color" />
+    <title>Assistente IA | SESI Connect</title>
+    <link href="../assets/icons/favicon.svg" rel="icon" type="image/svg+xml" />
+    <!-- Font Awesome -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      rel="stylesheet"
+    />
+    <!-- Estilos do projeto -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+  <body
+    class="app-layout ai-page has-mobile-navigation"
+    data-app-name="SESI Connect"
+    data-auth-required="true"
+    data-page="ai"
+    data-page-title="Assistente IA"
+    data-restore-scroll="true"
+  >
+    <!-- Acessibilidade -->
+    <a class="skip-link" href="#main-content"> Ir para o conteúdo principal </a>
+    <!-- =========================
+         CARREGAMENTO
+         ========================= -->
+    <div aria-hidden="true" class="page-loader">
+      <div class="page-loader-content">
+        <div class="page-loader-logo">
+          <i class="fa-solid fa-graduation-cap"></i>
+        </div>
+        <span class="loading-spinner"></span>
+        <p>Carregando SESI Connect...</p>
+      </div>
+    </div>
+    <!-- =========================
+         ESTRUTURA PRINCIPAL
+         ========================= -->
+    <div class="app-container">
+      <!-- =========================
+             SIDEBAR
+             ========================= -->
+      <aside aria-label="Navegação principal" class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+          <a
+            aria-label="Página inicial do SESI Connect"
+            class="sidebar-logo"
+            data-route="dashboard"
+            href="./dashboard.html"
+          >
+            <span class="sidebar-logo-icon">
+              <i class="fa-solid fa-graduation-cap"></i>
+            </span>
+            <span class="sidebar-logo-text">
+              <strong>SESI</strong>
+              <span>Connect</span>
+            </span>
+          </a>
+          <button
+            aria-controls="sidebar"
+            aria-expanded="false"
+            aria-label="Fechar menu"
+            class="sidebar-close-button mobile-only"
+            data-sidebar-toggle=""
+            type="button"
+          >
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+        <!-- Perfil -->
+        <div class="sidebar-user">
+          <div
+            aria-hidden="true"
+            class="sidebar-user-avatar"
+            data-user-initials=""
+          >
+            JS
+          </div>
+          <div class="sidebar-user-info">
+            <strong data-user-name=""> Jully Silva </strong>
+            <span data-user-role=""> Estudante </span>
+          </div>
+        </div>
+        <!-- Menu -->
+        <nav class="sidebar-navigation">
+          <div class="sidebar-navigation-group" data-navigation-group="">
+            <span class="sidebar-section-title"> Principal </span>
+            <a
+              aria-current="page"
+              class="sidebar-link active"
+              data-route="dashboard"
+              href="./dashboard.html"
+            >
+              <i class="fa-solid fa-chart-pie"></i>
+              <span class="sidebar-link-text"> Visão Geral </span>
+            </a>
+            <a class="sidebar-link" data-route="lessons" href="./lessons.html">
+              <i class="fa-solid fa-book-open"></i>
+              <span class="sidebar-link-text"> Mural de Aulas </span>
+            </a>
+            <a
+              class="sidebar-link"
+              data-route="schedule"
+              href="./schedule.html"
+            >
+              <i class="fa-solid fa-calendar-days"></i>
+              <span class="sidebar-link-text"> Cronograma </span>
+            </a>
+            <a
+              class="sidebar-link"
+              data-route="activities"
+              href="./activities.html"
+            >
+              <i class="fa-solid fa-list-check"></i>
+              <span class="sidebar-link-text"> Atividades </span>
+              <span class="sidebar-link-badge" data-dashboard-activity-count="">
+                0
+              </span>
+            </a>
+            <a
+              class="sidebar-link"
+              data-route="materials"
+              href="./materials.html"
+            >
+              <i class="fa-solid fa-folder-open"></i>
+              <span class="sidebar-link-text"> Materiais </span>
+            </a>
+            <a
+              class="sidebar-link sidebar-link--highlight"
+              data-route="ai"
+              href="./ai.html"
+            >
+              <i class="fa-solid fa-robot"></i>
+              <span class="sidebar-link-text"> Assistente IA </span>
+            </a>
+          </div>
+          <div class="sidebar-navigation-group" data-navigation-group="">
+            <span class="sidebar-section-title"> Gestão </span>
+            <a
+              class="sidebar-link"
+              data-roles="admin,coordinator,teacher"
+              data-route="students"
+              href="./students.html"
+            >
+              <i class="fa-solid fa-user-graduate"></i>
+              <span class="sidebar-link-text"> Alunos </span>
+            </a>
+            <a
+              class="sidebar-link"
+              data-roles="admin,coordinator"
+              data-route="teachers"
+              href="./teachers.html"
+            >
+              <i class="fa-solid fa-chalkboard-user"></i>
+              <span class="sidebar-link-text"> Professores </span>
+            </a>
+          </div>
+          <div class="sidebar-navigation-group" data-navigation-group="">
+            <span class="sidebar-section-title"> Conta </span>
+            <a class="sidebar-link" data-route="profile" href="./profile.html">
+              <i class="fa-solid fa-user"></i>
+              <span class="sidebar-link-text"> Meu Perfil </span>
+            </a>
+            <a
+              class="sidebar-link"
+              data-route="settings"
+              href="./settings.html"
+            >
+              <i class="fa-solid fa-gear"></i>
+              <span class="sidebar-link-text"> Configurações </span>
+            </a>
+          </div>
+        </nav>
+        <!-- Rodapé da sidebar -->
+        <div class="sidebar-footer">
+          <button
+            class="sidebar-link sidebar-logout-button logout-button"
+            data-logout=""
+            type="button"
+          >
+            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+            <span class="sidebar-link-text"> Sair </span>
+          </button>
+          <span class="sidebar-version"> SESI Connect v1.0 </span>
+        </div>
+      </aside>
+      <!-- Fundo da sidebar mobile -->
+      <button
+        aria-label="Fechar menu lateral"
+        class="sidebar-overlay"
+        id="sidebar-overlay"
+        tabindex="-1"
+        type="button"
+      ></button>
+      <!-- =========================
+             CONTEÚDO
+             ========================= -->
+      <div class="main-content">
+        <!-- =========================
+                 CABEÇALHO
+                 ========================= -->
+        <header class="top-header">
+          <div class="top-header-left">
+            <button
+              aria-controls="sidebar"
+              aria-expanded="false"
+              aria-label="Abrir menu"
+              class="mobile-menu-button"
+              data-sidebar-toggle=""
+              type="button"
+            >
+              <i class="fa-solid fa-bars"></i>
+            </button>
+            <div class="top-header-heading">
+              <span class="top-header-title"> SESI Connect </span>
+              <span class="top-header-page">Assistente IA</span>
+            </div>
+          </div>
+          <div class="top-header-search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input
+              aria-label="Pesquisar no sistema"
+              placeholder="Pesquisar no SESI Connect"
+              type="search"
+            />
+            <kbd>Ctrl K</kbd>
+          </div>
+          <div class="top-header-actions">
+            <!-- Tema -->
+            <button
+              aria-label="Ativar tema escuro"
+              aria-pressed="false"
+              class="top-header-action theme-toggle-button"
+              data-theme-toggle=""
+              type="button"
+            >
+              <i class="fa-solid fa-moon" data-theme-icon=""></i>
+            </button>
+            <!-- Notificações -->
+            <div class="notification-wrapper">
+              <button
+                aria-controls="notification-panel"
+                aria-expanded="false"
+                aria-label="Notificações"
+                class="top-header-action notification-button"
+                data-notification-toggle=""
+                type="button"
+              >
+                <i class="fa-regular fa-bell"></i>
+                <span
+                  class="notification-badge"
+                  data-notification-count=""
+                  id="notification-count"
+                >
+                  0
+                </span>
+              </button>
+              <!-- Painel de notificações -->
+              <section
+                aria-hidden="true"
+                class="notification-panel"
+                data-notification-panel=""
+                data-use-hidden=""
+                hidden=""
+                id="notification-panel"
+              >
+                <div class="notification-panel-header">
+                  <div>
+                    <h2>Notificações</h2>
+                    <p>Acompanhe suas novidades.</p>
+                  </div>
+                  <button
+                    class="notification-header-action"
+                    data-notifications-read-all=""
+                    type="button"
+                  >
+                    Marcar como lidas
+                  </button>
+                </div>
+                <div
+                  class="notification-list"
+                  data-notification-list=""
+                  id="notification-list"
+                >
+                  <!-- Gerado pelo notifications.js -->
+                </div>
+                <div class="notification-panel-footer">
+                  <button
+                    class="notification-clear-button"
+                    data-notifications-clear=""
+                    type="button"
+                  >
+                    <i class="fa-solid fa-trash"></i>
+                    Limpar notificações
+                  </button>
+                </div>
+              </section>
+            </div>
+            <!-- Perfil -->
+            <a
+              aria-label="Abrir meu perfil"
+              class="top-header-user"
+              data-route="profile"
+              href="./profile.html"
+            >
+              <div
+                aria-hidden="true"
+                class="top-header-user-avatar"
+                data-user-initials=""
+              >
+                JS
+              </div>
+              <div class="top-header-user-info">
+                <strong class="top-header-user-name" data-user-name="">
+                  Jully Silva
+                </strong>
+                <span class="top-header-user-role" data-user-role="">
+                  Estudante
+                </span>
+              </div>
+              <i class="fa-solid fa-chevron-right"></i>
+            </a>
+          </div>
+        </header>
+        <!-- =========================
+                 CONTEÚDO PRINCIPAL
+                 ========================= -->
+        <main class="page-content ai-content" data-ai-page="" id="main-content">
+          <section class="ai-header">
+            <div class="ai-header-content">
+              <span class="page-eyebrow">Assistente educacional</span>
+              <h1>Assistente IA</h1>
+              <p>
+                Use a IA como apoio para compreender conteúdos, revisar matérias
+                e organizar seus estudos.
+              </p>
+            </div>
+            <div class="ai-header-actions">
+              <span class="ai-status"><span>Disponível</span></span>
+              <button class="btn btn-outline" data-ai-new-chat="" type="button">
+                <i class="fa-solid fa-plus"></i> Nova conversa
+              </button>
+            </div>
+          </section>
+          <section class="ai-layout">
+            <aside
+              aria-label="Histórico de conversas"
+              class="ai-sidebar"
+              data-ai-sidebar=""
+            >
+              <button
+                class="btn btn-primary ai-new-chat"
+                data-ai-new-chat=""
+                type="button"
+              >
+                <i class="fa-solid fa-plus"></i> Nova conversa
+              </button>
+              <div class="ai-sidebar-header">
+                <span class="ai-sidebar-title">Histórico</span>
+                <button
+                  aria-label="Limpar histórico"
+                  class="ai-clear-history"
+                  data-ai-clear-history=""
+                  type="button"
+                >
+                  <i class="fa-solid fa-trash"></i>
+                </button>
+              </div>
+              <div
+                class="ai-history-list"
+                data-ai-history=""
+                id="ai-history-list"
+              ></div>
+              <button
+                class="btn btn-ghost mobile-only"
+                data-ai-close-history=""
+                type="button"
+              >
+                <i class="fa-solid fa-xmark"></i> Fechar histórico
+              </button>
+            </aside>
+            <section class="ai-chat">
+              <header class="ai-chat-header">
+                <div class="ai-chat-header-content">
+                  <button
+                    aria-label="Abrir histórico"
+                    class="icon-button mobile-only"
+                    data-ai-history-toggle=""
+                    type="button"
+                  >
+                    <i class="fa-solid fa-bars"></i>
+                  </button>
+                  <span class="ai-assistant-avatar"
+                    ><i class="fa-solid fa-robot"></i
+                  ></span>
+                  <div>
+                    <h2 class="ai-chat-title" data-ai-chat-title="">
+                      Assistente educacional
+                    </h2>
+                    <p class="ai-chat-subtitle" data-ai-chat-subtitle="">
+                      Pronto para ajudar
+                    </p>
+                  </div>
+                </div>
+                <div class="ai-chat-actions">
+                  <span class="status-badge status-badge--success"
+                    ><i class="fa-solid fa-circle"></i> Online</span
+                  >
+                </div>
+              </header>
+              <div
+                aria-live="polite"
+                class="ai-chat-messages"
+                data-ai-messages=""
+                id="ai-chat-messages"
+              ></div>
+              <div class="ai-chat-input-container">
+                <div
+                  class="ai-attachment-preview"
+                  data-ai-attachment-preview=""
+                  data-ai-preview=""
+                >
+                  <span class="ai-attachment-icon"
+                    ><i class="fa-solid fa-file"></i
+                  ></span>
+                  <div class="ai-attachment-info">
+                    <strong class="ai-attachment-name">Arquivo</strong
+                    ><span class="ai-attachment-size"></span>
+                  </div>
+                  <button
+                    aria-label="Remover anexo"
+                    class="ai-attachment-remove"
+                    data-ai-attachment-remove=""
+                    type="button"
+                  >
+                    <i class="fa-solid fa-xmark"></i>
+                  </button>
+                </div>
+                <form class="ai-chat-form" data-ai-form="" id="ai-chat-form">
+                  <button
+                    aria-label="Anexar arquivo"
+                    class="ai-attach-button"
+                    data-ai-attach=""
+                    type="button"
+                  >
+                    <i class="fa-solid fa-paperclip"></i>
+                  </button>
+                  <input
+                    accept=".pdf,.txt,.doc,.docx,.png,.jpg,.jpeg"
+                    class="ai-attachment-input"
+                    data-ai-attachment-input=""
+                    hidden=""
+                    id="ai-attachment-input"
+                    type="file"
+                  />
+                  <label class="sr-only" for="ai-chat-input">Mensagem</label>
+                  <textarea
+                    class="ai-chat-input"
+                    data-ai-input=""
+                    id="ai-chat-input"
+                    maxlength="4000"
+                    placeholder="Digite sua dúvida ou peça uma explicação..."
+                    rows="1"
+                  ></textarea>
+                  <button
+                    aria-label="Enviar mensagem"
+                    class="ai-send-button"
+                    data-ai-send=""
+                    id="ai-send-button"
+                    type="submit"
+                  >
+                    <i class="fa-solid fa-paper-plane"></i>
+                  </button>
+                </form>
+                <div class="ai-input-footer">
+                  <span
+                    >Enter para enviar • Shift + Enter para quebrar linha</span
+                  ><span data-ai-character-count="">0/4000</span>
+                </div>
+                <p class="ai-disclaimer">
+                  A IA pode cometer erros. Confirme informações importantes com
+                  seus professores e materiais escolares.
+                </p>
+              </div>
+            </section>
+          </section>
+        </main>
+        <!-- =========================
+                 RODAPÉ
+                 ========================= -->
+        <footer class="app-footer">
+          <p>
+            ©
+            <span data-current-year="">2026</span>
+            SESI Connect.
+          </p>
+          <div class="app-footer-links">
+            <a href="#">Privacidade</a>
+            <a href="#">Suporte</a>
+            <a href="#">Acessibilidade</a>
+          </div>
+        </footer>
+      </div>
+    </div>
+    <!-- =========================
+         NAVEGAÇÃO MOBILE
+         ========================= -->
+    <nav aria-label="Navegação mobile" class="mobile-bottom-navigation">
+      <a
+        aria-current="page"
+        class="mobile-bottom-link active"
+        data-route="dashboard"
+        href="./dashboard.html"
+      >
+        <i class="fa-solid fa-house"></i>
+        <span>Início</span>
+      </a>
+      <a class="mobile-bottom-link" data-route="lessons" href="./lessons.html">
+        <i class="fa-solid fa-book-open"></i>
+        <span>Aulas</span>
+      </a>
+      <a
+        class="mobile-bottom-link"
+        data-route="activities"
+        href="./activities.html"
+      >
+        <i class="fa-solid fa-list-check"></i>
+        <span>Atividades</span>
+      </a>
+      <a class="mobile-bottom-link" data-route="ai" href="./ai.html">
+        <i class="fa-solid fa-robot"></i>
+        <span>IA</span>
+      </a>
+      <a class="mobile-bottom-link" data-route="profile" href="./profile.html">
+        <i class="fa-solid fa-user"></i>
+        <span>Perfil</span>
+      </a>
+    </nav>
+    <!-- =========================
+         TOASTS
+         ========================= -->
+    <div
+      aria-atomic="true"
+      aria-live="polite"
+      class="toast-container"
+      id="toast-container"
+    ></div>
+    <!-- =========================
+         SEM JAVASCRIPT
+         ========================= -->
+    <noscript>
+      <div class="noscript-warning">
+        <strong>JavaScript desativado</strong>
+        <p>
+          Ative o JavaScript do navegador para utilizar todos os recursos do
+          SESI Connect.
+        </p>
+      </div>
+    </noscript>
+    <!-- =========================
+         JAVASCRIPT
+         ========================= -->
+    <!-- JavaScript revisado -->
+    <script src="../js/auth.js" type="module"></script>
+    <script src="../js/app.js" type="module"></script>
+    <script src="../js/modules/ai.js" type="module"></script>
+  </body>
+</html>

@@ -1,0 +1,1086 @@
+<!doctype html>
+
+<html data-theme="light" lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="Painel principal do SESI Connect." name="description" />
+    <meta content="#f8fafc" name="theme-color" />
+    <title>Configurações | SESI Connect</title>
+    <link href="../assets/icons/favicon.svg" rel="icon" type="image/svg+xml" />
+    <!-- Font Awesome -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      rel="stylesheet"
+    />
+    <!-- Estilos do projeto -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+  <body
+    class="app-layout settings-page has-mobile-navigation"
+    data-app-name="SESI Connect"
+    data-auth-required="true"
+    data-page="settings"
+    data-page-title="Configurações"
+    data-restore-scroll="true"
+  >
+    <!-- Acessibilidade -->
+    <a class="skip-link" href="#main-content"> Ir para o conteúdo principal </a>
+    <!-- =========================
+         CARREGAMENTO
+         ========================= -->
+    <div aria-hidden="true" class="page-loader">
+      <div class="page-loader-content">
+        <div class="page-loader-logo">
+          <i class="fa-solid fa-graduation-cap"></i>
+        </div>
+        <span class="loading-spinner"></span>
+        <p>Carregando SESI Connect...</p>
+      </div>
+    </div>
+    <!-- =========================
+         ESTRUTURA PRINCIPAL
+         ========================= -->
+    <div class="app-container">
+      <!-- =========================
+             SIDEBAR
+             ========================= -->
+      <aside aria-label="Navegação principal" class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+          <a
+            aria-label="Página inicial do SESI Connect"
+            class="sidebar-logo"
+            data-route="dashboard"
+            href="./dashboard.html"
+          >
+            <span class="sidebar-logo-icon">
+              <i class="fa-solid fa-graduation-cap"></i>
+            </span>
+            <span class="sidebar-logo-text">
+              <strong>SESI</strong>
+              <span>Connect</span>
+            </span>
+          </a>
+          <button
+            aria-controls="sidebar"
+            aria-expanded="false"
+            aria-label="Fechar menu"
+            class="sidebar-close-button mobile-only"
+            data-sidebar-toggle=""
+            type="button"
+          >
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+        <!-- Perfil -->
+        <div class="sidebar-user">
+          <div
+            aria-hidden="true"
+            class="sidebar-user-avatar"
+            data-user-initials=""
+          >
+            JS
+          </div>
+          <div class="sidebar-user-info">
+            <strong data-user-name=""> Jully Silva </strong>
+            <span data-user-role=""> Estudante </span>
+          </div>
+        </div>
+        <!-- Menu -->
+        <nav class="sidebar-navigation">
+          <div class="sidebar-navigation-group" data-navigation-group="">
+            <span class="sidebar-section-title"> Principal </span>
+            <a
+              aria-current="page"
+              class="sidebar-link active"
+              data-route="dashboard"
+              href="./dashboard.html"
+            >
+              <i class="fa-solid fa-chart-pie"></i>
+              <span class="sidebar-link-text"> Visão Geral </span>
+            </a>
+            <a class="sidebar-link" data-route="lessons" href="./lessons.html">
+              <i class="fa-solid fa-book-open"></i>
+              <span class="sidebar-link-text"> Mural de Aulas </span>
+            </a>
+            <a
+              class="sidebar-link"
+              data-route="schedule"
+              href="./schedule.html"
+            >
+              <i class="fa-solid fa-calendar-days"></i>
+              <span class="sidebar-link-text"> Cronograma </span>
+            </a>
+            <a
+              class="sidebar-link"
+              data-route="activities"
+              href="./activities.html"
+            >
+              <i class="fa-solid fa-list-check"></i>
+              <span class="sidebar-link-text"> Atividades </span>
+              <span class="sidebar-link-badge" data-dashboard-activity-count="">
+                0
+              </span>
+            </a>
+            <a
+              class="sidebar-link"
+              data-route="materials"
+              href="./materials.html"
+            >
+              <i class="fa-solid fa-folder-open"></i>
+              <span class="sidebar-link-text"> Materiais </span>
+            </a>
+            <a
+              class="sidebar-link sidebar-link--highlight"
+              data-route="ai"
+              href="./ai.html"
+            >
+              <i class="fa-solid fa-robot"></i>
+              <span class="sidebar-link-text"> Assistente IA </span>
+            </a>
+          </div>
+          <div class="sidebar-navigation-group" data-navigation-group="">
+            <span class="sidebar-section-title"> Gestão </span>
+            <a
+              class="sidebar-link"
+              data-roles="admin,coordinator,teacher"
+              data-route="students"
+              href="./students.html"
+            >
+              <i class="fa-solid fa-user-graduate"></i>
+              <span class="sidebar-link-text"> Alunos </span>
+            </a>
+            <a
+              class="sidebar-link"
+              data-roles="admin,coordinator"
+              data-route="teachers"
+              href="./teachers.html"
+            >
+              <i class="fa-solid fa-chalkboard-user"></i>
+              <span class="sidebar-link-text"> Professores </span>
+            </a>
+          </div>
+          <div class="sidebar-navigation-group" data-navigation-group="">
+            <span class="sidebar-section-title"> Conta </span>
+            <a class="sidebar-link" data-route="profile" href="./profile.html">
+              <i class="fa-solid fa-user"></i>
+              <span class="sidebar-link-text"> Meu Perfil </span>
+            </a>
+            <a
+              class="sidebar-link"
+              data-route="settings"
+              href="./settings.html"
+            >
+              <i class="fa-solid fa-gear"></i>
+              <span class="sidebar-link-text"> Configurações </span>
+            </a>
+          </div>
+        </nav>
+        <!-- Rodapé da sidebar -->
+        <div class="sidebar-footer">
+          <button
+            class="sidebar-link sidebar-logout-button logout-button"
+            data-logout=""
+            type="button"
+          >
+            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+            <span class="sidebar-link-text"> Sair </span>
+          </button>
+          <span class="sidebar-version"> SESI Connect v1.0 </span>
+        </div>
+      </aside>
+      <!-- Fundo da sidebar mobile -->
+      <button
+        aria-label="Fechar menu lateral"
+        class="sidebar-overlay"
+        id="sidebar-overlay"
+        tabindex="-1"
+        type="button"
+      ></button>
+      <!-- =========================
+             CONTEÚDO
+             ========================= -->
+      <div class="main-content">
+        <!-- =========================
+                 CABEÇALHO
+                 ========================= -->
+        <header class="top-header">
+          <div class="top-header-left">
+            <button
+              aria-controls="sidebar"
+              aria-expanded="false"
+              aria-label="Abrir menu"
+              class="mobile-menu-button"
+              data-sidebar-toggle=""
+              type="button"
+            >
+              <i class="fa-solid fa-bars"></i>
+            </button>
+            <div class="top-header-heading">
+              <span class="top-header-title"> SESI Connect </span>
+              <span class="top-header-page">Configurações</span>
+            </div>
+          </div>
+          <div class="top-header-search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input
+              aria-label="Pesquisar no sistema"
+              placeholder="Pesquisar no SESI Connect"
+              type="search"
+            />
+            <kbd>Ctrl K</kbd>
+          </div>
+          <div class="top-header-actions">
+            <!-- Tema -->
+            <button
+              aria-label="Ativar tema escuro"
+              aria-pressed="false"
+              class="top-header-action theme-toggle-button"
+              data-theme-toggle=""
+              type="button"
+            >
+              <i class="fa-solid fa-moon" data-theme-icon=""></i>
+            </button>
+            <!-- Notificações -->
+            <div class="notification-wrapper">
+              <button
+                aria-controls="notification-panel"
+                aria-expanded="false"
+                aria-label="Notificações"
+                class="top-header-action notification-button"
+                data-notification-toggle=""
+                type="button"
+              >
+                <i class="fa-regular fa-bell"></i>
+                <span
+                  class="notification-badge"
+                  data-notification-count=""
+                  id="notification-count"
+                >
+                  0
+                </span>
+              </button>
+              <!-- Painel de notificações -->
+              <section
+                aria-hidden="true"
+                class="notification-panel"
+                data-notification-panel=""
+                data-use-hidden=""
+                hidden=""
+                id="notification-panel"
+              >
+                <div class="notification-panel-header">
+                  <div>
+                    <h2>Notificações</h2>
+                    <p>Acompanhe suas novidades.</p>
+                  </div>
+                  <button
+                    class="notification-header-action"
+                    data-notifications-read-all=""
+                    type="button"
+                  >
+                    Marcar como lidas
+                  </button>
+                </div>
+                <div
+                  class="notification-list"
+                  data-notification-list=""
+                  id="notification-list"
+                >
+                  <!-- Gerado pelo notifications.js -->
+                </div>
+                <div class="notification-panel-footer">
+                  <button
+                    class="notification-clear-button"
+                    data-notifications-clear=""
+                    type="button"
+                  >
+                    <i class="fa-solid fa-trash"></i>
+                    Limpar notificações
+                  </button>
+                </div>
+              </section>
+            </div>
+            <!-- Perfil -->
+            <a
+              aria-label="Abrir meu perfil"
+              class="top-header-user"
+              data-route="profile"
+              href="./profile.html"
+            >
+              <div
+                aria-hidden="true"
+                class="top-header-user-avatar"
+                data-user-initials=""
+              >
+                JS
+              </div>
+              <div class="top-header-user-info">
+                <strong class="top-header-user-name" data-user-name="">
+                  Jully Silva
+                </strong>
+                <span class="top-header-user-role" data-user-role="">
+                  Estudante
+                </span>
+              </div>
+              <i class="fa-solid fa-chevron-right"></i>
+            </a>
+          </div>
+        </header>
+        <!-- =========================
+                 CONTEÚDO PRINCIPAL
+                 ========================= -->
+        <main class="page-content settings-content" id="main-content">
+          <section class="settings-header">
+            <div class="settings-header-content">
+              <span class="page-eyebrow">Preferências da conta</span>
+              <h1>Configurações</h1>
+              <p>
+                Personalize aparência, notificações, acessibilidade e
+                privacidade.
+              </p>
+            </div>
+            <div class="settings-header-actions">
+              <button
+                class="btn btn-outline"
+                data-settings-reset=""
+                type="button"
+              >
+                <i class="fa-solid fa-rotate-left"></i> Restaurar</button
+              ><button
+                class="btn btn-primary"
+                data-settings-save=""
+                type="button"
+              >
+                <i class="fa-solid fa-floppy-disk"></i> Salvar
+              </button>
+            </div>
+          </section>
+          <div class="settings-layout">
+            <aside class="settings-navigation">
+              <span class="settings-navigation-title">Categorias</span
+              ><button
+                class="settings-navigation-button active"
+                data-settings-tab="general"
+              >
+                <i class="fa-solid fa-sliders"></i> Geral</button
+              ><button
+                class="settings-navigation-button"
+                data-settings-tab="appearance"
+              >
+                <i class="fa-solid fa-palette"></i> Aparência</button
+              ><button
+                class="settings-navigation-button"
+                data-settings-tab="notifications"
+              >
+                <i class="fa-solid fa-bell"></i> Notificações</button
+              ><button
+                class="settings-navigation-button"
+                data-settings-tab="accessibility"
+              >
+                <i class="fa-solid fa-universal-access"></i>
+                Acessibilidade</button
+              ><button
+                class="settings-navigation-button"
+                data-settings-tab="privacy"
+              >
+                <i class="fa-solid fa-shield-halved"></i> Privacidade</button
+              ><button
+                class="settings-navigation-button"
+                data-settings-tab="security"
+              >
+                <i class="fa-solid fa-lock"></i> Segurança</button
+              ><button
+                class="settings-navigation-button"
+                data-settings-tab="data"
+              >
+                <i class="fa-solid fa-database"></i> Dados
+              </button>
+            </aside>
+            <div class="settings-panels">
+              <section
+                class="settings-panel active"
+                data-settings-panel="general"
+              >
+                <article class="settings-card">
+                  <div class="settings-card-header">
+                    <div class="settings-card-header-content">
+                      <h2 class="settings-card-title">
+                        <i class="fa-solid fa-language"></i> Idioma e navegação
+                      </h2>
+                      <p class="settings-card-description">
+                        Configurações gerais da experiência.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="settings-form-grid">
+                    <div class="form-group">
+                      <label for="setting-language">Idioma</label
+                      ><select
+                        class="form-control"
+                        data-setting="language"
+                        id="setting-language"
+                      >
+                        <option value="pt-BR">Português — Brasil</option>
+                        <option value="en-US">English</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label for="setting-home">Página inicial</label
+                      ><select
+                        class="form-control"
+                        data-setting="homePage"
+                        id="setting-home"
+                      >
+                        <option value="dashboard">Visão Geral</option>
+                        <option value="lessons">Mural de Aulas</option>
+                        <option value="activities">Atividades</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="settings-item">
+                    <div class="settings-item-content">
+                      <span class="settings-item-icon"
+                        ><i class="fa-solid fa-clock-rotate-left"></i
+                      ></span>
+                      <div class="settings-item-text">
+                        <strong class="settings-item-title"
+                          >Restaurar posição de leitura</strong
+                        ><span class="settings-item-description"
+                          >Retomar páginas e conteúdos de onde você parou.</span
+                        >
+                      </div>
+                    </div>
+                    <label class="settings-switch"
+                      ><input
+                        checked=""
+                        data-setting="restoreScroll"
+                        type="checkbox" /><span
+                        class="settings-switch-slider"
+                      ></span
+                    ></label>
+                  </div>
+                </article>
+              </section>
+              <section class="settings-panel" data-settings-panel="appearance">
+                <article class="settings-card">
+                  <div class="settings-card-header">
+                    <div class="settings-card-header-content">
+                      <h2 class="settings-card-title">
+                        <i class="fa-solid fa-palette"></i> Tema
+                      </h2>
+                      <p class="settings-card-description">
+                        Escolha como a interface deve aparecer.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="theme-options">
+                    <label class="theme-option"
+                      ><input
+                        data-setting="theme"
+                        name="theme"
+                        type="radio"
+                        value="light"
+                      /><span class="theme-preview"
+                        ><i class="theme-preview-sidebar"></i
+                        ><span class="theme-preview-content"
+                          ><i class="theme-preview-line"></i
+                          ><i class="theme-preview-line"></i></span></span
+                      ><span class="theme-option-label">Claro</span></label
+                    ><label class="theme-option theme-option--dark"
+                      ><input
+                        data-setting="theme"
+                        name="theme"
+                        type="radio"
+                        value="dark"
+                      /><span class="theme-preview"
+                        ><i class="theme-preview-sidebar"></i
+                        ><span class="theme-preview-content"
+                          ><i class="theme-preview-line"></i
+                          ><i class="theme-preview-line"></i></span></span
+                      ><span class="theme-option-label">Escuro</span></label
+                    ><label class="theme-option theme-option--system"
+                      ><input
+                        checked=""
+                        data-setting="theme"
+                        name="theme"
+                        type="radio"
+                        value="system"
+                      /><span class="theme-preview"
+                        ><i class="theme-preview-sidebar"></i
+                        ><span class="theme-preview-content"
+                          ><i class="theme-preview-line"></i
+                          ><i class="theme-preview-line"></i></span></span
+                      ><span class="theme-option-label">Sistema</span></label
+                    >
+                  </div>
+                </article>
+                <article class="settings-card">
+                  <div class="settings-card-header">
+                    <div>
+                      <h2 class="settings-card-title">Tamanho do texto</h2>
+                      <p class="settings-card-description">
+                        Ajuste a escala visual dos textos.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="settings-font-size-options">
+                    <label class="settings-font-size-option"
+                      ><input
+                        data-setting="fontSize"
+                        name="fontSize"
+                        type="radio"
+                        value="small"
+                      /><span
+                        class="settings-font-size-preview settings-font-size-preview--small"
+                        >Aa</span
+                      ><span class="settings-font-size-label"
+                        >Pequeno</span
+                      ></label
+                    ><label class="settings-font-size-option"
+                      ><input
+                        checked=""
+                        data-setting="fontSize"
+                        name="fontSize"
+                        type="radio"
+                        value="medium"
+                      /><span
+                        class="settings-font-size-preview settings-font-size-preview--medium"
+                        >Aa</span
+                      ><span class="settings-font-size-label"
+                        >Médio</span
+                      ></label
+                    ><label class="settings-font-size-option"
+                      ><input
+                        data-setting="fontSize"
+                        name="fontSize"
+                        type="radio"
+                        value="large"
+                      /><span
+                        class="settings-font-size-preview settings-font-size-preview--large"
+                        >Aa</span
+                      ><span class="settings-font-size-label"
+                        >Grande</span
+                      ></label
+                    >
+                  </div>
+                </article>
+              </section>
+              <section
+                class="settings-panel"
+                data-settings-panel="notifications"
+              >
+                <article class="settings-card">
+                  <div class="settings-card-header">
+                    <div>
+                      <h2 class="settings-card-title">
+                        <i class="fa-solid fa-bell"></i> Alertas
+                      </h2>
+                      <p class="settings-card-description">
+                        Escolha os eventos que geram notificações.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="settings-notification-list">
+                    <div class="settings-item">
+                      <div class="settings-item-content">
+                        <span class="settings-item-icon"
+                          ><i class="fa-solid fa-list-check"></i
+                        ></span>
+                        <div>
+                          <strong class="settings-item-title"
+                            >Novas atividades</strong
+                          ><span class="settings-item-description"
+                            >Avisar quando uma atividade for publicada.</span
+                          >
+                        </div>
+                      </div>
+                      <label class="settings-switch"
+                        ><input
+                          checked=""
+                          data-setting="notifyActivities"
+                          type="checkbox" /><span
+                          class="settings-switch-slider"
+                        ></span
+                      ></label>
+                    </div>
+                    <div class="settings-item">
+                      <div class="settings-item-content">
+                        <span class="settings-item-icon"
+                          ><i class="fa-solid fa-hourglass-half"></i
+                        ></span>
+                        <div>
+                          <strong class="settings-item-title"
+                            >Prazos próximos</strong
+                          ><span class="settings-item-description"
+                            >Lembrar antes de uma entrega.</span
+                          >
+                        </div>
+                      </div>
+                      <label class="settings-switch"
+                        ><input
+                          checked=""
+                          data-setting="notifyDeadlines"
+                          type="checkbox" /><span
+                          class="settings-switch-slider"
+                        ></span
+                      ></label>
+                    </div>
+                    <div class="settings-item">
+                      <div class="settings-item-content">
+                        <span class="settings-item-icon"
+                          ><i class="fa-solid fa-star"></i
+                        ></span>
+                        <div>
+                          <strong class="settings-item-title"
+                            >Notas publicadas</strong
+                          ><span class="settings-item-description"
+                            >Avisar quando houver nova correção.</span
+                          >
+                        </div>
+                      </div>
+                      <label class="settings-switch"
+                        ><input
+                          checked=""
+                          data-setting="notifyGrades"
+                          type="checkbox" /><span
+                          class="settings-switch-slider"
+                        ></span
+                      ></label>
+                    </div>
+                  </div>
+                </article>
+              </section>
+              <section
+                class="settings-panel"
+                data-settings-panel="accessibility"
+              >
+                <article class="settings-card">
+                  <div class="settings-card-header">
+                    <div>
+                      <h2 class="settings-card-title">
+                        <i class="fa-solid fa-universal-access"></i>
+                        Acessibilidade
+                      </h2>
+                      <p class="settings-card-description">
+                        Opções para conforto visual e navegação.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="settings-item">
+                    <div class="settings-item-content">
+                      <span class="settings-item-icon"
+                        ><i class="fa-solid fa-circle-half-stroke"></i
+                      ></span>
+                      <div>
+                        <strong class="settings-item-title"
+                          >Alto contraste</strong
+                        ><span class="settings-item-description"
+                          >Aumentar o contraste entre textos e fundos.</span
+                        >
+                      </div>
+                    </div>
+                    <label class="settings-switch"
+                      ><input
+                        data-setting="highContrast"
+                        type="checkbox" /><span
+                        class="settings-switch-slider"
+                      ></span
+                    ></label>
+                  </div>
+                  <div class="settings-item">
+                    <div class="settings-item-content">
+                      <span class="settings-item-icon"
+                        ><i class="fa-solid fa-person-walking-arrow-right"></i
+                      ></span>
+                      <div>
+                        <strong class="settings-item-title"
+                          >Reduzir movimentos</strong
+                        ><span class="settings-item-description"
+                          >Diminuir animações e transições.</span
+                        >
+                      </div>
+                    </div>
+                    <label class="settings-switch"
+                      ><input
+                        data-setting="reducedMotion"
+                        type="checkbox" /><span
+                        class="settings-switch-slider"
+                      ></span
+                    ></label>
+                  </div>
+                </article>
+              </section>
+              <section class="settings-panel" data-settings-panel="privacy">
+                <article class="settings-card">
+                  <div class="settings-card-header">
+                    <div>
+                      <h2 class="settings-card-title">
+                        <i class="fa-solid fa-shield-halved"></i> Privacidade
+                      </h2>
+                      <p class="settings-card-description">
+                        Controle preferências de histórico e personalização.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="settings-item">
+                    <div class="settings-item-content">
+                      <span class="settings-item-icon"
+                        ><i class="fa-solid fa-wand-magic-sparkles"></i
+                      ></span>
+                      <div>
+                        <strong class="settings-item-title"
+                          >Recomendações personalizadas</strong
+                        ><span class="settings-item-description"
+                          >Usar seu progresso para sugerir conteúdos.</span
+                        >
+                      </div>
+                    </div>
+                    <label class="settings-switch"
+                      ><input
+                        checked=""
+                        data-setting="recommendations"
+                        type="checkbox" /><span
+                        class="settings-switch-slider"
+                      ></span
+                    ></label>
+                  </div>
+                  <div class="settings-item">
+                    <div class="settings-item-content">
+                      <span class="settings-item-icon"
+                        ><i class="fa-solid fa-clock-rotate-left"></i
+                      ></span>
+                      <div>
+                        <strong class="settings-item-title"
+                          >Histórico de materiais</strong
+                        ><span class="settings-item-description"
+                          >Salvar materiais acessados recentemente.</span
+                        >
+                      </div>
+                    </div>
+                    <label class="settings-switch"
+                      ><input
+                        checked=""
+                        data-setting="materialHistory"
+                        type="checkbox" /><span
+                        class="settings-switch-slider"
+                      ></span
+                    ></label>
+                  </div>
+                </article>
+              </section>
+              <section class="settings-panel" data-settings-panel="security">
+                <article class="settings-card">
+                  <div class="settings-card-header">
+                    <div>
+                      <h2 class="settings-card-title">
+                        <i class="fa-solid fa-lock"></i> Segurança da conta
+                      </h2>
+                      <p class="settings-card-description">
+                        Sua sessão está protegida pelo sistema de autenticação
+                        local do protótipo.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="settings-security-list">
+                    <article class="settings-security-item">
+                      <span class="settings-security-icon"
+                        ><i class="fa-solid fa-shield-halved"></i
+                      ></span>
+                      <div class="settings-security-content">
+                        <strong class="settings-security-title"
+                          >Sessão atual</strong
+                        ><span class="settings-security-description"
+                          >Navegador atual • sessão ativa</span
+                        >
+                      </div>
+                    </article>
+                  </div>
+                  <div class="settings-card-footer">
+                    <button
+                      class="btn btn-outline"
+                      data-logout=""
+                      type="button"
+                    >
+                      <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                      Encerrar sessão
+                    </button>
+                  </div>
+                </article>
+              </section>
+              <section class="settings-panel" data-settings-panel="data">
+                <article class="settings-card">
+                  <div class="settings-card-header">
+                    <div>
+                      <h2 class="settings-card-title">
+                        <i class="fa-solid fa-database"></i> Dados locais
+                      </h2>
+                      <p class="settings-card-description">
+                        Exporte ou limpe dados salvos neste navegador.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="settings-data-actions">
+                    <div class="settings-data-action">
+                      <span class="settings-data-icon"
+                        ><i class="fa-solid fa-file-export"></i
+                      ></span>
+                      <div class="settings-data-content">
+                        <strong class="settings-data-title"
+                          >Exportar configurações</strong
+                        ><span class="settings-data-description"
+                          >Baixar preferências em JSON.</span
+                        >
+                      </div>
+                      <button
+                        class="btn btn-outline"
+                        data-settings-export=""
+                        type="button"
+                      >
+                        Exportar
+                      </button>
+                    </div>
+                    <div
+                      class="settings-data-action settings-data-action--danger"
+                    >
+                      <span class="settings-data-icon"
+                        ><i class="fa-solid fa-trash"></i
+                      ></span>
+                      <div class="settings-data-content">
+                        <strong class="settings-data-title"
+                          >Limpar dados de estudo</strong
+                        ><span class="settings-data-description"
+                          >Remove rascunhos, favoritos e históricos, preservando
+                          a sessão.</span
+                        >
+                      </div>
+                      <button
+                        class="btn btn-danger"
+                        data-settings-clear=""
+                        type="button"
+                      >
+                        Limpar
+                      </button>
+                    </div>
+                  </div>
+                </article>
+              </section>
+            </div>
+          </div>
+          <p class="settings-save-status" data-settings-status="">
+            Preferências carregadas.
+          </p>
+        </main>
+        <!-- =========================
+                 RODAPÉ
+                 ========================= -->
+        <footer class="app-footer">
+          <p>
+            ©
+            <span data-current-year="">2026</span>
+            SESI Connect.
+          </p>
+          <div class="app-footer-links">
+            <a href="#">Privacidade</a>
+            <a href="#">Suporte</a>
+            <a href="#">Acessibilidade</a>
+          </div>
+        </footer>
+      </div>
+    </div>
+    <!-- =========================
+         NAVEGAÇÃO MOBILE
+         ========================= -->
+    <nav aria-label="Navegação mobile" class="mobile-bottom-navigation">
+      <a
+        aria-current="page"
+        class="mobile-bottom-link active"
+        data-route="dashboard"
+        href="./dashboard.html"
+      >
+        <i class="fa-solid fa-house"></i>
+        <span>Início</span>
+      </a>
+      <a class="mobile-bottom-link" data-route="lessons" href="./lessons.html">
+        <i class="fa-solid fa-book-open"></i>
+        <span>Aulas</span>
+      </a>
+      <a
+        class="mobile-bottom-link"
+        data-route="activities"
+        href="./activities.html"
+      >
+        <i class="fa-solid fa-list-check"></i>
+        <span>Atividades</span>
+      </a>
+      <a class="mobile-bottom-link" data-route="ai" href="./ai.html">
+        <i class="fa-solid fa-robot"></i>
+        <span>IA</span>
+      </a>
+      <a class="mobile-bottom-link" data-route="profile" href="./profile.html">
+        <i class="fa-solid fa-user"></i>
+        <span>Perfil</span>
+      </a>
+    </nav>
+    <!-- =========================
+         TOASTS
+         ========================= -->
+    <div
+      aria-atomic="true"
+      aria-live="polite"
+      class="toast-container"
+      id="toast-container"
+    ></div>
+    <!-- =========================
+         SEM JAVASCRIPT
+         ========================= -->
+    <noscript>
+      <div class="noscript-warning">
+        <strong>JavaScript desativado</strong>
+        <p>
+          Ative o JavaScript do navegador para utilizar todos os recursos do
+          SESI Connect.
+        </p>
+      </div>
+    </noscript>
+    <!-- =========================
+         JAVASCRIPT
+         ========================= -->
+    <!-- JavaScript revisado -->
+    <script src="../js/auth.js" type="module"></script>
+    <script src="../js/app.js" type="module"></script>
+    <script type="module">
+      const KEY = "sesi-connect-settings-v2";
+      const $ = (s, c = document) => c.querySelector(s);
+      const $$ = (s, c = document) => [...c.querySelectorAll(s)];
+      const defaults = {
+        language: "pt-BR",
+        homePage: "dashboard",
+        restoreScroll: true,
+        theme: "system",
+        fontSize: "medium",
+        notifyActivities: true,
+        notifyDeadlines: true,
+        notifyGrades: true,
+        highContrast: false,
+        reducedMotion: false,
+        recommendations: true,
+        materialHistory: true,
+      };
+      const read = () => {
+        try {
+          return {
+            ...defaults,
+            ...JSON.parse(localStorage.getItem(KEY) || "{}"),
+          };
+        } catch {
+          return { ...defaults };
+        }
+      };
+      const apply = (s) => {
+        const resolved =
+          s.theme === "system"
+            ? matchMedia("(prefers-color-scheme: dark)").matches
+              ? "dark"
+              : "light"
+            : s.theme;
+        document.documentElement.dataset.theme = resolved;
+        document.documentElement.dataset.fontSize = s.fontSize;
+        document.body.classList.toggle("high-contrast", !!s.highContrast);
+        document.body.classList.toggle("reduced-motion", !!s.reducedMotion);
+      };
+      function render() {
+        const s = read();
+        $$("[data-setting]").forEach((el) => {
+          const k = el.dataset.setting;
+          if (!(k in s)) return;
+          if (el.type === "checkbox") el.checked = !!s[k];
+          else if (el.type === "radio") el.checked = el.value === String(s[k]);
+          else el.value = String(s[k]);
+        });
+        apply(s);
+      }
+      function collect() {
+        const s = { ...defaults };
+        $$("[data-setting]").forEach((el) => {
+          const k = el.dataset.setting;
+          if (el.type === "checkbox") s[k] = el.checked;
+          else if (el.type === "radio") {
+            if (el.checked) s[k] = el.value;
+          } else s[k] = el.value;
+        });
+        return s;
+      }
+      function status(t, c = "") {
+        const e = $("[data-settings-status]");
+        if (e) {
+          e.textContent = t;
+          e.className = `settings-save-status ${c}`.trim();
+        }
+      }
+      $$("[data-settings-tab]").forEach((b) =>
+        b.addEventListener("click", () => {
+          $$("[data-settings-tab]").forEach((x) =>
+            x.classList.toggle("active", x === b),
+          );
+          $$("[data-settings-panel]").forEach((p) =>
+            p.classList.toggle(
+              "active",
+              p.dataset.settingsPanel === b.dataset.settingsTab,
+            ),
+          );
+          history.replaceState(null, "", `#${b.dataset.settingsTab}`);
+        }),
+      );
+      $$("[data-setting]").forEach((el) =>
+        el.addEventListener("change", () => {
+          apply(collect());
+          status("Há alterações não salvas.", "is-saving");
+        }),
+      );
+      $("[data-settings-save]")?.addEventListener("click", () => {
+        const s = collect();
+        localStorage.setItem(KEY, JSON.stringify(s));
+        localStorage.setItem("sesi-connect-theme", s.theme);
+        apply(s);
+        status("Configurações salvas.", "is-success");
+        window.SESIConnect?.showToast?.("Configurações salvas.", "success");
+      });
+      $("[data-settings-reset]")?.addEventListener("click", () => {
+        localStorage.removeItem(KEY);
+        render();
+        status("Configurações restauradas.", "is-success");
+      });
+      $("[data-settings-export]")?.addEventListener("click", () => {
+        const blob = new Blob([JSON.stringify(read(), null, 2)], {
+          type: "application/json",
+        });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = "sesi-connect-configuracoes.json";
+        a.click();
+        URL.revokeObjectURL(url);
+      });
+      $("[data-settings-clear]")?.addEventListener("click", () => {
+        if (!confirm("Limpar rascunhos, favoritos e históricos locais?"))
+          return;
+        [...Object.keys(localStorage)]
+          .filter(
+            (k) =>
+              k.startsWith("sesi-connect-") &&
+              !["sesi-connect-session", "sesi-connect-theme", KEY].includes(k),
+          )
+          .forEach((k) => localStorage.removeItem(k));
+        window.SESIConnect?.showToast?.(
+          "Dados de estudo removidos.",
+          "success",
+        );
+      });
+      render();
+      const hash = location.hash.slice(1);
+      if (hash && $(`[data-settings-tab="${hash}"]`))
+        $(`[data-settings-tab="${hash}"]`).click();
+    </script>
+  </body>
+</html>

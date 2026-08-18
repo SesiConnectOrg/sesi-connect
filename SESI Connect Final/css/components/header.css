@@ -1,0 +1,373 @@
+/* =========================================================
+   SESI CONNECT
+   Header - estrutura atual
+   ========================================================= */
+
+.top-header {
+  position: relative;
+  z-index: var(--z-header);
+
+  display: flex;
+  width: 100%;
+  min-height: var(--header-height);
+  margin-bottom: var(--spacing-7);
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-5);
+
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* =========================================================
+   LADO ESQUERDO
+   ========================================================= */
+
+.top-header-left {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: var(--spacing-3);
+}
+
+.top-header-heading {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+}
+
+.top-header-title {
+  color: var(--text-color);
+
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.top-header-page {
+  margin-top: 2px;
+
+  color: var(--text-muted);
+
+  font-size: 0.6875rem;
+}
+
+/* =========================================================
+   BUSCA
+   ========================================================= */
+
+.top-header-search {
+  position: relative;
+
+  display: flex;
+  width: min(360px, 32vw);
+  align-items: center;
+}
+
+.top-header-search > i {
+  position: absolute;
+  left: 14px;
+
+  z-index: 1;
+
+  color: var(--text-muted);
+
+  pointer-events: none;
+}
+
+.top-header-search input {
+  width: 100%;
+  min-height: 42px;
+  padding: 9px 62px 9px 40px;
+
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-md);
+
+  outline: none;
+
+  background-color: var(--bg-card);
+  color: var(--text-color);
+
+  font-family: inherit;
+  font-size: 0.8125rem;
+
+  transition:
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast),
+    background-color var(--transition-fast);
+}
+
+.top-header-search input::placeholder {
+  color: var(--text-light);
+}
+
+.top-header-search input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.12);
+}
+
+.top-header-search kbd {
+  position: absolute;
+  right: 10px;
+
+  padding: 3px 6px;
+
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-sm);
+
+  background-color: var(--bg-main);
+  color: var(--text-muted);
+
+  font-family: inherit;
+  font-size: 0.625rem;
+  font-weight: 600;
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   AÇÕES
+   ========================================================= */
+
+.top-header-actions {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: var(--spacing-2);
+}
+
+.top-header-action {
+  position: relative;
+
+  display: inline-flex;
+  width: 42px;
+  height: 42px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-md);
+
+  background-color: var(--bg-card);
+  color: var(--text-secondary);
+
+  cursor: pointer;
+
+  transition:
+    border-color var(--transition-fast),
+    background-color var(--transition-fast),
+    color var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.top-header-action:hover {
+  border-color: var(--primary);
+
+  background-color: var(--primary-soft);
+  color: var(--primary);
+
+  transform: translateY(-1px);
+}
+
+/* =========================================================
+   NOTIFICAÇÕES
+   ========================================================= */
+
+.notification-wrapper {
+  position: relative;
+}
+
+.notification-badge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+
+  display: inline-flex;
+  min-width: 17px;
+  height: 17px;
+  padding-inline: 4px;
+  align-items: center;
+  justify-content: center;
+
+  border: 2px solid var(--bg-main);
+  border-radius: 999px;
+
+  background-color: var(--danger);
+  color: #ffffff;
+
+  font-size: 0.55rem;
+  font-weight: 700;
+}
+
+.notification-badge:empty,
+.notification-badge[data-count="0"] {
+  display: none;
+}
+
+/* =========================================================
+   PERFIL
+   ========================================================= */
+
+.top-header-user {
+  display: flex;
+  min-width: 0;
+  min-height: 46px;
+  padding: 4px 8px;
+  align-items: center;
+  gap: var(--spacing-3);
+
+  border: 1px solid transparent;
+  border-radius: var(--border-radius-md);
+
+  color: inherit;
+  text-decoration: none;
+
+  transition:
+    border-color var(--transition-fast),
+    background-color var(--transition-fast);
+}
+
+.top-header-user:hover,
+.top-header-user.active {
+  border-color: var(--border-color);
+  background-color: var(--bg-card);
+}
+
+.top-header-user-avatar {
+  display: inline-flex;
+  width: 38px;
+  height: 38px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  overflow: hidden;
+
+  border-radius: 50%;
+
+  background-color: var(--primary-soft);
+  color: var(--primary);
+
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.top-header-user-avatar img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+.top-header-user-info {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+}
+
+.top-header-user-info strong {
+  overflow: hidden;
+
+  max-width: 150px;
+
+  color: var(--text-color);
+
+  font-size: 0.8125rem;
+  font-weight: 600;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.top-header-user-info span {
+  overflow: hidden;
+
+  max-width: 150px;
+  margin-top: 1px;
+
+  color: var(--text-muted);
+
+  font-size: 0.6875rem;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.top-header-user > i {
+  color: var(--text-muted);
+
+  font-size: 0.7rem;
+}
+
+/* =========================================================
+   TEMA ESCURO
+   ========================================================= */
+
+html[data-theme="dark"] .top-header-action:hover {
+  background-color: rgba(56, 189, 248, 0.08);
+}
+
+/* =========================================================
+   RESPONSIVIDADE
+   ========================================================= */
+
+@media (max-width: 1180px) {
+  .top-header-search {
+    width: min(280px, 28vw);
+  }
+}
+
+@media (max-width: 1024px) {
+  .top-header {
+    min-height: 64px;
+  }
+
+  .top-header-search {
+    flex: 1;
+    width: auto;
+    max-width: 360px;
+  }
+}
+
+@media (max-width: 768px) {
+  .top-header {
+    gap: var(--spacing-3);
+  }
+
+  .top-header-heading {
+    display: none;
+  }
+
+  .top-header-search {
+    display: none;
+  }
+
+  .top-header-user-info,
+  .top-header-user > i {
+    display: none;
+  }
+
+  .top-header-user {
+    padding: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .top-header {
+    margin-bottom: var(--spacing-5);
+  }
+
+  .top-header-actions {
+    gap: var(--spacing-1);
+  }
+
+  .top-header-action,
+  .mobile-menu-button {
+    width: 38px;
+    height: 38px;
+  }
+
+  .top-header-user-avatar {
+    width: 36px;
+    height: 36px;
+  }
+}
