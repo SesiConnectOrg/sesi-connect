@@ -1,0 +1,332 @@
+/* =========================================================
+   SESI CONNECT
+   Arquivo principal de estilos
+   ========================================================= */
+
+/* =========================
+   BASE
+   ========================= */
+
+@import url("./bases/variables.css");
+@import url("./bases/reset.css");
+@import url("./bases/typography.css");
+@import url("./bases/layout.css");
+
+/* =========================
+   COMPONENTES
+   ========================= */
+
+@import url("./components/buttons.css");
+@import url("./components/cards.css");
+@import url("./components/forms.css");
+@import url("./components/tables.css");
+@import url("./components/sidebar.css");
+@import url("./components/header.css");
+@import url("./components/modals.css");
+@import url("./components/notifications.css");
+@import url("./components/calendar.css");
+
+/* =========================
+   PÁGINAS
+   ========================= */
+
+@import url("./pages/login.css");
+@import url("./pages/dashboard.css");
+@import url("./pages/students.css");
+@import url("./pages/teachers.css");
+@import url("./pages/lessons.css");
+@import url("./pages/lesson.css");
+@import url("./pages/schedule.css");
+@import url("./pages/activities.css");
+@import url("./pages/essay.css");
+@import url("./pages/materials.css");
+@import url("./pages/ai.css");
+@import url("./pages/profile.css");
+@import url("./pages/settings.css");
+
+/* =========================
+   UTILITÁRIOS
+   ========================= */
+
+@import url("./utils/animations.css");
+@import url("./utils/responsive.css");
+
+/* Camada final da versão atual */
+@import url("./current.css");
+
+.page-loader {
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease;
+}
+
+.page-loader.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* =========================================================
+   ATIVIDADES — BLOCO INFERIOR
+   Próximos prazos / Resumo / Assistente IA
+   ========================================================= */
+
+.activities-bottom-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr) minmax(0, 1fr);
+    gap: 16px;
+    width: 100%;
+    align-items: stretch;
+}
+
+/* Remove alturas gigantes herdadas */
+.activities-bottom-grid > * {
+    min-width: 0;
+    min-height: 0;
+    height: auto !important;
+}
+
+/* Cards */
+.activities-bottom-grid .card {
+    min-height: 0 !important;
+    height: auto !important;
+    box-sizing: border-box;
+}
+
+/* =========================================================
+   PRÓXIMOS PRAZOS
+   ========================================================= */
+
+.activities-bottom-grid .deadlines-card {
+    padding: 20px;
+}
+
+.activities-bottom-grid .deadline-item {
+    min-height: 76px;
+    padding: 12px;
+    box-sizing: border-box;
+}
+
+.activities-bottom-grid .deadline-item + .deadline-item {
+    margin-top: 8px;
+}
+
+/* =========================================================
+   RESUMO DAS ENTREGAS
+   ========================================================= */
+
+.activities-bottom-grid .delivery-summary {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    min-height: 0 !important;
+}
+
+/* Evita o espaço vazio enorme */
+.activities-bottom-grid .delivery-summary .summary-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* =========================================================
+   ASSISTENTE IA
+   ========================================================= */
+
+.activities-bottom-grid .ai-assistant-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    min-height: 0 !important;
+    height: auto !important;
+}
+
+/* Botão do assistente */
+.activities-bottom-grid .ai-assistant-card button {
+    width: 100%;
+    margin-top: 16px;
+}
+
+/* =========================================================
+   REDUÇÃO DE ESPAÇAMENTO DA SEÇÃO
+   ========================================================= */
+
+.activities-bottom-grid {
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+/* Remove possíveis alturas mínimas dos containers internos */
+.activities-bottom-grid .panel,
+.activities-bottom-grid .section-card,
+.activities-bottom-grid .dashboard-card {
+    min-height: 0 !important;
+    height: auto !important;
+}
+
+/* =========================================================
+   RESPONSIVIDADE
+   ========================================================= */
+
+@media (max-width: 1200px) {
+    .activities-bottom-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .activities-bottom-grid .ai-assistant-card {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 800px) {
+    .activities-bottom-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .activities-bottom-grid .ai-assistant-card {
+        grid-column: auto;
+    }
+}
+/* =========================================================
+   LOGIN — AJUSTE DE POSICIONAMENTO
+   ========================================================= */
+
+.login-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+    padding: 48px 40px;
+}
+
+/* =========================================================
+   LOGO
+   ========================================================= */
+
+.brand-logo--login {
+    display: block;
+    margin: 0 auto 48px;
+    text-decoration: none;
+}
+
+.brand-logo-image {
+    display: block;
+    width: 190px;
+    height: auto;
+    object-fit: contain;
+}
+
+/* =========================================================
+   CONTEÚDO DO LOGIN
+   ========================================================= */
+
+.login-content {
+    width: min(100%, 360px);
+    margin: 0 auto;
+}
+
+.login-header {
+    margin-bottom: 28px;
+}
+
+.login-header h1 {
+    margin-top: 0;
+}
+
+/* =========================================================
+   FORMULÁRIO
+   ========================================================= */
+
+.login-form {
+    width: 100%;
+}
+
+.form-group {
+    margin-bottom: 22px;
+}
+
+.login-options {
+    margin-top: 4px;
+}
+
+.login-submit {
+    width: 100%;
+    margin-top: 22px;
+}
+
+/* =========================================================
+   RODAPÉ
+   ========================================================= */
+
+.login-footer {
+    width: min(100%, 360px);
+    margin: 48px auto 0;
+    text-align: center;
+}
+
+/* =========================================================
+   LADO DIREITO
+   ========================================================= */
+
+.login-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+.login-presentation {
+    width: min(100%, 560px);
+    text-align: center;
+    margin: 0 auto;
+    padding: 40px;
+    box-sizing: border-box;
+}
+
+/* =========================================================
+   RESPONSIVIDADE
+   ========================================================= */
+
+@media (max-width: 900px) {
+    .login-left {
+        min-height: auto;
+        padding: 48px 24px;
+    }
+
+    .login-right {
+        min-height: 500px;
+    }
+
+    .brand-logo--login {
+        margin-bottom: 40px;
+    }
+}
+
+@media (max-width: 600px) {
+    .login-left {
+        padding: 32px 20px;
+    }
+
+    .brand-logo-image {
+        width: 160px;
+    }
+
+    .login-content {
+        width: 100%;
+        max-width: 360px;
+    }
+
+    .login-footer {
+        width: 100%;
+        margin-top: 40px;
+    }
+
+    .login-presentation {
+        padding: 32px 20px;
+    }
+}

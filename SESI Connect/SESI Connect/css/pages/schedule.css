@@ -1,0 +1,892 @@
+/* =========================================================
+   SESI CONNECT
+   Página do cronograma semanal
+   ========================================================= */
+
+/* =========================
+   ESTRUTURA DA PÁGINA
+   ========================= */
+
+.schedule-page {
+  min-height: 100vh;
+  background-color: var(--bg-main);
+}
+
+.schedule-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-5);
+}
+
+/* =========================
+   CABEÇALHO
+   ========================= */
+
+.schedule-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-5);
+}
+
+.schedule-header-content {
+  min-width: 0;
+}
+
+.schedule-header h1 {
+  margin-bottom: var(--spacing-1);
+
+  color: var(--text-color);
+
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-weight: 700;
+}
+
+.schedule-header p {
+  color: var(--text-muted);
+
+  font-size: 0.875rem;
+}
+
+.schedule-header-actions {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: var(--spacing-3);
+}
+
+/* =========================
+   NAVEGAÇÃO DA SEMANA
+   ========================= */
+
+.schedule-navigation {
+  display: flex;
+  padding: var(--spacing-4);
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-4);
+
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-lg);
+
+  background-color: var(--bg-card);
+  box-shadow: var(--shadow-sm);
+}
+
+.schedule-navigation-left,
+.schedule-navigation-right {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+}
+
+.schedule-week-info {
+  min-width: 0;
+
+  text-align: center;
+}
+
+.schedule-week-title {
+  display: block;
+
+  color: var(--text-color);
+
+  font-size: 0.9375rem;
+  font-weight: 700;
+}
+
+.schedule-week-period {
+  display: block;
+
+  margin-top: 2px;
+
+  color: var(--text-muted);
+
+  font-size: 0.75rem;
+}
+
+.schedule-nav-button {
+  display: inline-flex;
+  width: 38px;
+  height: 38px;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-md);
+
+  background-color: var(--bg-card);
+  color: var(--text-muted);
+
+  transition:
+    border-color var(--transition-fast),
+    background-color var(--transition-fast),
+    color var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.schedule-nav-button:hover {
+  border-color: var(--primary);
+  background-color: var(--primary-soft);
+  color: var(--primary);
+  transform: translateY(-1px);
+}
+
+.schedule-nav-button:active {
+  transform: translateY(0);
+}
+
+.schedule-today-button {
+  display: inline-flex;
+  min-height: 38px;
+  padding-inline: var(--spacing-4);
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid var(--primary);
+  border-radius: var(--border-radius-md);
+
+  background-color: var(--primary-light);
+  color: var(--primary-hover);
+
+  font-size: 0.75rem;
+  font-weight: 700;
+
+  transition:
+    background-color var(--transition-fast),
+    color var(--transition-fast);
+}
+
+.schedule-today-button:hover {
+  background-color: var(--primary);
+  color: var(--text-white);
+}
+
+/* =========================
+   RESUMO DO CRONOGRAMA
+   ========================= */
+
+.schedule-summary {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--spacing-4);
+}
+
+.schedule-summary-card {
+  display: flex;
+  min-height: 100px;
+  padding: var(--spacing-4);
+  align-items: center;
+  gap: var(--spacing-3);
+
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-lg);
+
+  background-color: var(--bg-card);
+  box-shadow: var(--shadow-sm);
+
+  transition:
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.schedule-summary-card:hover {
+  border-color: var(--primary);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.schedule-summary-icon {
+  display: inline-flex;
+  width: 46px;
+  height: 46px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  border-radius: var(--border-radius-md);
+
+  background-color: var(--primary-light);
+  color: var(--primary);
+
+  font-size: 1.0625rem;
+}
+
+.schedule-summary-icon--success {
+  background-color: var(--success-light);
+  color: var(--success);
+}
+
+.schedule-summary-icon--warning {
+  background-color: var(--warning-light);
+  color: var(--warning-hover);
+}
+
+.schedule-summary-icon--purple {
+  background-color: var(--purple-light);
+  color: var(--purple);
+}
+
+.schedule-summary-value {
+  display: block;
+
+  margin-bottom: 2px;
+
+  color: var(--text-color);
+
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.schedule-summary-label {
+  color: var(--text-muted);
+
+  font-size: 0.75rem;
+}
+
+/* =========================
+   CARTÃO DO CRONOGRAMA
+   ========================= */
+
+.schedule-card-container {
+  width: 100%;
+  overflow: hidden;
+
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-lg);
+
+  background-color: var(--bg-card);
+  box-shadow: var(--shadow-sm);
+}
+
+.schedule-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.schedule-table-wrapper::-webkit-scrollbar {
+  height: 8px;
+}
+
+.schedule-table-wrapper::-webkit-scrollbar-track {
+  background-color: var(--bg-main);
+}
+
+.schedule-table-wrapper::-webkit-scrollbar-thumb {
+  border-radius: var(--border-radius-round);
+  background-color: var(--border-color-dark);
+}
+
+/* =========================
+   GRADE SEMANAL
+   ========================= */
+
+.timetable,
+.schedule-grid {
+  display: grid;
+  grid-template-columns:
+    90px
+    repeat(5, minmax(150px, 1fr));
+
+  min-width: 900px;
+  padding: var(--spacing-4);
+  gap: var(--spacing-2);
+}
+
+/* =========================
+   CABEÇALHO DOS DIAS
+   ========================= */
+
+.schedule-day-header {
+  display: flex;
+  min-height: 58px;
+  padding: var(--spacing-2);
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  border-radius: var(--border-radius-md);
+
+  background-color: var(--bg-main);
+
+  text-align: center;
+}
+
+.schedule-day-name {
+  color: var(--text-color);
+
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.schedule-day-date {
+  margin-top: 2px;
+
+  color: var(--text-muted);
+
+  font-size: 0.6875rem;
+}
+
+.schedule-day-header.is-today {
+  background-color: var(--primary);
+}
+
+.schedule-day-header.is-today .schedule-day-name,
+.schedule-day-header.is-today .schedule-day-date {
+  color: var(--text-white);
+}
+
+/* =========================
+   COLUNA DE HORÁRIOS
+   ========================= */
+
+.time-slot {
+  display: flex;
+  min-height: 78px;
+  padding: var(--spacing-2);
+  align-items: center;
+  justify-content: center;
+
+  border-radius: var(--border-radius-md);
+
+  background-color: var(--bg-main);
+  color: var(--text-muted);
+
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+/* =========================
+   CARTÃO DE AULA
+   ========================= */
+
+.schedule-card {
+  position: relative;
+
+  display: flex;
+  min-height: 78px;
+  padding: var(--spacing-3);
+  justify-content: center;
+  flex-direction: column;
+  gap: 3px;
+
+  overflow: hidden;
+
+  border: 1px solid transparent;
+  border-left: 4px solid var(--primary);
+  border-radius: var(--border-radius-md);
+
+  background-color: var(--primary-light);
+  color: var(--primary-hover);
+
+  cursor: pointer;
+
+  transition:
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.schedule-card:hover {
+  border-color: currentColor;
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.schedule-card strong,
+.schedule-card-title {
+  display: block;
+  overflow: hidden;
+
+  color: inherit;
+
+  font-size: 0.8125rem;
+  font-weight: 700;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.schedule-card span,
+.schedule-card-teacher {
+  display: block;
+  overflow: hidden;
+
+  color: inherit;
+
+  font-size: 0.6875rem;
+  opacity: 0.82;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.schedule-card-room {
+  display: flex;
+  margin-top: 2px;
+  align-items: center;
+  gap: 4px;
+
+  color: inherit;
+
+  font-size: 0.625rem;
+  opacity: 0.75;
+}
+
+/* =========================
+   CORES DAS DISCIPLINAS
+   ========================= */
+
+.schedule-card.bg-blue,
+.schedule-card--math {
+  border-left-color: #2563eb;
+  background-color: #dbeafe;
+  color: #1d4ed8;
+}
+
+.schedule-card.bg-green,
+.schedule-card--portuguese {
+  border-left-color: #10b981;
+  background-color: #d1fae5;
+  color: #047857;
+}
+
+.schedule-card.bg-yellow,
+.schedule-card--history {
+  border-left-color: #f59e0b;
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.schedule-card.bg-purple,
+.schedule-card--physics {
+  border-left-color: #7c3aed;
+  background-color: #ede9fe;
+  color: #6d28d9;
+}
+
+.schedule-card.bg-pink,
+.schedule-card--chemistry {
+  border-left-color: #db2777;
+  background-color: #fce7f3;
+  color: #be185d;
+}
+
+.schedule-card.bg-teal,
+.schedule-card--biology {
+  border-left-color: #0d9488;
+  background-color: #ccfbf1;
+  color: #0f766e;
+}
+
+.schedule-card.bg-orange,
+.schedule-card--geography {
+  border-left-color: #ea580c;
+  background-color: #ffedd5;
+  color: #c2410c;
+}
+
+.schedule-card--physical-education {
+  border-left-color: #6366f1;
+  background-color: #e0e7ff;
+  color: #4338ca;
+}
+
+/* =========================
+   AULA ATUAL
+   ========================= */
+
+.schedule-card.is-current {
+  box-shadow:
+    0 0 0 2px var(--primary),
+    var(--shadow-md);
+}
+
+.schedule-card.is-current::after {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+
+  width: 8px;
+  height: 8px;
+
+  border: 2px solid var(--bg-card);
+  border-radius: 50%;
+
+  background-color: var(--danger);
+
+  content: "";
+
+  animation: schedule-pulse 1.5s ease-in-out infinite;
+}
+
+/* =========================
+   HORÁRIO LIVRE
+   ========================= */
+
+.schedule-empty-slot {
+  display: flex;
+  min-height: 78px;
+  padding: var(--spacing-3);
+  align-items: center;
+  justify-content: center;
+
+  border: 1px dashed var(--border-color);
+  border-radius: var(--border-radius-md);
+
+  color: var(--text-light);
+
+  font-size: 0.6875rem;
+  text-align: center;
+}
+
+/* =========================
+   INTERVALO
+   ========================= */
+
+.schedule-break {
+  display: flex;
+  min-height: 52px;
+  padding: var(--spacing-3);
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-2);
+
+  border: 1px dashed var(--warning);
+  border-radius: var(--border-radius-md);
+
+  background-color: var(--warning-light);
+  color: #92400e;
+
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+/* =========================
+   VISUALIZAÇÃO EM LISTA
+   ========================= */
+
+.schedule-list {
+  display: none;
+  flex-direction: column;
+  gap: var(--spacing-4);
+}
+
+.schedule-list-day {
+  padding: var(--spacing-4);
+
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-lg);
+
+  background-color: var(--bg-card);
+}
+
+.schedule-list-day-header {
+  display: flex;
+  margin-bottom: var(--spacing-4);
+  padding-bottom: var(--spacing-3);
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-3);
+
+  border-bottom: 1px solid var(--border-color);
+}
+
+.schedule-list-day-title {
+  color: var(--text-color);
+
+  font-size: 0.9375rem;
+  font-weight: 700;
+}
+
+.schedule-list-day-date {
+  color: var(--text-muted);
+
+  font-size: 0.75rem;
+}
+
+.schedule-list-items {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+}
+
+.schedule-list-item {
+  display: flex;
+  padding: var(--spacing-3);
+  align-items: center;
+  gap: var(--spacing-3);
+
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-md);
+
+  background-color: var(--bg-main);
+}
+
+.schedule-list-time {
+  display: inline-flex;
+  min-width: 58px;
+  min-height: 34px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  border-radius: var(--border-radius-sm);
+
+  background-color: var(--bg-card);
+  color: var(--text-secondary);
+
+  font-size: 0.6875rem;
+  font-weight: 700;
+}
+
+.schedule-list-content {
+  min-width: 0;
+  flex: 1;
+}
+
+.schedule-list-subject {
+  display: block;
+
+  color: var(--text-color);
+
+  font-size: 0.8125rem;
+  font-weight: 700;
+}
+
+.schedule-list-teacher {
+  display: block;
+
+  margin-top: 2px;
+
+  color: var(--text-muted);
+
+  font-size: 0.6875rem;
+}
+
+/* =========================
+   LEGENDA
+   ========================= */
+
+.schedule-legend {
+  display: flex;
+  padding: var(--spacing-4);
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--spacing-4);
+
+  border-top: 1px solid var(--border-color);
+
+  background-color: var(--bg-card);
+}
+
+.schedule-legend-title {
+  color: var(--text-color);
+
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.schedule-legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-2);
+
+  color: var(--text-muted);
+
+  font-size: 0.6875rem;
+}
+
+.schedule-legend-color {
+  width: 10px;
+  height: 10px;
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background-color: var(--primary);
+}
+
+/* =========================
+   ESTADO VAZIO
+   ========================= */
+
+.schedule-empty {
+  display: flex;
+  min-height: 300px;
+  padding: var(--spacing-8);
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: var(--spacing-3);
+
+  border: 1px dashed var(--border-color-dark);
+  border-radius: var(--border-radius-lg);
+
+  background-color: var(--bg-card);
+
+  text-align: center;
+}
+
+.schedule-empty i {
+  color: var(--text-light);
+
+  font-size: 2rem;
+}
+
+.schedule-empty h3 {
+  font-size: 1rem;
+}
+
+.schedule-empty p {
+  max-width: 400px;
+
+  color: var(--text-muted);
+
+  font-size: 0.8125rem;
+}
+
+/* =========================
+   ANIMAÇÕES
+   ========================= */
+
+@keyframes schedule-pulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.55;
+    transform: scale(1.2);
+  }
+}
+
+/* =========================
+   TEMA ESCURO
+   ========================= */
+
+html[data-theme="dark"] .schedule-card.bg-blue,
+html[data-theme="dark"] .schedule-card--math {
+  background-color: rgba(37, 99, 235, 0.15);
+  color: #93c5fd;
+}
+
+html[data-theme="dark"] .schedule-card.bg-green,
+html[data-theme="dark"] .schedule-card--portuguese {
+  background-color: rgba(16, 185, 129, 0.14);
+  color: #6ee7b7;
+}
+
+html[data-theme="dark"] .schedule-card.bg-yellow,
+html[data-theme="dark"] .schedule-card--history {
+  background-color: rgba(245, 158, 11, 0.14);
+  color: #fde68a;
+}
+
+html[data-theme="dark"] .schedule-card.bg-purple,
+html[data-theme="dark"] .schedule-card--physics {
+  background-color: rgba(124, 58, 237, 0.16);
+  color: #c4b5fd;
+}
+
+html[data-theme="dark"] .schedule-card.bg-pink,
+html[data-theme="dark"] .schedule-card--chemistry {
+  background-color: rgba(219, 39, 119, 0.15);
+  color: #f9a8d4;
+}
+
+html[data-theme="dark"] .schedule-card.bg-teal,
+html[data-theme="dark"] .schedule-card--biology {
+  background-color: rgba(13, 148, 136, 0.16);
+  color: #99f6e4;
+}
+
+html[data-theme="dark"] .schedule-card.bg-orange,
+html[data-theme="dark"] .schedule-card--geography {
+  background-color: rgba(234, 88, 12, 0.16);
+  color: #fdba74;
+}
+
+html[data-theme="dark"] .schedule-card--physical-education {
+  background-color: rgba(99, 102, 241, 0.16);
+  color: #a5b4fc;
+}
+
+html[data-theme="dark"] .schedule-break {
+  border-color: #78350f;
+  background-color: #451a03;
+  color: #fde68a;
+}
+
+/* =========================
+   RESPONSIVIDADE
+   ========================= */
+
+@media (max-width: 1100px) {
+  .schedule-summary {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .schedule-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .schedule-header-actions {
+    width: 100%;
+  }
+
+  .schedule-navigation {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .schedule-navigation-left,
+  .schedule-navigation-right {
+    justify-content: center;
+  }
+
+  .schedule-card-container {
+    display: none;
+  }
+
+  .schedule-list {
+    display: flex;
+  }
+}
+
+@media (max-width: 600px) {
+  .schedule-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .schedule-navigation-left,
+  .schedule-navigation-right {
+    width: 100%;
+  }
+
+  .schedule-today-button {
+    flex: 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .schedule-summary-card,
+  .schedule-navigation,
+  .schedule-list-day {
+    padding: var(--spacing-4);
+  }
+
+  .schedule-list-item {
+    align-items: flex-start;
+  }
+
+  .schedule-list-time {
+    min-width: 52px;
+  }
+}

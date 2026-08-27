@@ -1,0 +1,253 @@
+/* =========================================================
+   SESI CONNECT
+   Tipografia global do sistema
+   ========================================================= */
+
+/* =========================
+   CORPO DO DOCUMENTO
+   ========================= */
+
+body {
+  font-family: var(--font-primary);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+/* =========================
+   TÍTULOS
+   ========================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--text-color);
+  font-family: var(--font-primary);
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+h1 {
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+}
+
+h2 {
+  font-size: clamp(1.5rem, 2.5vw, 1.875rem);
+}
+
+h3 {
+  font-size: 1.25rem;
+}
+
+h4 {
+  font-size: 1rem;
+}
+
+h5 {
+  font-size: 0.9375rem;
+}
+
+h6 {
+  font-size: 0.875rem;
+}
+
+/* =========================
+   PARÁGRAFOS
+   ========================= */
+
+p {
+  color: var(--text-secondary);
+  line-height: 1.65;
+}
+
+.text-muted {
+  color: var(--text-muted);
+}
+
+.text-light {
+  color: var(--text-light);
+}
+
+.text-primary {
+  color: var(--primary);
+}
+
+.text-success {
+  color: var(--success);
+}
+
+.text-warning {
+  color: var(--warning);
+}
+
+.text-danger {
+  color: var(--danger);
+}
+
+/* =========================
+   PESOS DE FONTE
+   ========================= */
+
+.font-light {
+  font-weight: 300;
+}
+
+.font-regular {
+  font-weight: 400;
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+/* =========================
+   TAMANHOS DE TEXTO
+   ========================= */
+
+.text-xs {
+  font-size: 0.75rem;
+}
+
+.text-sm {
+  font-size: 0.875rem;
+}
+
+.text-md {
+  font-size: 1rem;
+}
+
+.text-lg {
+  font-size: 1.125rem;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+}
+
+/* =========================
+   ALINHAMENTO
+   ========================= */
+
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+/* =========================
+   TÍTULOS DAS PÁGINAS
+   ========================= */
+
+.page-title {
+  margin-bottom: var(--spacing-1);
+  color: var(--text-color);
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-weight: 700;
+}
+
+.page-subtitle {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+/* =========================
+   TEXTOS DE COMPONENTES
+   ========================= */
+
+.card-title {
+  color: var(--text-color);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.card-subtitle {
+  color: var(--text-muted);
+  font-size: 0.8125rem;
+}
+
+.section-title {
+  margin-bottom: var(--spacing-4);
+  color: var(--text-color);
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+.form-label {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+/* =========================
+   LINKS
+   ========================= */
+
+.text-link {
+  color: var(--primary);
+  font-weight: 500;
+  transition:
+    color var(--transition-fast),
+    text-decoration-color var(--transition-fast);
+}
+
+.text-link:hover {
+  color: var(--primary-hover);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* =========================
+   TEXTO EDITORIAL
+   ========================= */
+
+.editorial-text {
+  font-family: var(--font-secondary);
+  font-size: 1rem;
+  line-height: 1.9;
+}
+
+/* =========================
+   LIMITAÇÃO DE LINHAS
+   ========================= */
+
+.text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.line-clamp-2 {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}

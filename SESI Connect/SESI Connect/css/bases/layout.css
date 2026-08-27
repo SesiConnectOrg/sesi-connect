@@ -1,0 +1,515 @@
+/* =========================================================
+   SESI CONNECT
+   Estrutura global e organização das páginas
+   ========================================================= */
+
+/* =========================
+   DOCUMENTO
+   ========================= */
+
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: var(--bg-body);
+}
+
+/* =========================
+   CONTÊINER PRINCIPAL
+   ========================= */
+
+.container {
+  width: min(100% - 32px, var(--container-max-width));
+  margin-inline: auto;
+}
+
+.container-fluid {
+  width: 100%;
+}
+
+/* =========================
+   LAYOUT DA APLICAÇÃO
+   ========================= */
+
+/* =========================
+   LAYOUT PRINCIPAL
+   ========================= */
+
+.app-layout {
+  width: 100%;
+  min-width: 100%;
+  min-height: 100vh;
+  background-color: var(--bg-body);
+}
+
+/*
+ * A sidebar é fixed.
+ * Portanto, o conteúdo precisa ocupar todo o viewport
+ * descontando apenas a largura da sidebar.
+ */
+.main-content {
+  width: auto;
+  min-width: 0;
+  min-height: 100vh;
+
+  margin-left: var(--sidebar-width);
+
+  padding: var(--spacing-8);
+
+  background-color: var(--bg-main);
+
+  transition:
+    margin-left var(--transition-normal),
+    padding var(--transition-normal);
+}
+
+.main-content,
+.page-content,
+.top-header {
+  box-sizing: border-box;
+}
+
+.page-content {
+  width: 100%;
+  max-width: none;
+  min-width: 0;
+  margin-inline: 0;
+}
+
+/* Sidebar recolhida */
+.app-layout.sidebar-collapsed .main-content {
+  width: auto;
+  margin-left: var(--sidebar-collapsed-width);
+}
+
+/* =========================
+   CONTEÚDO DAS PÁGINAS
+   ========================= */
+
+.page-content {
+  width: 100%;
+  max-width: none;
+  margin-inline: auto;
+}
+
+.page-section {
+  margin-bottom: var(--spacing-8);
+}
+
+.page-section:last-child {
+  margin-bottom: 0;
+}
+
+/* =========================
+   CABEÇALHO DE PÁGINA
+   ========================= */
+
+.page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-5);
+  margin-bottom: var(--spacing-7);
+}
+
+.page-header-content {
+  min-width: 0;
+}
+
+.page-header-actions {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: var(--spacing-3);
+}
+
+/* =========================
+   GRADES
+   ========================= */
+
+.grid {
+  display: grid;
+  gap: var(--spacing-5);
+}
+
+.grid-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.grid-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.grid-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: var(--spacing-5);
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.7fr);
+  gap: var(--spacing-5);
+}
+
+/* =========================
+   FLEXBOX
+   ========================= */
+
+.flex {
+  display: flex;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.items-start {
+  align-items: flex-start;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.items-end {
+  align-items: flex-end;
+}
+
+.justify-start {
+  justify-content: flex-start;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+/* =========================
+   ESPAÇAMENTOS ENTRE ELEMENTOS
+   ========================= */
+
+.gap-1 {
+  gap: var(--spacing-1);
+}
+
+.gap-2 {
+  gap: var(--spacing-2);
+}
+
+.gap-3 {
+  gap: var(--spacing-3);
+}
+
+.gap-4 {
+  gap: var(--spacing-4);
+}
+
+.gap-5 {
+  gap: var(--spacing-5);
+}
+
+.gap-6 {
+  gap: var(--spacing-6);
+}
+
+.gap-8 {
+  gap: var(--spacing-8);
+}
+
+/* =========================
+   MARGENS
+   ========================= */
+
+.mt-2 {
+  margin-top: var(--spacing-2);
+}
+
+.mt-3 {
+  margin-top: var(--spacing-3);
+}
+
+.mt-4 {
+  margin-top: var(--spacing-4);
+}
+
+.mt-5 {
+  margin-top: var(--spacing-5);
+}
+
+.mt-6 {
+  margin-top: var(--spacing-6);
+}
+
+.mt-8 {
+  margin-top: var(--spacing-8);
+}
+
+.mb-2 {
+  margin-bottom: var(--spacing-2);
+}
+
+.mb-3 {
+  margin-bottom: var(--spacing-3);
+}
+
+.mb-4 {
+  margin-bottom: var(--spacing-4);
+}
+
+.mb-5 {
+  margin-bottom: var(--spacing-5);
+}
+
+.mb-6 {
+  margin-bottom: var(--spacing-6);
+}
+
+.mb-8 {
+  margin-bottom: var(--spacing-8);
+}
+
+/* =========================
+   PREENCHIMENTO
+   ========================= */
+
+.p-2 {
+  padding: var(--spacing-2);
+}
+
+.p-3 {
+  padding: var(--spacing-3);
+}
+
+.p-4 {
+  padding: var(--spacing-4);
+}
+
+.p-5 {
+  padding: var(--spacing-5);
+}
+
+.p-6 {
+  padding: var(--spacing-6);
+}
+
+.p-8 {
+  padding: var(--spacing-8);
+}
+
+/* =========================
+   LARGURAS
+   ========================= */
+
+.w-full {
+  width: 100%;
+}
+
+.w-auto {
+  width: auto;
+}
+
+.max-w-full {
+  max-width: 100%;
+}
+
+/* =========================
+   EXIBIÇÃO
+   ========================= */
+
+.block {
+  display: block;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.inline-flex {
+  display: inline-flex;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* =========================
+   POSICIONAMENTO
+   ========================= */
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.fixed {
+  position: fixed;
+}
+
+.sticky {
+  position: sticky;
+}
+
+/* =========================
+   ROLAGEM
+   ========================= */
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.overflow-auto {
+  overflow: auto;
+}
+
+.overflow-x-auto {
+  overflow-x: auto;
+}
+
+.overflow-y-auto {
+  overflow-y: auto;
+}
+
+/* =========================
+   DIVISOR
+   ========================= */
+
+.divider {
+  width: 100%;
+  height: 1px;
+  margin-block: var(--spacing-5);
+  background-color: var(--border-color);
+}
+
+/* =========================
+   ESTADO VAZIO
+   ========================= */
+
+.empty-state {
+  display: flex;
+  min-height: 260px;
+  padding: var(--spacing-8);
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: var(--spacing-3);
+  border: 1px dashed var(--border-color-dark);
+  border-radius: var(--border-radius-lg);
+  background-color: var(--bg-card);
+  text-align: center;
+}
+
+.empty-state i {
+  color: var(--text-light);
+  font-size: 2.5rem;
+}
+
+.empty-state h3 {
+  font-size: 1.125rem;
+}
+
+.empty-state p {
+  max-width: 420px;
+  color: var(--text-muted);
+  font-size: 0.875rem;
+}
+
+/* =========================
+   MENSAGEM SEM JAVASCRIPT
+   ========================= */
+
+.noscript-message {
+  position: fixed;
+  right: var(--spacing-4);
+  bottom: var(--spacing-4);
+  left: var(--spacing-4);
+  z-index: var(--z-modal);
+  padding: var(--spacing-4);
+  border-radius: var(--border-radius-md);
+  background-color: var(--danger);
+  color: var(--text-white);
+  box-shadow: var(--shadow-lg);
+  text-align: center;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+/* =========================
+   RESPONSIVIDADE BÁSICA
+   ========================= */
+
+@media (max-width: 1024px) {
+  .main-content {
+    width: 100%;
+    margin-left: 0;
+    padding: var(--spacing-6);
+  }
+
+  .app-layout.sidebar-collapsed .main-content {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    padding: var(--spacing-5);
+  }
+
+  .page-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .page-header-actions {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .grid-2,
+  .grid-3,
+  .grid-4 {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: min(100% - 24px, var(--container-max-width));
+  }
+
+  .main-content {
+    padding: var(--spacing-4);
+  }
+}

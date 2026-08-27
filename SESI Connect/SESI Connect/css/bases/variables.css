@@ -1,0 +1,180 @@
+/* =========================================================
+   SESI CONNECT
+   Variáveis globais do sistema
+   ========================================================= */
+
+:root {
+  /* =========================
+       FONTES
+       ========================= */
+
+  --font-primary: "Inter", Arial, sans-serif;
+  --font-secondary: "Merriweather", Georgia, serif;
+
+  /* =========================
+       CORES PRINCIPAIS
+       ========================= */
+
+  --primary: #0284c7;
+  --primary-hover: #0369a1;
+  --primary-light: #e0f2fe;
+  --primary-soft: #f0f9ff;
+
+  --secondary: #0f172a;
+  --secondary-light: #334155;
+
+  --success: #10b981;
+  --success-hover: #059669;
+  --success-light: #d1fae5;
+
+  --warning: #f59e0b;
+  --warning-hover: #d97706;
+  --warning-light: #fef3c7;
+
+  --danger: #ef4444;
+  --danger-hover: #dc2626;
+  --danger-light: #fee2e2;
+
+  --info: #2563eb;
+  --info-hover: #1d4ed8;
+  --info-light: #dbeafe;
+
+  --purple: #7c3aed;
+  --purple-light: #ede9fe;
+
+  --pink: #db2777;
+  --pink-light: #fce7f3;
+
+  --teal: #0d9488;
+  --teal-light: #ccfbf1;
+
+  --orange: #ea580c;
+  --orange-light: #ffedd5;
+
+  /* =========================
+       FUNDO
+       ========================= */
+
+  --bg-body: #f8fafc;
+  --bg-main: #f1f5f9;
+  --bg-card: #ffffff;
+  --bg-sidebar: #ffffff;
+  --bg-header: #ffffff;
+  --bg-overlay: rgba(15, 23, 42, 0.55);
+
+  /* =========================
+       TEXTO
+       ========================= */
+
+  --text-color: #0f172a;
+  --text-secondary: #334155;
+  --text-muted: #64748b;
+  --text-light: #94a3b8;
+  --text-white: #ffffff;
+
+  /* =========================
+       BORDAS
+       ========================= */
+
+  --border-color: #e2e8f0;
+  --border-color-dark: #cbd5e1;
+
+  --border-radius-sm: 6px;
+  --border-radius-md: 10px;
+  --border-radius-lg: 16px;
+  --border-radius-xl: 24px;
+  --border-radius-round: 999px;
+
+  /* =========================
+       SOMBRAS
+       ========================= */
+
+  --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.06);
+
+  --shadow-md: 0 4px 10px rgba(15, 23, 42, 0.08);
+
+  --shadow-lg: 0 10px 30px rgba(15, 23, 42, 0.12);
+
+  --shadow-xl: 0 20px 50px rgba(15, 23, 42, 0.18);
+
+  /* =========================
+       TAMANHOS
+       ========================= */
+
+  --sidebar-width: 250px;
+  --sidebar-collapsed-width: 80px;
+
+  --header-height: 76px;
+
+  --container-max-width: 100%;
+
+  /* =========================
+       ESPAÇAMENTOS
+       ========================= */
+
+  --spacing-1: 4px;
+  --spacing-2: 8px;
+  --spacing-3: 12px;
+  --spacing-4: 16px;
+  --spacing-5: 20px;
+  --spacing-6: 24px;
+  --spacing-7: 28px;
+  --spacing-8: 32px;
+  --spacing-10: 40px;
+  --spacing-12: 48px;
+  --spacing-16: 64px;
+
+  /* =========================
+       TRANSIÇÕES
+       ========================= */
+
+  --transition-fast: 150ms ease;
+  --transition-normal: 250ms ease;
+  --transition-slow: 400ms ease;
+
+  /* =========================
+       CAMADAS
+       ========================= */
+
+  --z-sidebar: 100;
+  --z-header: 200;
+  --z-dropdown: 500;
+  --z-modal: 1000;
+  --z-tooltip: 1500;
+}
+
+/* =========================================================
+   TEMA ESCURO
+   Será ativado pelo JavaScript adicionando:
+   <html data-theme="dark">
+   ========================================================= */
+
+html[data-theme="dark"] {
+  --primary: #38bdf8;
+  --primary-hover: #7dd3fc;
+  --primary-light: #0c4a6e;
+  --primary-soft: #082f49;
+
+  --bg-body: #020617;
+  --bg-main: #0f172a;
+  --bg-card: #111827;
+  --bg-sidebar: #111827;
+  --bg-header: #111827;
+  --bg-overlay: rgba(0, 0, 0, 0.72);
+
+  --text-color: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+  --text-light: #64748b;
+
+  --border-color: #1e293b;
+  --border-color-dark: #334155;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.25);
+
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.3);
+
+  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.4);
+
+  --shadow-xl: 0 20px 60px rgba(0, 0, 0, 0.5);
+}

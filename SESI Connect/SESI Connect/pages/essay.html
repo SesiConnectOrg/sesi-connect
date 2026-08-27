@@ -1,0 +1,1200 @@
+<!doctype html>
+
+<html data-theme="light" lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="Editor de redações do SESI Connect." name="description" />
+    <meta content="#f8fafc" name="theme-color" />
+    <title>Redação | SESI Connect</title>
+    <link href="../assets/icons/favicon.svg" rel="icon" type="image/svg+xml" />
+    <!-- Font Awesome -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      rel="stylesheet"
+    />
+    <!-- Estilos -->
+    <link href="../css/styles.css" rel="stylesheet" />
+  </head>
+  <body
+    class="app-layout essay-page writing-page has-mobile-navigation"
+    data-auth-required="true"
+    data-essay-page=""
+    data-page="essay"
+    data-page-title="Redação"
+    data-restore-scroll="true"
+  >
+    <!-- Acessibilidade -->
+    <a class="skip-link" href="#main-content"> Ir para o conteúdo principal </a>
+    <!-- =========================
+         CARREGAMENTO
+         ========================= -->
+    <div aria-hidden="true" class="page-loader">
+      <div class="page-loader-content">
+        <div class="page-loader-logo">
+          <i class="fa-solid fa-graduation-cap"></i>
+        </div>
+        <span class="loading-spinner"></span>
+        <p>Carregando editor de redação...</p>
+      </div>
+    </div>
+    <!-- =========================
+         APLICAÇÃO
+         ========================= -->
+    <div class="app-container">
+      <!-- =========================
+             SIDEBAR
+             ========================= -->
+      <aside aria-label="Navegação principal" class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+          <a
+            aria-label="Página inicial do SESI Connect"
+            class="sidebar-logo"
+            data-route="dashboard"
+            href="./dashboard.html"
+          >
+            <span class="sidebar-logo-icon">
+              <i class="fa-solid fa-graduation-cap"></i>
+            </span>
+            <span class="sidebar-logo-text">
+              <strong>SESI</strong>
+              <span>Connect</span>
+            </span>
+          </a>
+          <button
+            aria-controls="sidebar"
+            aria-expanded="false"
+            aria-label="Fechar menu"
+            class="sidebar-close-button mobile-only"
+            data-sidebar-toggle=""
+            type="button"
+          >
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+        <!-- Usuário -->
+        <div class="sidebar-user">
+          <div
+            aria-hidden="true"
+            class="sidebar-user-avatar"
+            data-user-initials=""
+          >
+            JS
+          </div>
+          <div class="sidebar-user-info">
+            <strong data-user-name=""> Jully Silva </strong>
+            <span data-user-role=""> Estudante </span>
+          </div>
+        </div>
+        <!-- Navegação -->
+        <nav class="sidebar-navigation">
+          <div class="sidebar-navigation-group">
+            <span class="sidebar-section-title"> Principal </span>
+            <a
+              class="sidebar-link"
+              data-route="dashboard"
+              href="./dashboard.html"
+            >
+              <i class="fa-solid fa-chart-pie"></i>
+              <span class="sidebar-link-text"> Visão Geral </span>
+            </a>
+            <a class="sidebar-link" data-route="lessons" href="./lessons.html">
+              <i class="fa-solid fa-book-open"></i>
+              <span class="sidebar-link-text"> Mural de Aulas </span>
+            </a>
+            <a
+              class="sidebar-link"
+              data-route="schedule"
+              href="./schedule.html"
+            >
+              <i class="fa-solid fa-calendar-days"></i>
+              <span class="sidebar-link-text"> Cronograma </span>
+            </a>
+            <a
+              aria-current="page"
+              class="sidebar-link active"
+              data-route="activities"
+              href="./activities.html"
+            >
+              <i class="fa-solid fa-list-check"></i>
+              <span class="sidebar-link-text"> Atividades </span>
+              <span class="sidebar-link-badge"> 3 </span>
+            </a>
+            <a
+              class="sidebar-link"
+              data-route="materials"
+              href="./materials.html"
+            >
+              <i class="fa-solid fa-folder-open"></i>
+              <span class="sidebar-link-text"> Materiais </span>
+            </a>
+            <a
+              class="sidebar-link sidebar-link--highlight"
+              data-route="ai"
+              href="./ai.html"
+            >
+              <i class="fa-solid fa-robot"></i>
+              <span class="sidebar-link-text"> Assistente IA </span>
+            </a>
+          </div>
+          <div class="sidebar-navigation-group">
+            <span class="sidebar-section-title"> Gestão </span>
+            <a
+              class="sidebar-link"
+              data-roles="admin,coordinator,teacher"
+              data-route="students"
+              href="./students.html"
+            >
+              <i class="fa-solid fa-user-graduate"></i>
+              <span class="sidebar-link-text"> Alunos </span>
+            </a>
+            <a
+              class="sidebar-link"
+              data-roles="admin,coordinator"
+              data-route="teachers"
+              href="./teachers.html"
+            >
+              <i class="fa-solid fa-chalkboard-user"></i>
+              <span class="sidebar-link-text"> Professores </span>
+            </a>
+          </div>
+          <div class="sidebar-navigation-group">
+            <span class="sidebar-section-title"> Conta </span>
+            <a class="sidebar-link" data-route="profile" href="./profile.html">
+              <i class="fa-solid fa-user"></i>
+              <span class="sidebar-link-text"> Meu Perfil </span>
+            </a>
+            <a
+              class="sidebar-link"
+              data-route="settings"
+              href="./settings.html"
+            >
+              <i class="fa-solid fa-gear"></i>
+              <span class="sidebar-link-text"> Configurações </span>
+            </a>
+          </div>
+        </nav>
+        <!-- Rodapé -->
+        <div class="sidebar-footer">
+          <button
+            class="sidebar-link sidebar-logout-button"
+            data-logout=""
+            type="button"
+          >
+            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+            <span class="sidebar-link-text"> Sair </span>
+          </button>
+          <span class="sidebar-version"> SESI Connect v1.0 </span>
+        </div>
+      </aside>
+      <!-- Overlay mobile -->
+      <button
+        aria-label="Fechar menu lateral"
+        class="sidebar-overlay"
+        id="sidebar-overlay"
+        tabindex="-1"
+        type="button"
+      ></button>
+      <!-- =========================
+             CONTEÚDO PRINCIPAL
+             ========================= -->
+      <div class="main-content">
+        <!-- =========================
+                 CABEÇALHO SUPERIOR
+                 ========================= -->
+        <header class="top-header">
+          <div class="top-header-left">
+            <button
+              aria-controls="sidebar"
+              aria-expanded="false"
+              aria-label="Abrir menu"
+              class="mobile-menu-button"
+              data-sidebar-toggle=""
+              type="button"
+            >
+              <i class="fa-solid fa-bars"></i>
+            </button>
+            <div class="top-header-heading">
+              <span class="top-header-title"> SESI Connect </span>
+              <span class="top-header-page"> Editor de Redação </span>
+            </div>
+          </div>
+          <!-- Pesquisa global -->
+          <div class="top-header-search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input
+              aria-label="Pesquisar no sistema"
+              placeholder="Pesquisar no SESI Connect"
+              type="search"
+            />
+            <kbd>Ctrl K</kbd>
+          </div>
+          <!-- Ações -->
+          <div class="top-header-actions">
+            <!-- Tema -->
+            <button
+              aria-label="Alterar tema"
+              aria-pressed="false"
+              class="top-header-action theme-toggle-button"
+              data-theme-toggle=""
+              type="button"
+            >
+              <i class="fa-solid fa-moon" data-theme-icon=""></i>
+            </button>
+            <!-- Notificações -->
+            <div class="notification-wrapper">
+              <button
+                aria-controls="notification-panel"
+                aria-expanded="false"
+                aria-label="Notificações"
+                class="top-header-action notification-button"
+                data-notification-toggle=""
+                type="button"
+              >
+                <i class="fa-regular fa-bell"></i>
+                <span class="notification-badge" data-notification-count="">
+                  0
+                </span>
+              </button>
+              <section
+                aria-hidden="true"
+                class="notification-panel"
+                data-notification-panel=""
+                data-use-hidden=""
+                hidden=""
+                id="notification-panel"
+              >
+                <div class="notification-panel-header">
+                  <div>
+                    <h2>Notificações</h2>
+                    <p>Acompanhe suas novidades.</p>
+                  </div>
+                  <button
+                    class="notification-header-action"
+                    data-notifications-read-all=""
+                    type="button"
+                  >
+                    Marcar como lidas
+                  </button>
+                </div>
+                <div class="notification-list" data-notification-list="">
+                  <!-- Gerado pelo notifications.js -->
+                </div>
+                <div class="notification-panel-footer">
+                  <button
+                    class="notification-clear-button"
+                    data-notifications-clear=""
+                    type="button"
+                  >
+                    <i class="fa-solid fa-trash"></i>
+                    Limpar notificações
+                  </button>
+                </div>
+              </section>
+            </div>
+            <!-- Perfil -->
+            <a
+              aria-label="Abrir meu perfil"
+              class="top-header-user"
+              data-route="profile"
+              href="./profile.html"
+            >
+              <div
+                aria-hidden="true"
+                class="top-header-user-avatar"
+                data-user-initials=""
+              >
+                JS
+              </div>
+              <div class="top-header-user-info">
+                <strong data-user-name=""> Jully Silva </strong>
+                <span data-user-role=""> Estudante </span>
+              </div>
+              <i class="fa-solid fa-chevron-right"></i>
+            </a>
+          </div>
+        </header>
+        <!-- =========================
+                 CONTEÚDO
+                 ========================= -->
+        <main class="page-content essay-content" id="main-content">
+          <!-- Navegação estrutural -->
+          <div class="essay-breadcrumb">
+            <a
+              class="essay-back-button"
+              data-route="activities"
+              href="./activities.html"
+            >
+              <i class="fa-solid fa-arrow-left"></i>
+              Voltar para atividades
+            </a>
+            <nav aria-label="Navegação estrutural" class="breadcrumb">
+              <a data-route="dashboard" href="./dashboard.html"> Início </a>
+              <i class="fa-solid fa-chevron-right"></i>
+              <a data-route="activities" href="./activities.html">
+                Atividades
+              </a>
+              <i class="fa-solid fa-chevron-right"></i>
+              <span>Redação</span>
+            </nav>
+          </div>
+          <!-- =========================
+                     CABEÇALHO DA REDAÇÃO
+                     ========================= -->
+          <section class="essay-header-card">
+            <div class="essay-header-icon">
+              <i class="fa-solid fa-file-pen"></i>
+            </div>
+            <div class="essay-header-content">
+              <div class="essay-header-badges">
+                <span class="subject-badge subject-badge--portuguese">
+                  <span data-essay-info="subject"> Língua Portuguesa </span>
+                </span>
+                <span class="status-badge status-badge--warning">
+                  Em andamento
+                </span>
+              </div>
+              <span class="page-eyebrow"> Produção textual </span>
+              <h1 data-essay-title="">Redação dissertativo-argumentativa</h1>
+              <p data-essay-description="">
+                Produza um texto dissertativo-argumentativo, no modelo ENEM,
+                apresentando uma proposta de intervenção que respeite os
+                direitos humanos.
+              </p>
+              <div class="essay-header-meta">
+                <span>
+                  <i class="fa-solid fa-chalkboard-user"></i>
+                  <span data-essay-info="teacher"> Profa. Renata Souza </span>
+                </span>
+                <span>
+                  <i class="fa-regular fa-calendar"></i>
+
+                  Prazo:
+
+                  <strong data-essay-deadline=""> 09/08/2026, 23:59 </strong>
+                </span>
+                <span>
+                  <i class="fa-solid fa-align-left"></i>
+
+                  Mínimo:
+
+                  <strong data-essay-info="minimumWords"> 160 </strong>
+
+                  palavras
+                </span>
+              </div>
+            </div>
+            <div class="essay-header-actions">
+              <button
+                class="btn btn-outline"
+                data-essay-ai-help=""
+                type="button"
+              >
+                <i class="fa-solid fa-robot"></i>
+                Pedir ajuda à IA
+              </button>
+              <button class="btn btn-primary" data-essay-save="" type="button">
+                <i class="fa-solid fa-floppy-disk"></i>
+                Salvar rascunho
+              </button>
+            </div>
+          </section>
+          <!-- =========================
+                     REDAÇÃO ENVIADA
+                     ========================= -->
+          <section
+            class="essay-submitted-message"
+            data-essay-submitted-message=""
+            hidden=""
+          >
+            <div class="essay-submitted-icon">
+              <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <div>
+              <h2>Redação enviada com sucesso</h2>
+              <p>
+                Sua redação foi enviada em
+
+                <strong data-essay-submitted-at=""> — </strong>. O texto está
+                bloqueado para evitar alterações acidentais.
+              </p>
+            </div>
+            <button
+              class="btn btn-outline"
+              data-essay-edit-submitted=""
+              type="button"
+            >
+              <i class="fa-solid fa-pen"></i>
+              Reabrir para edição
+            </button>
+          </section>
+          <!-- =========================
+                     TEMA DA REDAÇÃO
+                     ========================= -->
+          <section class="content-card essay-theme-card">
+            <div class="essay-theme-heading">
+              <span class="essay-theme-icon">
+                <i class="fa-solid fa-lightbulb"></i>
+              </span>
+              <div>
+                <span class="card-eyebrow"> Tema proposto </span>
+                <h2 data-essay-theme="">
+                  Os desafios para a inclusão social no Brasil
+                </h2>
+              </div>
+            </div>
+            <div class="essay-theme-text">
+              <p>
+                A inclusão social consiste na criação de oportunidades para que
+                todas as pessoas possam participar plenamente da sociedade, com
+                acesso à educação, ao trabalho, à cultura, à saúde e aos demais
+                direitos fundamentais.
+              </p>
+              <p>
+                Com base em seus conhecimentos e nos conteúdos estudados,
+                desenvolva uma redação dissertativo-argumentativa sobre o tema
+                apresentado.
+              </p>
+            </div>
+            <div class="essay-theme-instructions">
+              <article>
+                <i class="fa-solid fa-circle-check"></i>
+                <span> Apresente uma tese clara na introdução. </span>
+              </article>
+              <article>
+                <i class="fa-solid fa-circle-check"></i>
+                <span> Desenvolva pelo menos dois argumentos. </span>
+              </article>
+              <article>
+                <i class="fa-solid fa-circle-check"></i>
+                <span> Utilize repertórios relacionados ao tema. </span>
+              </article>
+              <article>
+                <i class="fa-solid fa-circle-check"></i>
+                <span> Finalize com uma proposta de intervenção. </span>
+              </article>
+            </div>
+          </section>
+          <!-- =========================
+                     GRADE PRINCIPAL
+                     ========================= -->
+          <div class="essay-layout">
+            <!-- =========================
+                         COLUNA DO EDITOR
+                         ========================= -->
+            <div class="essay-editor-column">
+              <section class="content-card essay-editor-card">
+                <!-- Barra superior -->
+                <div class="essay-editor-header">
+                  <div>
+                    <span class="card-eyebrow"> Área de escrita </span>
+                    <h2>Minha redação</h2>
+                  </div>
+                  <div class="essay-save-information">
+                    <span
+                      class="essay-save-status"
+                      data-essay-save-status=""
+                      data-status="saved"
+                    >
+                      Rascunho vazio
+                    </span>
+                    <span class="essay-save-shortcut">
+                      <kbd>Ctrl</kbd>
+                      +
+                      <kbd>S</kbd>
+                      para salvar
+                    </span>
+                  </div>
+                </div>
+                <!-- Modelos de parágrafo -->
+                <div class="essay-editor-toolbar">
+                  <div class="essay-editor-toolbar-group">
+                    <span class="essay-toolbar-label">
+                      Inserir estrutura:
+                    </span>
+                    <button
+                      class="essay-template-button"
+                      data-essay-template="introduction"
+                      type="button"
+                    >
+                      <i class="fa-solid fa-1"></i>
+                      Introdução
+                    </button>
+                    <button
+                      class="essay-template-button"
+                      data-essay-template="development1"
+                      type="button"
+                    >
+                      <i class="fa-solid fa-2"></i>
+                      Desenvolvimento 1
+                    </button>
+                    <button
+                      class="essay-template-button"
+                      data-essay-template="development2"
+                      type="button"
+                    >
+                      <i class="fa-solid fa-3"></i>
+                      Desenvolvimento 2
+                    </button>
+                    <button
+                      class="essay-template-button"
+                      data-essay-template="conclusion"
+                      type="button"
+                    >
+                      <i class="fa-solid fa-4"></i>
+                      Conclusão
+                    </button>
+                  </div>
+                  <div class="essay-editor-toolbar-actions">
+                    <button
+                      aria-label="Copiar redação"
+                      class="icon-button"
+                      data-essay-copy=""
+                      title="Copiar redação"
+                      type="button"
+                    >
+                      <i class="fa-regular fa-copy"></i>
+                    </button>
+                    <button
+                      aria-label="Baixar redação"
+                      class="icon-button"
+                      data-essay-download=""
+                      title="Baixar redação"
+                      type="button"
+                    >
+                      <i class="fa-solid fa-download"></i>
+                    </button>
+                    <button
+                      aria-label="Limpar redação"
+                      class="icon-button icon-button--danger"
+                      data-essay-clear=""
+                      title="Limpar redação"
+                      type="button"
+                    >
+                      <i class="fa-solid fa-trash"></i>
+                    </button>
+                  </div>
+                </div>
+                <!-- Editor -->
+                <div class="essay-editor-wrapper">
+                  <label class="sr-only" for="essay-editor">
+                    Texto da redação
+                  </label>
+                  <textarea
+                    autocomplete="off"
+                    class="essay-editor-textarea essay-textarea"
+                    data-auto-resize="true"
+                    data-essay-editor=""
+                    id="essay-editor"
+                    name="essay"
+                    placeholder="Comece escrevendo sua introdução aqui...
+
+Apresente o tema, contextualize o problema e indique os dois argumentos que serão desenvolvidos ao longo da redação."
+                    rows="22"
+                    spellcheck="true"
+                  ></textarea>
+                  <div
+                    aria-hidden="true"
+                    class="essay-editor-paper-lines"
+                  ></div>
+                </div>
+                <!-- Estatísticas inferiores -->
+                <div class="essay-editor-footer">
+                  <div class="essay-editor-statistics">
+                    <span>
+                      <i class="fa-solid fa-font"></i>
+                      <strong data-essay-word-count=""> 0 </strong>
+
+                      palavras
+                    </span>
+                    <span>
+                      <i class="fa-solid fa-keyboard"></i>
+                      <strong data-essay-character-count=""> 0 </strong>
+
+                      caracteres
+                    </span>
+                    <span>
+                      <i class="fa-solid fa-paragraph"></i>
+                      <strong data-essay-paragraph-count=""> 0 </strong>
+
+                      parágrafos
+                    </span>
+                    <span>
+                      <i class="fa-solid fa-bars-staggered"></i>
+                      <strong data-essay-line-count=""> 0 </strong>
+
+                      linhas
+                    </span>
+                  </div>
+                  <span
+                    class="essay-editor-recommendation"
+                    data-essay-recommendation=""
+                  >
+                    Comece escrevendo a introdução.
+                  </span>
+                </div>
+              </section>
+              <!-- Validação -->
+              <div
+                class="essay-validation-container"
+                data-essay-validation=""
+                hidden=""
+                role="alert"
+              ></div>
+              <!-- Ações principais -->
+              <section class="content-card essay-actions-card">
+                <div class="essay-actions-content">
+                  <div class="essay-actions-icon">
+                    <i class="fa-solid fa-paper-plane"></i>
+                  </div>
+                  <div>
+                    <h2>Pronto para enviar?</h2>
+                    <p>
+                      Revise a estrutura, a ortografia e a proposta de
+                      intervenção antes de confirmar a entrega.
+                    </p>
+                    <span>
+                      Atalho:
+                      <kbd>Ctrl</kbd>
+                      +
+                      <kbd>Enter</kbd>
+                      para enviar
+                    </span>
+                  </div>
+                </div>
+                <div class="essay-actions-buttons">
+                  <button
+                    class="btn btn-outline"
+                    data-essay-save=""
+                    type="button"
+                  >
+                    <i class="fa-solid fa-floppy-disk"></i>
+                    Salvar rascunho
+                  </button>
+                  <button
+                    class="btn btn-primary"
+                    data-essay-submit=""
+                    type="button"
+                  >
+                    <i class="fa-solid fa-paper-plane"></i>
+                    Enviar redação
+                  </button>
+                </div>
+              </section>
+              <!-- Histórico de versões -->
+              <section class="content-card essay-revisions-card">
+                <div class="card-header">
+                  <div>
+                    <span class="card-eyebrow"> Segurança do texto </span>
+                    <h2>Histórico de versões</h2>
+                    <p>
+                      Os salvamentos manuais ficam disponíveis para restauração.
+                    </p>
+                  </div>
+                  <button
+                    class="btn btn-outline btn-small"
+                    data-essay-save=""
+                    type="button"
+                  >
+                    <i class="fa-solid fa-plus"></i>
+                    Salvar versão
+                  </button>
+                </div>
+                <div class="essay-revisions-list" data-essay-revisions="">
+                  <p class="essay-revisions-empty">
+                    Nenhuma versão salva manualmente.
+                  </p>
+                </div>
+              </section>
+            </div>
+            <!-- =========================
+                         COLUNA LATERAL
+                         ========================= -->
+            <aside class="essay-side-column">
+              <!-- Progresso -->
+              <section class="content-card essay-progress-card">
+                <div class="essay-progress-circle">
+                  <svg aria-hidden="true" viewbox="0 0 120 120">
+                    <circle
+                      class="essay-progress-circle-background"
+                      cx="60"
+                      cy="60"
+                      r="52"
+                    ></circle>
+                    <circle
+                      class="essay-progress-circle-value"
+                      cx="60"
+                      cy="60"
+                      data-essay-progress-circle=""
+                      r="52"
+                    ></circle>
+                  </svg>
+                  <div class="essay-progress-circle-content">
+                    <strong data-essay-progress-value=""> 0% </strong>
+                    <span>progresso</span>
+                  </div>
+                </div>
+                <h2>Progresso da redação</h2>
+                <p>
+                  O cálculo considera a quantidade de palavras e a estrutura em
+                  parágrafos.
+                </p>
+                <div
+                  aria-label="Progresso da redação"
+                  aria-valuemax="100"
+                  aria-valuemin="0"
+                  aria-valuenow="0"
+                  class="progress essay-progress-bar"
+                  role="progressbar"
+                >
+                  <span
+                    class="progress-bar"
+                    data-essay-progress=""
+                    style="width: 0%"
+                  ></span>
+                </div>
+                <div class="essay-progress-details">
+                  <article>
+                    <span>Palavras atuais</span>
+                    <strong data-essay-word-count=""> 0 </strong>
+                  </article>
+                  <article>
+                    <span>Mínimo exigido</span>
+                    <strong data-essay-info="minimumWords"> 160 </strong>
+                  </article>
+                  <article>
+                    <span>Meta recomendada</span>
+                    <strong data-essay-info="recommendedWords"> 240 </strong>
+                  </article>
+                  <article>
+                    <span>Parágrafos mínimos</span>
+                    <strong data-essay-info="minimumParagraphs"> 4 </strong>
+                  </article>
+                </div>
+              </section>
+              <!-- Estrutura sugerida -->
+              <section class="content-card essay-structure-card">
+                <div class="card-header">
+                  <div>
+                    <span class="card-eyebrow"> Organização </span>
+                    <h2>Estrutura sugerida</h2>
+                  </div>
+                </div>
+                <ol class="essay-structure-list">
+                  <li>
+                    <span class="essay-structure-number"> 1 </span>
+                    <div>
+                      <strong>Introdução</strong>
+                      <p>Contextualização, problema e tese.</p>
+                    </div>
+                  </li>
+                  <li>
+                    <span class="essay-structure-number"> 2 </span>
+                    <div>
+                      <strong>Desenvolvimento 1</strong>
+                      <p>Primeiro argumento, explicação e consequência.</p>
+                    </div>
+                  </li>
+                  <li>
+                    <span class="essay-structure-number"> 3 </span>
+                    <div>
+                      <strong>Desenvolvimento 2</strong>
+                      <p>Segundo argumento, repertório e relação com o tema.</p>
+                    </div>
+                  </li>
+                  <li>
+                    <span class="essay-structure-number"> 4 </span>
+                    <div>
+                      <strong>Conclusão</strong>
+                      <p>Agente, ação, meio, finalidade e detalhamento.</p>
+                    </div>
+                  </li>
+                </ol>
+              </section>
+              <!-- Competências -->
+              <section class="content-card essay-competencies-card">
+                <div class="card-header">
+                  <div>
+                    <span class="card-eyebrow"> Modelo ENEM </span>
+                    <h2>Competências avaliadas</h2>
+                  </div>
+                </div>
+                <div class="essay-competencies-list">
+                  <article>
+                    <span class="essay-competency-number"> C1 </span>
+                    <div>
+                      <strong>Norma-padrão</strong>
+                      <p>Domínio da escrita formal da língua portuguesa.</p>
+                    </div>
+                  </article>
+                  <article>
+                    <span class="essay-competency-number"> C2 </span>
+                    <div>
+                      <strong>Compreensão do tema</strong>
+                      <p>Desenvolvimento adequado da proposta apresentada.</p>
+                    </div>
+                  </article>
+                  <article>
+                    <span class="essay-competency-number"> C3 </span>
+                    <div>
+                      <strong>Argumentação</strong>
+                      <p>Seleção e organização de informações e argumentos.</p>
+                    </div>
+                  </article>
+                  <article>
+                    <span class="essay-competency-number"> C4 </span>
+                    <div>
+                      <strong>Coesão</strong>
+                      <p>
+                        Uso adequado de conectivos e mecanismos linguísticos.
+                      </p>
+                    </div>
+                  </article>
+                  <article>
+                    <span class="essay-competency-number"> C5 </span>
+                    <div>
+                      <strong>Intervenção</strong>
+                      <p>
+                        Proposta detalhada e compatível com os direitos humanos.
+                      </p>
+                    </div>
+                  </article>
+                </div>
+              </section>
+              <!-- Conectivos -->
+              <section class="content-card essay-connectors-card">
+                <div class="card-header">
+                  <div>
+                    <span class="card-eyebrow"> Coesão textual </span>
+                    <h2>Conectivos úteis</h2>
+                  </div>
+                </div>
+                <div class="essay-connectors">
+                  <button
+                    class="essay-connector"
+                    data-copy-text="Em primeiro lugar,"
+                    type="button"
+                  >
+                    Em primeiro lugar
+                  </button>
+                  <button
+                    class="essay-connector"
+                    data-copy-text="Além disso,"
+                    type="button"
+                  >
+                    Além disso
+                  </button>
+                  <button
+                    class="essay-connector"
+                    data-copy-text="Nesse sentido,"
+                    type="button"
+                  >
+                    Nesse sentido
+                  </button>
+                  <button
+                    class="essay-connector"
+                    data-copy-text="Consequentemente,"
+                    type="button"
+                  >
+                    Consequentemente
+                  </button>
+                  <button
+                    class="essay-connector"
+                    data-copy-text="Sob essa perspectiva,"
+                    type="button"
+                  >
+                    Sob essa perspectiva
+                  </button>
+                  <button
+                    class="essay-connector"
+                    data-copy-text="Portanto,"
+                    type="button"
+                  >
+                    Portanto
+                  </button>
+                </div>
+                <p class="essay-connectors-hint">
+                  Clique em um conectivo para copiá-lo.
+                </p>
+              </section>
+              <!-- IA -->
+              <section class="content-card essay-ai-card">
+                <div class="essay-ai-icon">
+                  <i class="fa-solid fa-robot"></i>
+                </div>
+                <div>
+                  <span class="card-eyebrow"> Assistente educacional </span>
+                  <h2>Precisa organizar as ideias?</h2>
+                  <p>
+                    Envie o texto atual para receber sugestões de clareza,
+                    estrutura e argumentação.
+                  </p>
+                </div>
+                <button
+                  class="btn btn-primary btn-full"
+                  data-essay-ai-help=""
+                  type="button"
+                >
+                  <i class="fa-solid fa-sparkles"></i>
+                  Analisar com a IA
+                </button>
+              </section>
+              <!-- Informações -->
+              <section class="content-card essay-information-card">
+                <div class="card-header">
+                  <div>
+                    <span class="card-eyebrow"> Informações </span>
+                    <h2>Regras da atividade</h2>
+                  </div>
+                </div>
+                <dl class="essay-information-list">
+                  <div>
+                    <dt>Disciplina</dt>
+                    <dd data-essay-info="subject">Língua Portuguesa</dd>
+                  </div>
+                  <div>
+                    <dt>Professor(a)</dt>
+                    <dd data-essay-info="teacher">Profa. Renata Souza</dd>
+                  </div>
+                  <div>
+                    <dt>Prazo</dt>
+                    <dd data-essay-info="deadline">09/08/2026, 23:59</dd>
+                  </div>
+                  <div>
+                    <dt>Limite máximo</dt>
+                    <dd>
+                      <span data-essay-info="maximumWords"> 4000 </span>
+
+                      palavras
+                    </dd>
+                  </div>
+                </dl>
+              </section>
+            </aside>
+          </div>
+        </main>
+        <!-- =========================
+                 RODAPÉ
+                 ========================= -->
+        <footer class="app-footer">
+          <p>
+            ©
+            <span data-current-year="">2026</span>
+            SESI Connect.
+          </p>
+          <div class="app-footer-links">
+            <a href="#">Privacidade</a>
+            <a href="#">Suporte</a>
+            <a href="#">Acessibilidade</a>
+          </div>
+        </footer>
+      </div>
+    </div>
+    <!-- =========================
+         BARRA FIXA MOBILE
+         ========================= -->
+    <div class="essay-mobile-actions">
+      <button class="btn btn-outline" data-essay-save="" type="button">
+        <i class="fa-solid fa-floppy-disk"></i>
+        Salvar
+      </button>
+      <button class="btn btn-primary" data-essay-submit="" type="button">
+        <i class="fa-solid fa-paper-plane"></i>
+        Enviar
+      </button>
+    </div>
+    <!-- =========================
+         NAVEGAÇÃO MOBILE
+         ========================= -->
+    <nav aria-label="Navegação mobile" class="mobile-bottom-navigation">
+      <a
+        class="mobile-bottom-link"
+        data-route="dashboard"
+        href="./dashboard.html"
+      >
+        <i class="fa-solid fa-house"></i>
+        <span>Início</span>
+      </a>
+      <a class="mobile-bottom-link" data-route="lessons" href="./lessons.html">
+        <i class="fa-solid fa-book-open"></i>
+        <span>Aulas</span>
+      </a>
+      <a
+        class="mobile-bottom-link"
+        data-route="schedule"
+        href="./schedule.html"
+      >
+        <i class="fa-solid fa-calendar-days"></i>
+        <span>Agenda</span>
+      </a>
+      <a
+        aria-current="page"
+        class="mobile-bottom-link active"
+        data-route="activities"
+        href="./activities.html"
+      >
+        <i class="fa-solid fa-list-check"></i>
+        <span>Atividades</span>
+      </a>
+      <a class="mobile-bottom-link" data-route="profile" href="./profile.html">
+        <i class="fa-solid fa-user"></i>
+        <span>Perfil</span>
+      </a>
+    </nav>
+    <!-- =========================
+         TOASTS
+         ========================= -->
+    <div
+      aria-atomic="true"
+      aria-live="polite"
+      class="toast-container"
+      id="toast-container"
+    ></div>
+    <!-- =========================
+         SEM JAVASCRIPT
+         ========================= -->
+    <noscript>
+      <div class="noscript-warning">
+        <strong>JavaScript desativado</strong>
+        <p>Ative o JavaScript para escrever, salvar e enviar sua redação.</p>
+      </div>
+    </noscript>
+    <!-- =========================
+         JAVASCRIPT
+         ========================= -->
+    <!-- Recursos visuais complementares -->
+    <!-- JavaScript revisado -->
+    <script src="../js/auth.js" type="module"></script>
+    <script src="../js/app.js" type="module"></script>
+    <script src="../js/modules/essay.js" type="module"></script>
+    <script type="module">
+      /* =========================
+           CÍRCULO DE PROGRESSO
+           ========================= */
+
+      const progressCircle = document.querySelector(
+        "[data-essay-progress-circle]",
+      );
+
+      const progressValues = [
+        ...document.querySelectorAll("[data-essay-progress-value]"),
+      ];
+
+      const circumference = 2 * Math.PI * 52;
+
+      if (progressCircle) {
+        progressCircle.style.strokeDasharray = String(circumference);
+
+        progressCircle.style.strokeDashoffset = String(circumference);
+      }
+
+      function updateEssayProgressCircle() {
+        if (!progressCircle) {
+          return;
+        }
+
+        const percentage =
+          progressValues
+            .map((element) => {
+              return Number.parseFloat(element.textContent);
+            })
+            .find(Number.isFinite) || 0;
+
+        const normalizedPercentage = Math.min(100, Math.max(0, percentage));
+
+        const offset =
+          circumference - (normalizedPercentage / 100) * circumference;
+
+        progressCircle.style.strokeDashoffset = String(offset);
+      }
+
+      const progressObserver = new MutationObserver(updateEssayProgressCircle);
+
+      progressValues.forEach((element) => {
+        progressObserver.observe(element, {
+          childList: true,
+          characterData: true,
+          subtree: true,
+        });
+      });
+
+      updateEssayProgressCircle();
+
+      /* =========================
+           CONECTIVOS
+           ========================= */
+
+      document.querySelectorAll("[data-copy-text]").forEach((button) => {
+        button.addEventListener("click", async () => {
+          const text = button.dataset.copyText || button.textContent.trim();
+
+          try {
+            await navigator.clipboard.writeText(text);
+
+            button.classList.add("is-copied");
+
+            const originalText = button.textContent;
+
+            button.textContent = "Copiado!";
+
+            window.setTimeout(() => {
+              button.textContent = originalText;
+
+              button.classList.remove("is-copied");
+            }, 1200);
+          } catch (error) {
+            console.warn(
+              "[SESI Connect] Não foi possível copiar o conectivo.",
+              error,
+            );
+          }
+        });
+      });
+
+      /* =========================
+           PRAZO
+           ========================= */
+
+      const deadlineElements = document.querySelectorAll(
+        "[data-essay-deadline]",
+      );
+
+      function updateDeadlineStatus() {
+        const essay = window.SESIEssay?.getEssay?.();
+
+        if (!essay?.deadline) {
+          return;
+        }
+
+        const deadline = new Date(essay.deadline);
+
+        const difference = deadline.getTime() - Date.now();
+
+        deadlineElements.forEach((element) => {
+          element.classList.toggle("is-expired", difference < 0);
+
+          element.classList.toggle(
+            "is-urgent",
+            difference >= 0 && difference <= 24 * 60 * 60 * 1000,
+          );
+        });
+      }
+
+      document.addEventListener("sesi:essay-ready", updateDeadlineStatus);
+
+      updateDeadlineStatus();
+
+      /* =========================
+           FOCO NO EDITOR
+           ========================= */
+
+      document.querySelectorAll("[data-essay-template]").forEach((button) => {
+        button.addEventListener("click", () => {
+          window.setTimeout(() => {
+            document.querySelector("[data-essay-editor]")?.focus();
+          }, 50);
+        });
+      });
+    </script>
+  </body>
+</html>

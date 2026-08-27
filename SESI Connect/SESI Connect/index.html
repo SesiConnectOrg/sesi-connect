@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Acesse o SESI Connect, plataforma educacional para alunos e professores."
+    />
+    <title>Login | SESI Connect</title>
+    <link href="./assets/icons/favicon.svg" rel="icon" type="image/svg+xml" />
+    
+
+    <!-- Font Awesome -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      rel="stylesheet"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&amp;display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS principal -->
+    <link href="css/styles.css" rel="stylesheet" />
+  </head>
+  <body
+    class="login-page"
+    data-guest-only="true"
+    data-page="login"
+    data-page-title="Login"
+  >
+    <main class="login-screen">
+      <!-- Área do formulário -->
+      <section aria-labelledby="login-title" class="login-left">
+       <a
+  aria-label="Página inicial do SESI Connect"
+  class="brand-logo brand-logo--login"
+  href="./index.html"
+>
+  <img
+    src="./assets/icons/logo.png"
+    alt="SESI Connect"
+    class="brand-logo-image"
+  />
+</a>
+
+        <div class="login-content">
+          <header class="login-header">
+            <h1 id="login-title">Bem-vindo(a)!</h1>
+            <p>Insira suas credenciais para acessar a plataforma.</p>
+          </header>
+
+          <form autocomplete="on" class="login-form" id="login-form" novalidate>
+            <div class="form-group">
+              <label for="login-email">E-mail</label>
+              <div class="input-wrapper">
+                <i
+                  aria-hidden="true"
+                  class="fa-regular fa-envelope input-icon"
+                ></i>
+                <input
+                  autocomplete="email"
+                  class="form-control form-control--icon"
+                  id="login-email"
+                  name="email"
+                  placeholder="seu.email@aluno.sesi.br"
+                  required
+                  type="email"
+                />
+              </div>
+              <small
+                aria-live="polite"
+                class="form-error"
+                id="email-error"
+              ></small>
+            </div>
+
+            <div class="form-group">
+              <label for="login-password">Senha</label>
+              <div class="input-wrapper">
+                <i aria-hidden="true" class="fa-solid fa-lock input-icon"></i>
+                <input
+                  autocomplete="current-password"
+                  class="form-control form-control--icon form-control--password"
+                  id="login-password"
+                  minlength="6"
+                  name="password"
+                  placeholder="Digite sua senha"
+                  required
+                  type="password"
+                />
+                <button
+                  aria-controls="login-password"
+                  aria-label="Mostrar senha"
+                  aria-pressed="false"
+                  class="password-toggle"
+                  id="toggle-password"
+                  type="button"
+                >
+                  <i aria-hidden="true" class="fa-regular fa-eye"></i>
+                </button>
+              </div>
+              <small
+                aria-live="polite"
+                class="form-error"
+                id="password-error"
+              ></small>
+            </div>
+
+            <div class="login-options">
+              <label class="checkbox-field" for="remember-user">
+                <input id="remember-user" name="remember" type="checkbox" />
+                <span>Lembrar-me</span>
+              </label>
+              <a class="forgot-password" href="#">Esqueceu a senha?</a>
+            </div>
+
+            <button class="btn-primary login-submit" type="submit">
+              <span>Entrar</span>
+              <i
+                aria-hidden="true"
+                class="fa-solid fa-arrow-right-to-bracket"
+              ></i>
+            </button>
+
+            <p aria-live="polite" class="login-message" id="login-message"></p>
+          </form>
+        </div>
+
+        <footer class="login-footer">
+          <p>© 2026 SESI Connect. Projeto educacional.</p>
+        </footer>
+      </section>
+
+      <!-- Área visual -->
+      <section aria-label="Apresentação da plataforma" class="login-right">
+        <div class="login-decoration login-decoration--one"></div>
+        <div class="login-decoration login-decoration--two"></div>
+        <div class="login-presentation">
+          <div class="login-illustration">
+            <i aria-hidden="true" class="fa-solid fa-graduation-cap"></i>
+          </div>
+          <h2>Plataforma SESI Connect</h2>
+          <p>
+            Sua jornada de aprendizado em um só lugar. Conecte-se com
+            professores, atividades, materiais e conteúdos educacionais.
+          </p>
+
+          <div class="login-features">
+            <div class="login-feature">
+              <i aria-hidden="true" class="fa-solid fa-book-open"></i>
+              <span>Aulas e materiais</span>
+            </div>
+            <div class="login-feature">
+              <i aria-hidden="true" class="fa-solid fa-list-check"></i>
+              <span>Atividades organizadas</span>
+            </div>
+            <div class="login-feature">
+              <i aria-hidden="true" class="fa-solid fa-robot"></i>
+              <span>Assistente educacional</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <noscript>
+      <div class="noscript-message">
+        O JavaScript precisa estar ativado para utilizar o SESI Connect.
+      </div>
+    </noscript>
+
+    <!-- JavaScript principal -->
+    <script src="./js/auth.js" type="module"></script>
+    <script src="./js/app.js" type="module"></script>
+  </body>
+</html>
