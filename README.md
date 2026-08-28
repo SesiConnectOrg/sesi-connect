@@ -9,7 +9,6 @@
 
 [![Status](https://img.shields.io/badge/status-em%20desenvolvimento-2ea44f?style=for-the-badge)](#status-do-projeto)
 [![License](https://img.shields.io/badge/license-acadêmico-007ec6?style=for-the-badge)](#licença)
-[![GitHub](https://img.shields.io/badge/GitHub-repositório-181717?style=for-the-badge\&logo=github)](https://github.com/davirlima7-debug/sesi-connect)
 [![Site](https://img.shields.io/badge/Acessar%20Site-SESI%20Connect-00AEEF?style=for-the-badge&logo=googlechrome&logoColor=white)](https://sesiconnect.netlify.app/)
 
 </div>
