@@ -10,6 +10,7 @@
 [![Status](https://img.shields.io/badge/status-em%20desenvolvimento-2ea44f?style=for-the-badge)](#status-do-projeto)
 [![License](https://img.shields.io/badge/license-acadêmico-007ec6?style=for-the-badge)](#licença)
 [![GitHub](https://img.shields.io/badge/GitHub-repositório-181717?style=for-the-badge\&logo=github)](https://github.com/davirlima7-debug/sesi-connect)
+[![Site](https://img.shields.io/badge/Acessar%20Site-SESI%20Connect-00AEEF?style=for-the-badge&logo=googlechrome&logoColor=white)](https://sesiconnect.netlify.app/)
 
 </div>
 
@@ -244,16 +245,7 @@ O **SESI Connect** é desenvolvido por:
 
 [Eduardo Hernandes](https://github.com/eduhernandes)
 
-## Repositório e Site
-
-<div align="center">
-
-[![GitHub](https://img.shields.io/badge/Acessar%20Repositório-GitHub-181717?style=for-the-badge&logo=github)](https://github.com/SesiConnectOrg/sesi-connect)
-
-[![Site](https://img.shields.io/badge/Acessar%20Site-SESI%20Connect-00AEEF?style=for-the-badge&logo=googlechrome&logoColor=white)](https://sesiconnect.netlify.app/)
-
-</div>
-
+---
 
 ## Status do Projeto
 
