@@ -244,16 +244,16 @@ O **SESI Connect** é desenvolvido por:
 
 [Eduardo Hernandes](https://github.com/eduhernandes)
 
-
-## Repositório
+## Repositório e Site
 
 <div align="center">
 
-[![GitHub](https://img.shields.io/badge/Acessar%20Repositório-GitHub-181717?style=for-the-badge\&logo=github)](https://github.com/davirlima7-debug/sesi-connect)
+[![GitHub](https://img.shields.io/badge/Acessar%20Repositório-GitHub-181717?style=for-the-badge&logo=github)](https://github.com/SesiConnectOrg/sesi-connect)
+
+[![Site](https://img.shields.io/badge/Acessar%20Site-SESI%20Connect-00AEEF?style=for-the-badge&logo=googlechrome&logoColor=white)](https://sesiconnect.netlify.app/)
 
 </div>
 
----
 
 ## Status do Projeto
 
