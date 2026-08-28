@@ -240,7 +240,10 @@ O **SESI Connect** é desenvolvido por:
 
 [Instagram — Jael Feijó](https://www.instagram.com/jaelfeijo_/)
 
----
+## Professor orientador
+
+[Eduardo Hernandes](https://github.com/eduhernandes)
+
 
 ## Repositório
 
